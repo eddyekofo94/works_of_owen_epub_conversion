@@ -2577,6 +2577,216 @@ FOOTNOTE_TRANSLATIONS = {
     ),
 }
 
+FOOTNOTE_TRANSLATIONS.update({
+    "v10_fn7": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: John 6:42, 7:52. &ldquo;Natura sic apparet vitiata ut hoc majoris vitii sit, non videre.&rdquo; — Aug."
+    ),
+    "v10_fn10": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Philippians lib. quod sit Deus immutabilis."
+    ),
+    "v10_fn11": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;In ordine volitorum divinorum, quaedam sunt quae omnem actum creaturae praece-dunt, quaedam quae sequuntur.&rdquo; — Corv, ad Molin., cap. 5. sect. 1, p. 67."
+    ),
+    "v10_fn13": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Multa tamen arbitror Deum velle; quae non vellet, adeoque nec juste velle posset, nisi aliqua actio creaturae praecederet.&rdquo; — Ad Ames., p. 24."
+    ),
+    "v10_fn16": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Volitiones aliquae Dei cessant certo quodam tempore.&rdquo; — Episcop. Disp. de Vol. Dei., thes. 7"
+    ),
+    "v10_fn20": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Possunt homines etectionem suam irritam et frustraneam reddere.&rdquo; — Rem. Apol., cap. 9. p. 105."
+    ),
+    "v10_fn24": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Ad gloriam participandam pro isto tempore quo credunt electi sunt.&rdquo; — Rem. Apol., p. 190."
+    ),
+    "v10_fn27": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Quis enim comminetur poenam ei, quem peremptorio decreto a poena immunem esse vult ?&rdquo; — Rem. Apol., cap. 17. p. 187."
+    ),
+    "v10_fn32": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Vid. Sam. Rhaetorfort. Exercit. de Grat., ex. 1. cap. 4."
+    ),
+    "v10_fn34": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Scientia visionis dicitur, quia ea quae videntur, apud nos habent esse distinctum extra videntem.&rdquo; — Aq. p. q. 14, a. 9, c."
+    ),
+    "v10_fn39": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Deus ita omnium salutem ex aequo vult, ut illam ex aequo optet et desideret.&rdquo; — Corv. ad Molin., cap. 31. sect. 1."
+    ),
+    "v10_fn42": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Reprobatio populi Judaici fuit actio temporaria et quae bono ipsorum Judaeorum si modo sanabiles adhuc essent, animumque advertere vellent, servire poterat, utque ei fini serviret a Deo facta erat.&rdquo; — Rem. Apol., cap. 20. p. 221."
+    ),
+    "v10_fn44": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Concedimus in Deo desideria, quae nunquam implentur.&rdquo; — Corv. ad Molin., cap. v. sect. 2."
+    ),
+    "v10_fn45": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Bona quaedam Deus optat et desiderat.&rdquo; — Rem. Confes., cap. 2. sect. 9."
+    ),
+    "v10_fn47": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Deum futura contingentia, decreto suo determinasse ad alterutram partem (intellige quae a libera creaturae voluntate patrantur), falsum, absurdum, et multiplicis blasphemiae praevium abominor et exsecror.&rdquo; — Armin. Declarat. Senten."
+    ),
+    "v10_fn51": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Deus non semper ex praescientia finem intendit.&rdquo; — Armin., Antip., p. 667; Corv. ad Molin., cap. 5. sect. 5."
+    ),
+    "v10_fn56": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;An actus divinae providentiae omnium rerum conservatrix, sit affirmativus po-tentiae, an tantum negativus voluntatis, quo nolit res ereatas perdere.&rdquo; — Rem. Apol., cap. 6."
+    ),
+    "v10_fn60": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Rem. Apol., cap. 6."
+    ),
+    "v10_fn61": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Qui sic homines voluit esse liberos ut fecit sacrilegos.&rdquo; — Aug."
+    ),
+    "v10_fn63": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Deus influxu suo nihil confert creaturae, quo ad agendum incitetur ac adjuvetur.&rdquo; — Corv. ad Molin., cap. 3. sect. 15, p. 35."
+    ),
+    "v10_fn66": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Respectu contingentiae quam res habent in se, tum in divina scientia Deo expectatio tribuitur.&rdquo; — Rem. Defen. Sent. in Act. Syn., p. 107."
+    ),
+    "v10_fn67": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Potentia voluntatis, ab omni interna et externa necessitate immunis debet mahere.&rdquo; — Rem. Confes., cap. 6. sect. 3. Vid. plura. Rem. Apol., cap. 6. p. 69, a."
+    ),
+    "v10_fn70": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Curandum diligenter, ut Deo quidem universalis, homini vero particularis influxus in actus tribuatur, quo universalem Dei influxum, ad particularem actum determinet.&rdquo; — Corv, ad Molin., cap. 3. sect. 5."
+    ),
+    "v10_fn73": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Determinatio cum libertate vera nullo modo consistere potest.&rdquo; — Rem. Apol., cap. 7. fol. 82."
+    ),
+    "v10_fn79": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Durand, Dist. c. 48, q. 3."
+    ),
+    "v10_fn82": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Aug. Enchirid. ad Lauren., cap. 101. 836"
+    ),
+    "v10_fn92": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Ne credere cogamur aliquid omnipotentem Deum voluisse factumque non esse.&rdquo; — Aug. En., cap. 103."
+    ),
+    "v10_fn97": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Episcop. Thes., p. 35; Epist. ad Walach., p. 38; Grevinch. ad Ames., p. 133."
+    ),
+    "v10_fn101": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Nos negamus Dei electionem ad salutem extendere sese ad slngulares personas, qua singulares personas.&rdquo; — Rem. Coll. Hag., fol. 76."
+    ),
+    "v10_fn114": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Vid. Prosp. ad Excep. Gen. ad Dub., 8,9. Vid. Car. de Ingratis., c. 2,3."
+    ),
+    "v10_fn129": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Absurdum est ut ex unius inobedientia multi actu inobedientes, facti essent.&rdquo; — Corr. ad Molin., cap. 7. sect. 8."
+    ),
+    "v10_fn136": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Perverse dicitur peccatum originis, reum facere mortis, quum peccatum illud poena sit peccati actualis Adami.&rdquo; — Armin. Resp. ad Quaest. 9. a. 3."
+    ),
+    "v10_fn139": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Ex ratione creationis homo habebat affectum ad ea quae vetabantur.&rdquo; — Corv. ad Molin., cap. 6. sect. 1."
+    ),
+    "v10_fn143": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Justitia originalis instar fraeni fuit, quod preestabat internae concupiscentiae ordinationem.&rdquo; — Corv. ad Molin., cap. 8. sect. 1."
+    ),
+    "v10_fn156": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Se omnino credere, futurum fuisse, ut finis mortis Christi constaret, etiamsi nemo credidisset.&rdquo; — Idem, cap. 27, sect. 3,4."
+    ),
+    "v10_fn157": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Posita et praestita Christi morte et satisfactione, fieri potest, ut, nemine novi foederis conditionem prastante, nemo salvaretur.&rdquo; — Idem. Grevinch. ad Ames. p. 9. 842"
+    ),
+    "v10_fn163": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Rem. Apol., ubi sup.; Corv. ad Molin., cap. 28. sect. 9."
+    ),
+    "v10_fn167": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;O Domine, doce nos quid agamus; quo gradiamur ostende; quid efficiamus operare.&rdquo; — Ben. Pap. in Concil. Legunstad."
+    ),
+    "v10_fn174": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Petamus ut det quod ut habeamus jubet.&rdquo; — Aug."
+    ),
+    "v10_fn179": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Tanta est erga homines bonitas Dei, ut nostra velit esse merita quae sunt ipsius dona.&rdquo; — Coelest. Epist. ad Ep. Gal., cap. 12."
+    ),
+    "v10_fn181": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Certum est locum nullum esse, unde appareat fidem istam, sub Vet. Test., praeceptam fuisse ant viguisse.&rdquo; — Rem. Apol., cap. 7. p. 91."
+    ),
+    "v10_fn184": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Nego hanc propositionem: neminem posse salvari, quam qui Jesu Christo per veram fidem sit insitus.&rdquo; — Bert, ad Sibrand., p. 133."
+    ),
+    "v10_fn187": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Art. of the Church of Eng., art. xvii."
+    ),
+    "v10_fn188": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Nihil magis repugnat fidei, quam sine fide salvum esse posse quempiam hominum.&rdquo; — Acost. de Indo. Salu. Proc."
+    ),
+    "v10_fn206": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Non potest Deus Lib. Arbit. integrum servare, nisi tam peccare hominem sineret, quam bene agere.&rdquo; — Corv, ad Molin., cap. 6."
+    ),
+    "v10_fn209": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Lib. Arbit. est rei sibi placitae spontaneus appetitus.&rdquo; — Prosp, ad Collat., cap. 18, p. 379."
+    ),
+    "v10_fn213": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Fides vocatur opus Dei, quia Deus ipse id a nobis fieri postulat.&rdquo; — Rem. Apol., cap. 10. p. 112."
+    ),
+    "v10_fn214": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Ea quae de habituum infusione dicuntur, ante omnem fidei actum, rejiciuntur a nobis.&rdquo; — Epist, ad Wal., p. 67. 847"
+    ),
+    "v10_fn215": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Principium internum fidei a nobis in evangelio requisitum, esse habitum quendam divinitus infusum, cujus vi ac efficacitate voluntas determinetur; hoc negavi.&rdquo; — Grevinch, ad Ames., p. 324."
+    ),
+    "v10_fn218": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Interdum Deus hanc vel illam gentem, civitatem, personam, ad evangelicae gratiae communionem vocat, quam ipse dignam pronuntiat comparative,&rdquo; etc. — Rein. Declarat. Sent. Synod."
+    ),
+    "v10_fn221": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Praecedit aliquid in peccatoribus, quo quamvis nondum justificati sunt, digni efficiantur justificatione.&rdquo; — Grevinch, ad Ames., p. 434."
+    ),
+    "v10_fn222": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Tenendum est, veram conversionem praestationemque bonorum operum esse conditionem praerequisitam ante justificationem.&rdquo; — Filii Arm. Praef. ad cap. 7. ad Rem."
+    ),
+    "v10_fn225": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Fatemur, aliam nobis ad actum fidei eliciendum necessariam gratiam non agnosci quam moralem.&rdquo; — Rem. Act. Synod. ad Art. 4. 848"
+    ),
+    "v10_fn243": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Natura sic apparet vitiata ut hoc majoris vitii sit non videre.&rdquo; — Aug."
+    ),
+    "v10_fn245": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Plato de Legib., lib. 7."
+    ),
+    "v10_fn252": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Hor. De Art. Poet., ver. 38."
+    ),
+    "v10_fn274": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Lib. de Satisfac. Christi. Vos. Def. Grot. alii."
+    ),
+    "v10_fn293": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Omnes illi, pro quibus Christus ex intentione Dei satisfecit, sunt Deo reconciliati, i. e., in favorem salutiferum aliquo modo restituti.&rdquo; — Ames. Antisynod., p. 104."
+    ),
+    "v10_fn316": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Πολὺς ταραγμὸς ἔν τε τοῖς ζεοῖς ἔνι. — Eurip. Iphig. in Taur. 572."
+    ),
+    "v10_fn318": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Nullos unquam fuisse aut esse posse ἀθέους proprie dictos et speculative, seu plene persuasos, agnoscunt pene omnes.&rdquo; — Vid. Voet. Disp. de Atheismo. Psalm 14:1. &ldquo;Non est potestas Dei in terris.&rdquo; — Chal. Par. &ldquo;Eorum qui antiquitus horrendi criminis rei existimabantur vindicias instituerunt inulti.&rdquo; — Vid. Vos. de Idol. 51:cap. 1. jΩς τοῦ πιεῖν γε, καὶ φαγεῖν τοὐ φ j ἡμέραν, Ζεὺς οῦτος ἀνθρώποισι τοῖσι σώφροσι. — Eurip in Cyclop 335"
+    ),
+    "v10_fn319": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Veritatis argumentum est omnibus aliquid videri tanquam deos esse, quod omnibus de diis opinio insita sit, neque ulla gens usquam est, adeo extra leges moresque posita ut non aliquos Deos credat.&rdquo; — Seneca, Epist. in."
+    ),
+    "v10_fn320": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Sueton. in Vita Titi, cap. 10."
+    ),
+    "v10_fn339": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Palud. on the Sent., book 4. dist. 46."
+    ),
+    "v10_fn342": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: On dist. 46."
+    ),
+    "v10_fn366": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Socin., de Authoritate Scripturae; lib. edit. sub nomine Dominici Lopez, Soc. Jes."
+    ),
+    "v10_fn372": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: The words in the original apply much better to our author's meaning. See them, Odyss., lib. 8. 5:550. — TR."
+    ),
+    "v10_fn394": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Quest. 47, art. 1."
+    ),
+    "v10_fn406": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: De Provid., cap. 22. assert. 6, p. 845."
+    ),
+    "v10_fn427": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Twiss. Vind. Grat. lib. 1. p. 2, sect. 25, digress. 8."
+    ),
+})
+
 BODY_TRANSLATIONS = {
     "causa sine quibus non": "causes without which not",
     "quam purae ab omni": "how pure from all",
@@ -3649,7 +3859,8 @@ BODY_TRANSLATIONS = {
         "<strong>Modern Translation:</strong> When we are condemned by men, we are acquitted by God. (Tertullian, <em>Apologeticum</em>, 50)"
     ),
     "Tantae dignitatis illa una Redemptoris nostri fuit oblatio, ut una ad tollenda mundi peccatum sufficeret.": (
-        "<strong>Modern Translation:</strong> Of such great dignity was that one offering of our Redeemer, that it alone sufficed to take away the sin of the world. (Theological Maxim, <em>Unknown</em>, N/A)"
+        "<strong>Modern Citation:</strong> Arnold of Bonneval, <em>De Cardinalibus Operibus Christi</em>, Sermon 7, formerly attributed to Cyprian.<br/>"
+        "<strong>Modern Translation:</strong> Of such great dignity was that one offering of our Redeemer, that it alone sufficed to take away the sin of the world."
     ),
     "Muller est domus salus, et ruina,": (
         "<strong>Modern Translation:</strong> A woman is the salvation of a house, and its ruin. (Latin Proverb, <em>Unknown</em>, N/A)"
@@ -3805,7 +4016,8 @@ BODY_TRANSLATIONS = {
         "<strong>Modern Translation:</strong> Is the seat of God anything but the earth, and the sea, and the air, and the heaven, and towards the gods above? What do we seek further? Jupiter is whatever you see, wherever you move. (Lucan, <em>Pharsalia (De Bello Civili)</em>, Book 9, lines 578-580)"
     ),
     "Habet populus Dei plenitudinem suam. In electis enim et praescitis, atque ab omnium generalitate discretis, specialis quaedam censetur universitas, ut de toto mundo totus mundus liberatus, et de omnibus hominibus omnes homines videantur assumpti.": (
-        "<strong>Modern Translation:</strong> The people of God has its own fullness. For in the elect and foreknown, and those separated from the generality of all, a certain special universality is reckoned, so that out of the whole world a whole world is liberated, and out of all men all men are seen to be taken up. (Prosper of Aquitaine, <em>De Vocatione Omnium Gentium</em>, Book 1, Chapter 3)"
+        "<strong>Modern Citation:</strong> Prosper of Aquitaine, <em>De Vocatione Omnium Gentium</em>, Book 1, Chapter 3.<br/>"
+        "<strong>Modern Translation:</strong> The people of God has its own fullness. For in the elect and foreknown, and those separated from the generality of all, a certain special universality is reckoned, so that out of the whole world a whole world is liberated, and out of all men all men are seen to be taken up."
     ),
     "עָוָה est inique vel perverse agere; proprie curvum esse vel incurvari.": (
         "<strong>Modern Translation:</strong> Avah is to act iniquitously or perversely; properly, to be crooked or to be bent. (Hebrew Lexicon, <em>Philological Definitions</em>, Entry for Avah)"

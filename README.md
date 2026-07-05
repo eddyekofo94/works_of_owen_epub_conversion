@@ -165,6 +165,9 @@ and known bug classes. They write both JSON and Markdown reports to
 
 # Bug regression with strict exit code
 .venv/bin/python3 scripts/audit_bug_regressions.py 3 --strict
+
+# Strict heal-readiness gate for by-eye review
+.venv/bin/python3 scripts/audit_heal_readiness.py 3 --strict
 ```
 
 ### Audit output files
@@ -176,8 +179,24 @@ volumes/v3/bugs_fixes/
 ├── volume_3_text_integrity.md        # Text integrity report
 ├── volume_3_text_integrity.json      # Machine-readable integrity data
 ├── volume_3_bug_regressions.md       # Bug regression report
-└── volume_3_bug_regressions.json     # Machine-readable regression data
+├── volume_3_bug_regressions.json     # Machine-readable regression data
+├── volume_3_heal_readiness.md        # Strict heal-readiness report
+└── volume_3_heal_readiness.json      # Machine-readable readiness data
 ```
+
+### Heal readiness gate
+
+`scripts/assert_need_under.py N 1.0` is only the numeric Need gate. Final
+`#heal` verification also runs `scripts/audit_heal_readiness.py N --strict`,
+which fails closed when blocker-class warnings, bug-regression overruns,
+unreported source-text changes, inline modern translation/citation body text, or
+hidden whitelist suppressions remain. Low Latin tagging or translation ratios may
+be carried as disclosed review debt only when Latin word coverage is healthy and
+no substantial foreign passage is missing.
+
+The readiness audit writes:
+- `volumes/vN/bugs_fixes/volume_N_heal_readiness.md`
+- `volumes/vN/bugs_fixes/volume_N_heal_readiness.json`
 
 ## Full Check Pipeline
 
@@ -389,10 +408,20 @@ Each plan includes:
 Output: `volumes/vN/plans/vN_need_reduction_plan.md`
 
 ### 3. Heal Skill (`heal.skill`)
-Provides `$heal` / `#heal` commands to heal exactly one Owen volume, scoped to volumes 1-16, toward PRISTINE Apple Books-compliant EPUB3 output.
+Provides `$heal` / `#heal` commands to heal exactly one Owen volume, scoped to volumes 1-16, toward PRISTINE Apple Books-compliant EPUB3 output and readiness for human by-eye cleanup.
 
 *   `$heal worst` / `#heal worst` (or no argument) — Scans the collection by running `.venv/bin/python3 scripts/report_volume_state.py --all --no-readme`, identifies the volume with the highest Need score, checks out a standard local branch such as `heal-v[n]`, runs target-scoped audits, repairs, verifies, and reports before-and-after progression.
 *   `$heal [n]` / `#heal [n]` — Runs the healing pipeline for a specific Owen volume `n`.
+
+Final readiness requires both `.venv/bin/python3 scripts/assert_need_under.py N 1.0`
+and `.venv/bin/python3 scripts/audit_heal_readiness.py N --strict`. External
+Owen witnesses should be used only for exception-driven collation of flagged
+windows, OCR patterns, splits, language/citation hotspots, and dense source loss.
+The workflow may use browser/computer-use for visual checks, GitHub for optional
+durable branch hygiene, code-review for final review when requested, and bounded
+read-only helper work for citation or collation research. Commit and push are
+recommended before declaring a durable checkpoint, but `#heal` must ask first and
+show the exact changed-file/generated-artifact scope; PRs remain optional.
 
 The deprecated `volume-healer` skill has been removed to avoid trigger conflicts. Healing remains project-local and must not auto-merge to `master`.
 

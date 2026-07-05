@@ -1,67 +1,10 @@
 [
   {
-    "vol": "10",
-    "rank": 1,
-    "score": 54.8,
-    "need": 54.8,
-    "grade": "needs_work",
-    "qa_level": "FULL",
-    "coverage": 98.95,
-    "greek_coverage": 99.51,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 98.06,
-    "latin_tagging": 44.77,
-    "latin_translation": 40.74,
-    "total_citations": 20,
-    "unresolved_citations": 0,
-    "splits": 40,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "anomalies_count": 1,
-    "unmatched_quotes": 0,
-    "font": "eb-garamond",
-    "treatises": 4,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": []
-  },
-  {
-    "vol": "h2",
-    "rank": 2,
-    "score": 36.3,
-    "need": 36.3,
-    "grade": "fair",
-    "qa_level": "FULL",
-    "coverage": 99.81,
-    "greek_coverage": 100.0,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 97.4,
-    "latin_tagging": 70.63,
-    "latin_translation": 11.85,
-    "total_citations": 87,
-    "unresolved_citations": 39,
-    "splits": 40,
-    "warnings": 1,
-    "errors": 0,
-    "regressions": 1,
-    "anomalies_count": 154,
-    "unmatched_quotes": null,
-    "font": "goudi",
-    "treatises": 3,
-    "has_convert_py": true,
-    "text_replacements": 0,
-    "recommended_actions": [
-      "translate_unresolved_citations",
-      "review_ocr_anomalies"
-    ]
-  },
-  {
     "vol": "h5",
-    "rank": 3,
-    "score": 34.1,
-    "need": 34.1,
-    "grade": "fair",
+    "rank": 1,
+    "score": 43.2,
+    "need": 43.2,
+    "grade": "needs_work",
     "qa_level": "FULL",
     "coverage": 99.93,
     "greek_coverage": 100.0,
@@ -75,6 +18,192 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 2,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "latin_coverage_below_threshold",
+          "message": "Latin word coverage 98.78% is below 99.00%.",
+          "severity": "blocker",
+          "value": 0.9878
+        },
+        {
+          "code": "unresolved_citations",
+          "message": "Unresolved patristic/classical citations remain.",
+          "severity": "blocker",
+          "value": 6
+        },
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 231
+        },
+        {
+          "code": "weak_page_coverage",
+          "message": "Some PDF pages have no strong text-window match in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "missing_enumerator_markers",
+          "message": "Some bracketed/parenthesized/ordinal markers present in the PDF are missing from the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "missing_latin_clauses",
+          "message": "Some dense Latin passages from the PDF are missing from the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Inline structural marker candidates exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 32,
+            "budget": 1
+          },
+          "samples": [
+            {
+              "file": "EPUB/ch004.xhtml",
+              "text": "Obs. III. There is a goodness and excellency in this heavenly gift, which may be tasted or experienced in some measure by such as never receive them, in their life, power, and efficacy. They may taste,\u2014(1.) Of the word in its truth, not its power; (2.) Of the "
+            },
+            {
+              "file": "EPUB/ch004.xhtml",
+              "text": "1. Its communication or application unto the earth,\u2014it falls upon it; 2. An especial adjunct thereof in its frequency,\u2014it falls often on it; 3. By that reception which the earth is naturally fitted and suited to give unto it,\u2014it drinketh it in."
+            },
+            {
+              "file": "EPUB/ch004.xhtml",
+              "text": "\u039c\u03b5\u03c4\u03b1\u03bb\u03b1\u03bc\u03b2\u03ac\u03bd\u03b5\u03b9 \u03b5\u1f50\u03bb\u03bf\u03b3\u03af\u03b1\u03c2 \u1f00\u03c0\u1f78 \u03c4\u03bf\u1fe6 \u0398\u03b5\u03bf\u1fe6 . The earth must be tilled, from its nature and the law of its creation, And therefore Adam was to have tilled and wrought the ground in the garden even before the fall, Gen. 2:15. And this is the principal concernment of him"
+            },
+            {
+              "file": "EPUB/ch004.xhtml",
+              "text": "They are, therefore, no otherwise meet for God but in and through Christ, according to the infinite condescension which he is pleased to exercise in the covenant of grace. Therein doth the Lord Christ, 1. Make our persons accepted, as was that of Abel, through"
+            },
+            {
+              "file": "EPUB/ch005.xhtml",
+              "text": "Obs. III. There is a goodness and excellency in this heavenly gift, which may be tasted or experienced in some measure by such as never receive them, in their life, power, and efficacy. They may taste,\u2014(1.) Of the word in its truth, not its power; (2.) Of the "
+            }
+          ]
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Missing enumerator markers exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 1,
+            "budget": 0
+          },
+          "samples": [
+            {
+              "marker": "(1st)",
+              "pdf": 1,
+              "epub": 0,
+              "examples": [
+                {
+                  "location": "pdf:p7",
+                  "context": "f, the place of the glorious presence of God. And this also may be considered two ways:\u2014 (1st). With respect unto what he hath already done for us; and two things are included therein: [1st.] That he hath completely finished the work he had to do upon the earth. He had abso"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_translation_coverage",
+          "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 41.36% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.4136,
+          "samples": [
+            {
+              "word": "abraham",
+              "epub": 502,
+              "tagged": 10
+            },
+            {
+              "word": "cor",
+              "epub": 188,
+              "tagged": 0
+            },
+            {
+              "word": "isa",
+              "epub": 161,
+              "tagged": 0
+            },
+            {
+              "word": "levi",
+              "epub": 138,
+              "tagged": 4
+            },
+            {
+              "word": "immediate",
+              "epub": 81,
+              "tagged": 2
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 15.70% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.157,
+          "samples": [
+            {
+              "phrase": "ideo,\" \"quapropter,\" \"propterea"
+            },
+            {
+              "phrase": "emittamus,\" or \"demittamus"
+            },
+            {
+              "phrase": "initii Christi"
+            },
+            {
+              "phrase": "inchoationis Christi"
+            },
+            {
+              "phrase": "omisso qui in Christo"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 12,
+      "review_debt_count": 5,
+      "ready": false
+    },
     "anomalies_count": 231,
     "unmatched_quotes": null,
     "font": "libre-caslon-text",
@@ -88,10 +217,10 @@
   },
   {
     "vol": "h6",
-    "rank": 4,
-    "score": 30.8,
-    "need": 30.8,
-    "grade": "fair",
+    "rank": 2,
+    "score": 42.0,
+    "need": 42.0,
+    "grade": "needs_work",
     "qa_level": "FULL",
     "coverage": 99.98,
     "greek_coverage": 100.0,
@@ -105,6 +234,149 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 1,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "unresolved_citations",
+          "message": "Unresolved patristic/classical citations remain.",
+          "severity": "blocker",
+          "value": 4
+        },
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 250
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Inline structural marker candidates exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 40,
+            "budget": 1
+          },
+          "samples": [
+            {
+              "file": "EPUB/ch002.xhtml",
+              "text": "\u03a0\u1fb6\u03c2 \u1f00\u03c1\u03c7\u03b9\u03b5\u03c1\u03b5\u03cd\u03c2 . In the first, 1. The universality of the expression is to be observed: \u03a0\u1fb6\u03c2 \u1f00\u03c1\u03c7\u03b9\u03b5\u03c1\u03b5\u03cd\u03c2 ,\u2014\"Every high priest.\" By the context, this universal is cast under a limitation with respect unto the law: \"Every high priest\" that is \"made\" or \"appointed by"
+            },
+            {
+              "file": "EPUB/ch004.xhtml",
+              "text": "\u03a0\u1fb6\u03c2 \u1f00\u03c1\u03c7\u03b9\u03b5\u03c1\u03b5\u03cd\u03c2 . In the first, 1. The universality of the expression is to be observed: \u03a0\u1fb6\u03c2 \u1f00\u03c1\u03c7\u03b9\u03b5\u03c1\u03b5\u03cd\u03c2 ,\u2014\"Every high priest.\" By the context, this universal is cast under a limitation with respect unto the law: \"Every high priest\" that is \"made\" or \"appointed by"
+            },
+            {
+              "file": "EPUB/ch005.xhtml",
+              "text": "In the words may be observed, 1. The persons spoken of; \"who.\""
+            },
+            {
+              "file": "EPUB/ch006.xhtml",
+              "text": "In the words may be observed, 1. The persons spoken of; \"who.\""
+            },
+            {
+              "file": "EPUB/ch008.xhtml",
+              "text": "In the promise itself we may consider, 1. Whom it is made unto, 2. What it is that is promised:\u2014"
+            }
+          ]
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_translation_coverage",
+          "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 41.18% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.4118,
+          "samples": [
+            {
+              "word": "mediator",
+              "epub": 299,
+              "tagged": 6
+            },
+            {
+              "word": "sinai",
+              "epub": 140,
+              "tagged": 4
+            },
+            {
+              "word": "cor",
+              "epub": 122,
+              "tagged": 0
+            },
+            {
+              "word": "testator",
+              "epub": 122,
+              "tagged": 0
+            },
+            {
+              "word": "abraham",
+              "epub": 108,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 7.86% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.0786,
+          "samples": [
+            {
+              "phrase": "autem dicendo"
+            },
+            {
+              "phrase": "super ea quae dicuntur"
+            },
+            {
+              "phrase": "Beza, \"majestatis illius;\" or, \"throni virtutis magnificandi"
+            },
+            {
+              "phrase": "ratio est posita"
+            },
+            {
+              "phrase": "in affectibus. Rerum repetitio et congregatio, quae"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 7,
+      "review_debt_count": 5,
+      "ready": false
+    },
     "anomalies_count": 250,
     "unmatched_quotes": null,
     "font": "merriweather",
@@ -118,10 +390,10 @@
   },
   {
     "vol": "h1",
-    "rank": 5,
-    "score": 30.2,
-    "need": 30.2,
-    "grade": "fair",
+    "rank": 3,
+    "score": 41.8,
+    "need": 41.8,
+    "grade": "needs_work",
     "qa_level": "FULL",
     "coverage": 99.99,
     "greek_coverage": 100.0,
@@ -135,6 +407,124 @@
     "warnings": 1,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "epub_audit_warnings",
+          "message": "EPUB audit warnings remain.",
+          "severity": "blocker",
+          "value": 1
+        },
+        {
+          "code": "unresolved_citations",
+          "message": "Unresolved patristic/classical citations remain.",
+          "severity": "blocker",
+          "value": 30
+        },
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 440
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "roman_heading_candidates",
+          "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_translation_coverage",
+          "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 35.61% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.3561,
+          "samples": [
+            {
+              "word": "abraham",
+              "epub": 365,
+              "tagged": 2
+            },
+            {
+              "word": "targum",
+              "epub": 200,
+              "tagged": 2
+            },
+            {
+              "word": "isa",
+              "epub": 197,
+              "tagged": 2
+            },
+            {
+              "word": "num",
+              "epub": 188,
+              "tagged": 8
+            },
+            {
+              "word": "cyrus",
+              "epub": 146,
+              "tagged": 4
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 6.90% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.069,
+          "samples": [
+            {
+              "phrase": "Egregium est opus hoc"
+            },
+            {
+              "phrase": "testis de auctoris singulari"
+            },
+            {
+              "phrase": "atque industria quam ad illud conficiendum"
+            },
+            {
+              "phrase": "Ne longo"
+            },
+            {
+              "phrase": "tua tempora"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 7,
+      "review_debt_count": 5,
+      "ready": false
+    },
     "anomalies_count": 440,
     "unmatched_quotes": null,
     "font": "minion-pro",
@@ -147,55 +537,183 @@
     ]
   },
   {
-    "vol": "13",
-    "rank": 6,
-    "score": 29.4,
-    "need": 29.4,
-    "grade": "fair",
+    "vol": "h2",
+    "rank": 4,
+    "score": 40.7,
+    "need": 40.7,
+    "grade": "needs_work",
     "qa_level": "FULL",
-    "coverage": 99.89,
-    "greek_coverage": 97.44,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 95.58,
-    "latin_tagging": 69.44,
-    "latin_translation": 46.44,
-    "total_citations": 18,
-    "unresolved_citations": 0,
-    "splits": 0,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "anomalies_count": 0,
-    "unmatched_quotes": 0,
-    "font": "itc-galliard",
-    "treatises": 5,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": []
-  },
-  {
-    "vol": "h4",
-    "rank": 7,
-    "score": 28.7,
-    "need": 28.7,
-    "grade": "fair",
-    "qa_level": "FULL",
-    "coverage": 99.96,
+    "coverage": 99.81,
     "greek_coverage": 100.0,
     "hebrew_coverage": 100.0,
-    "latin_coverage": 99.25,
-    "latin_tagging": 41.57,
-    "latin_translation": 8.21,
-    "total_citations": 19,
-    "unresolved_citations": 9,
+    "latin_coverage": 97.4,
+    "latin_tagging": 70.63,
+    "latin_translation": 11.85,
+    "total_citations": 87,
+    "unresolved_citations": 39,
     "splits": 40,
-    "warnings": 0,
+    "warnings": 1,
     "errors": 0,
-    "regressions": 2,
-    "anomalies_count": 203,
+    "regressions": 1,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "epub_audit_warnings",
+          "message": "EPUB audit warnings remain.",
+          "severity": "blocker",
+          "value": 1
+        },
+        {
+          "code": "latin_coverage_below_threshold",
+          "message": "Latin word coverage 97.40% is below 99.00%.",
+          "severity": "blocker",
+          "value": 0.974
+        },
+        {
+          "code": "unresolved_citations",
+          "message": "Unresolved patristic/classical citations remain.",
+          "severity": "blocker",
+          "value": 39
+        },
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 154
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "overlong_heading_candidates",
+          "message": "Some chapter headings are long enough to suggest swallowed body text",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "missing_latin_clauses",
+          "message": "Some dense Latin passages from the PDF are missing from the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Inline structural marker candidates exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 7,
+            "budget": 1
+          },
+          "samples": [
+            {
+              "file": "EPUB/ch009.xhtml",
+              "text": "That the Lord Christ is called a priest on some account or other, and is so, these men cannot deny, and therefore on all occasions they do in words expressly confess it. But their endeavour is, to persuade us that little or nothing is signified by that appella"
+            },
+            {
+              "file": "EPUB/ch022.xhtml",
+              "text": "VER. 13.\u20141. The authority of God the Father in the exaltation of Jesus Christ as the head and mediator of the church, is greatly to be regarded by believers. 2. The exaltation of Christ is the great pledge of the acceptance of the work of mediation performed i"
+            },
+            {
+              "file": "EPUB/ch023.xhtml",
+              "text": "VER. 17.\u20141. God is not displeased with any thing in his people but sin. 2. Public sins, sins in societies, are great provocations of God. 3. God sometimes will make men who have been wickedly exemplary in sin righteously exemplary in their punishment. 4. Great"
+            },
+            {
+              "file": "EPUB/ch023.xhtml",
+              "text": "VER. 11.\u20141. An interest in the gospel consisteth not in an outward profession of it, but in a real participation of those things wherein the perfection of its state doth consist. 2. The pre-eminence of the gospel state above the legal is spiritual and undiscer"
+            },
+            {
+              "file": "EPUB/ch023.xhtml",
+              "text": "VER. 26.\u20141. It was inconsistent with the wisdom, goodness, grace, and love of God, that Christ should often suffer in that way which was necessary to the offering of himself, namely, by his death and blood-shedding. 2. It was impossible, from the dignity of hi"
+            }
+          ]
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_translation_coverage",
+          "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 70.63% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7063,
+          "samples": [
+            {
+              "word": "mere",
+              "epub": 76,
+              "tagged": 2
+            },
+            {
+              "word": "immediate",
+              "epub": 68,
+              "tagged": 2
+            },
+            {
+              "word": "mediator",
+              "epub": 65,
+              "tagged": 0
+            },
+            {
+              "word": "abraham",
+              "epub": 57,
+              "tagged": 0
+            },
+            {
+              "word": "isa",
+              "epub": 54,
+              "tagged": 1
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 11.85% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.1185,
+          "samples": [
+            {
+              "phrase": "sacerdotio fungi,\" or \"munus"
+            },
+            {
+              "phrase": "is \"sacerdotio fungor"
+            },
+            {
+              "phrase": "in sacris operari"
+            },
+            {
+              "phrase": "officio fungi"
+            },
+            {
+              "phrase": "pontificatus, sacerdotium"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 10,
+      "review_debt_count": 4,
+      "ready": false
+    },
+    "anomalies_count": 154,
     "unmatched_quotes": null,
-    "font": "libertinus",
-    "treatises": 1,
+    "font": "goudi",
+    "treatises": 3,
     "has_convert_py": true,
     "text_replacements": 0,
     "recommended_actions": [
@@ -205,9 +723,9 @@
   },
   {
     "vol": "h7",
-    "rank": 8,
-    "score": 28.3,
-    "need": 28.3,
+    "rank": 5,
+    "score": 39.5,
+    "need": 39.5,
     "grade": "fair",
     "qa_level": "FULL",
     "coverage": 99.98,
@@ -222,6 +740,175 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 2,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "unresolved_citations",
+          "message": "Unresolved patristic/classical citations remain.",
+          "severity": "blocker",
+          "value": 2
+        },
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 230
+        },
+        {
+          "code": "weak_page_coverage",
+          "message": "Some PDF pages have no strong text-window match in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "reference_continuation_splits",
+          "message": "Some scripture or chapter references are split across paragraph boundaries",
+          "severity": "blocker"
+        },
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Inline structural marker candidates exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 40,
+            "budget": 1
+          },
+          "samples": [
+            {
+              "file": "EPUB/ch006.xhtml",
+              "text": "Of this Enoch it is affirmed, 1. That he was \"translated;\" 2. The end of that translation is declared, \"that he should not see death;\" 3. The consequent of it, \"he was not found;\" 4. The efficient cause of that translation, and the reason of that consequent, h"
+            },
+            {
+              "file": "EPUB/ch006.xhtml",
+              "text": "In the field of conjectures used on this occasion, I judge it probable, (1.) That his rapture was visible, in the sight of many that feared God, who were to be witnesses of it unto the world, that it might be his ordinance for the conviction of sinners, and th"
+            },
+            {
+              "file": "EPUB/ch008.xhtml",
+              "text": "There is in the words, 1. The person spoken of or instanced in; which is Noah."
+            },
+            {
+              "file": "EPUB/ch008.xhtml",
+              "text": "\u0394\u03b9 \u02bc \u1f27\u03c2 . (2.) Lastly, There is a double consequent of this faith of Noah and his obedience therein; [1.] With respect unto the world, \"he condemned it;\" [2.] With respect unto himself, he \"became heir of the righteousness which is by faith.\" Both these are as"
+            },
+            {
+              "file": "EPUB/ch011.xhtml",
+              "text": "There is in the words, 1. A supposition that these pilgrims had originally a country of their own whereunto they did belong."
+            }
+          ]
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Reference continuation splits exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 2,
+            "budget": 0
+          },
+          "samples": [
+            {
+              "file": "EPUB/ch034.xhtml",
+              "previous": "All this he \"patiently endured,\" as the sense of the word was declared on the foregoing verse.",
+              "next": "4."
+            },
+            {
+              "file": "EPUB/ch036.xhtml",
+              "previous": "All this he \"patiently endured,\" as the sense of the word was declared on the foregoing verse.",
+              "next": "4."
+            }
+          ]
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_translation_coverage",
+          "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 21.45% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.2145,
+          "samples": [
+            {
+              "word": "abraham",
+              "epub": 406,
+              "tagged": 2
+            },
+            {
+              "word": "cor",
+              "epub": 175,
+              "tagged": 0
+            },
+            {
+              "word": "iii",
+              "epub": 122,
+              "tagged": 0
+            },
+            {
+              "word": "isa",
+              "epub": 104,
+              "tagged": 2
+            },
+            {
+              "word": "terror",
+              "epub": 88,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 8.95% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.0895,
+          "samples": [
+            {
+              "phrase": "sperandarum substantia rerum"
+            },
+            {
+              "phrase": "is, \"quae sperantur"
+            },
+            {
+              "phrase": "Beza, \u2021  \"illud quo"
+            },
+            {
+              "phrase": "argumentum illud quod"
+            },
+            {
+              "phrase": "Illud ex quo"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 9,
+      "review_debt_count": 5,
+      "ready": false
+    },
     "anomalies_count": 230,
     "unmatched_quotes": null,
     "font": "literata",
@@ -234,10 +921,432 @@
     ]
   },
   {
+    "vol": "13",
+    "rank": 6,
+    "score": 39.4,
+    "need": 39.4,
+    "grade": "fair",
+    "qa_level": "FULL",
+    "coverage": 99.89,
+    "greek_coverage": 97.44,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 95.58,
+    "latin_tagging": 69.44,
+    "latin_translation": 46.44,
+    "total_citations": 18,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "greek_coverage_below_threshold",
+          "message": "Greek coverage 97.44% is below 99.00%.",
+          "severity": "blocker",
+          "value": 0.9744
+        },
+        {
+          "code": "latin_coverage_below_threshold",
+          "message": "Latin word coverage 95.58% is below 99.00%.",
+          "severity": "blocker",
+          "value": 0.9558
+        },
+        {
+          "code": "weak_page_coverage",
+          "message": "Some PDF pages have no strong text-window match in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "dense_source_window_loss",
+          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "roman_heading_candidates",
+          "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements",
+          "severity": "blocker"
+        },
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "missing_greek_clauses",
+          "message": "Some dense Greek passages from the PDF are missing from the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "missing_latin_clauses",
+          "message": "Some dense Latin passages from the PDF are missing from the EPUB",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 69.44% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.6944,
+          "samples": [
+            {
+              "word": "populi",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "apollos",
+              "epub": 7,
+              "tagged": 0
+            },
+            {
+              "word": "regulate",
+              "epub": 7,
+              "tagged": 0
+            },
+            {
+              "word": "metropolis",
+              "epub": 6,
+              "tagged": 0
+            },
+            {
+              "word": "cenchrea",
+              "epub": 6,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 46.44% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.4644,
+          "samples": [
+            {
+              "phrase": "Medio tutissimus"
+            },
+            {
+              "phrase": "Sixtus Senensis"
+            },
+            {
+              "phrase": "in causa facili"
+            },
+            {
+              "phrase": "bonum oritur ex integris"
+            },
+            {
+              "phrase": "ecclesia: puto propterea quia"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: k\u03cd\u03c1\u03b9\u03b1\u03b9 \u03b4\u03cc\u03be\u03b1\u03b9 in Christian religion"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: Dum pluit in terras, ut possint sole"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Now, three ways may a man receive"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Motives to the observance of this rule are"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Explication III. The greatness of the work"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Let motives hereunto be"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Now, to a right performance of this duty"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Motives to this duty are"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Now, to a close adhering to the church"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Motives hereunto are"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Now, admonition is twofold"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: These and the like things being duly weighed"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Thus, in general, to take a view of some particular passages"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: The reasonableness of this gospel institution is manifested by the Holy Ghost"
+        }
+      ],
+      "blocker_count": 10,
+      "review_debt_count": 16,
+      "ready": false
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "itc-galliard",
+    "treatises": 5,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
+    "vol": "h4",
+    "rank": 7,
+    "score": 39.1,
+    "need": 39.1,
+    "grade": "fair",
+    "qa_level": "FULL",
+    "coverage": 99.96,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.25,
+    "latin_tagging": 41.57,
+    "latin_translation": 8.21,
+    "total_citations": 19,
+    "unresolved_citations": 9,
+    "splits": 40,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 2,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "unresolved_citations",
+          "message": "Unresolved patristic/classical citations remain.",
+          "severity": "blocker",
+          "value": 9
+        },
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 203
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "missing_hebrew_clauses",
+          "message": "Some dense Hebrew passages from the PDF are missing from the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "missing_latin_clauses",
+          "message": "Some dense Latin passages from the PDF are missing from the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Inline structural marker candidates exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 16,
+            "budget": 1
+          },
+          "samples": [
+            {
+              "file": "EPUB/ch002.xhtml",
+              "text": "1. What from the nature of the things themselves, which are suited unto the various states, conditions, and apprehensions of the minds of men; 2. What from the manner of their expression, on which a character of divine wisdom is impressed; 3. What from the aut"
+            },
+            {
+              "file": "EPUB/ch003.xhtml",
+              "text": "1. What from the nature of the things themselves, which are suited unto the various states, conditions, and apprehensions of the minds of men; 2. What from the manner of their expression, on which a character of divine wisdom is impressed; 3. What from the aut"
+            },
+            {
+              "file": "EPUB/ch005.xhtml",
+              "text": "1. That those that preach it are sent of God; 2. That what is preached be according to the analogy of faith; 3. That it be drawn from the written word; 4. That it be delivered in the name and authority of God."
+            },
+            {
+              "file": "EPUB/ch010.xhtml",
+              "text": "1. That those that preach it are sent of God; 2. That what is preached be according to the analogy of faith; 3. That it be drawn from the written word; 4. That it be delivered in the name and authority of God."
+            },
+            {
+              "file": "EPUB/ch014.xhtml",
+              "text": "To complete our profession, yea, to constitute our \u1f41\u03bc\u03bf\u03bb\u03bf\u03b3\u03af\u03b1 , there is required that we make a solemn declaration of our subjection unto the gospel in these things. And this is made two ways. (1.) By works. (2.) By words."
+            }
+          ]
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Missing Hebrew clauses exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 1,
+            "budget": 0
+          },
+          "samples": [
+            {
+              "page": 2,
+              "word_count": 3,
+              "sample": "\u05db\u05b0\u05bc\u05e7\u05b9\u05dc\u05d5\u05b9 \u05e7\u05d5\u05b9\u05dc \u05d9\u05b0\u05d4\u05d5\u05b9\u05d4\u05b8"
+            }
+          ]
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_translation_coverage",
+          "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 41.57% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.4157,
+          "samples": [
+            {
+              "word": "cor",
+              "epub": 254,
+              "tagged": 10
+            },
+            {
+              "word": "isa",
+              "epub": 194,
+              "tagged": 2
+            },
+            {
+              "word": "elsewhere",
+              "epub": 115,
+              "tagged": 0
+            },
+            {
+              "word": "abraham",
+              "epub": 103,
+              "tagged": 0
+            },
+            {
+              "word": "immediate",
+              "epub": 91,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 8.21% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.0821,
+          "samples": [
+            {
+              "phrase": "ut ad iram eum provocetis tanquam"
+            },
+            {
+              "phrase": "offensus fui,\" \"incensus fui"
+            },
+            {
+              "phrase": "exsecratus sum"
+            },
+            {
+              "phrase": "filia vocis"
+            },
+            {
+              "phrase": "curvicervicum pecus"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 9,
+      "review_debt_count": 5,
+      "ready": false
+    },
+    "anomalies_count": 203,
+    "unmatched_quotes": null,
+    "font": "libertinus",
+    "treatises": 1,
+    "has_convert_py": true,
+    "text_replacements": 0,
+    "recommended_actions": [
+      "translate_unresolved_citations",
+      "review_ocr_anomalies"
+    ]
+  },
+  {
     "vol": "h3",
-    "rank": 9,
-    "score": 22.1,
-    "need": 22.1,
+    "rank": 8,
+    "score": 32.9,
+    "need": 32.9,
     "grade": "fair",
     "qa_level": "FULL",
     "coverage": 99.97,
@@ -252,6 +1361,166 @@
     "warnings": 1,
     "errors": 0,
     "regressions": 2,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "epub_audit_warnings",
+          "message": "EPUB audit warnings remain.",
+          "severity": "blocker",
+          "value": 1
+        },
+        {
+          "code": "unresolved_citations",
+          "message": "Unresolved patristic/classical citations remain.",
+          "severity": "blocker",
+          "value": 13
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "roman_heading_candidates",
+          "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Inline structural marker candidates exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 8,
+            "budget": 1
+          },
+          "samples": [
+            {
+              "file": "EPUB/ch006.xhtml",
+              "text": "Wherefore he adds, (3.) what is direct to his pretension, \"That all the words, or things signified by them, in any testimony, which are firstly spoken of one, and then are, for some of the causes mentioned\" (that is, conveniency, similitude, or subordination),"
+            },
+            {
+              "file": "EPUB/ch009.xhtml",
+              "text": "Wherefore he adds, (3.) what is direct to his pretension, \"That all the words, or things signified by them, in any testimony, which are firstly spoken of one, and then are, for some of the causes mentioned\" (that is, conveniency, similitude, or subordination),"
+            },
+            {
+              "file": "EPUB/ch013.xhtml",
+              "text": "\u0395\u1f30 \u03b3\u03ac\u03c1 , \"si enim,\" \"etenim,\" \"and if,\" \"for if.\" \u1f49 \u03bb\u03cc\u03b3\u03bf\u03c2 \u03bb\u03b1\u03bb\u03b7\u03b8\u03b5\u1f76\u03c2 , \" sermo dictus ;\" \u05e0\u05b6\u05d9\u05dc\u05b0\u05ea\u05b8\u05d0 \u05d3\u05b5\u05bc\u05d0\u05ea\u05b0\u05de\u05b5\u05dc\u05b7\u05dc\u05b5\u05ea , Syr., \" sermo qui dictus est,\" or \"pronuntiatus ,\" \"the word which was spoken or pronounced,\"\u2014properly, as we shall see. \u0394\u03b9 \u02bc \u1f00\u03b3\u03b3\u03ad\u03bb\u03c9\u03bd , Syr., \u05db\u05b0\u05bc\u05d9\u05b7\u05d3"
+            },
+            {
+              "file": "EPUB/ch013.xhtml",
+              "text": "He further describes the gospel, (2.) From the way and means of its conveyance unto us. It was \"confirmed unto us by them that heard him.\" And herein also he prevents an objection that might arise in the minds of the Hebrews, inasmuch as they, at least the gre"
+            },
+            {
+              "file": "EPUB/ch014.xhtml",
+              "text": "\u0395\u1f30 \u03b3\u03ac\u03c1 , \"si enim,\" \"etenim,\" \"and if,\" \"for if.\" \u1f49 \u03bb\u03cc\u03b3\u03bf\u03c2 \u03bb\u03b1\u03bb\u03b7\u03b8\u03b5\u1f76\u03c2 , \" sermo dictus ;\" \u05e0\u05b6\u05d9\u05dc\u05b0\u05ea\u05b8\u05d0 \u05d3\u05b5\u05bc\u05d0\u05ea\u05b0\u05de\u05b5\u05dc\u05b7\u05dc\u05b5\u05ea , Syr., \" sermo qui dictus est,\" or \"pronuntiatus ,\" \"the word which was spoken or pronounced,\"\u2014properly, as we shall see. \u0394\u03b9 \u02bc \u1f00\u03b3\u03b3\u03ad\u03bb\u03c9\u03bd , Syr., \u05db\u05b0\u05bc\u05d9\u05b7\u05d3"
+            }
+          ]
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Missing configured fonts exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 1,
+            "budget": 0
+          },
+          "samples": [
+            {
+              "volume": "h3",
+              "configured_font": "bembo",
+              "expected_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/fonts/bembo",
+              "note": "Font directory fonts/bembo/ exists but contains no .otf or .ttf files.  Add the font files to fix this."
+            }
+          ]
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "A significant portion of Latin words in the EPUB are not wrapped in language spans",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_translation_coverage",
+          "message": "Some tagged Latin phrases in the EPUB do not have matching modern translations in translation_db.py",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 41.91% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.4191,
+          "samples": [
+            {
+              "word": "cor",
+              "epub": 350,
+              "tagged": 0
+            },
+            {
+              "word": "isa",
+              "epub": 225,
+              "tagged": 3
+            },
+            {
+              "word": "mediator",
+              "epub": 141,
+              "tagged": 0
+            },
+            {
+              "word": "abraham",
+              "epub": 128,
+              "tagged": 0
+            },
+            {
+              "word": "elsewhere",
+              "epub": 111,
+              "tagged": 2
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 10.19% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.1019,
+          "samples": [
+            {
+              "phrase": "Multis vicibus,\" Beza"
+            },
+            {
+              "phrase": "is \"sortior,\" \"divido"
+            },
+            {
+              "phrase": "alternis vicibus"
+            },
+            {
+              "phrase": "is \"Olim,\" \"quondam,\" \"pridem,\" \"jamdudum"
+            },
+            {
+              "phrase": "Ultimis diebus"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 8,
+      "review_debt_count": 5,
+      "ready": false
+    },
     "anomalies_count": 0,
     "unmatched_quotes": null,
     "font": "bembo",
@@ -264,10 +1533,10 @@
   },
   {
     "vol": "11",
-    "rank": 10,
-    "score": 13.1,
-    "need": 13.1,
-    "grade": "good",
+    "rank": 9,
+    "score": 25.7,
+    "need": 25.7,
+    "grade": "fair",
     "qa_level": "FULL",
     "coverage": 99.96,
     "greek_coverage": 100.0,
@@ -281,6 +1550,269 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 206
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 76.78% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7678,
+          "samples": [
+            {
+              "word": "ergo",
+              "epub": 25,
+              "tagged": 5
+            },
+            {
+              "word": "perpetrate",
+              "epub": 10,
+              "tagged": 0
+            },
+            {
+              "word": "salmasius",
+              "epub": 9,
+              "tagged": 0
+            },
+            {
+              "word": "vedelius",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "predestinate",
+              "epub": 8,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 34.66% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.3466,
+          "samples": [
+            {
+              "phrase": "primi, Deus necessario"
+            },
+            {
+              "phrase": "actum voluntatis circa"
+            },
+            {
+              "phrase": "quia tunc per decimum primi non tentaretur, ergo"
+            },
+            {
+              "phrase": "decimum ipsum tentari non"
+            },
+            {
+              "phrase": "catholicam asserendum est"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 148"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 150"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 151"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 154"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 155"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 156"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 157"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 162"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 166"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch005.xhtml', 'previous': 'k to deal so harshly with some of them with whom he hath to do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo .\" 3', 'next': 'It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,'}"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch010.xhtml', 'previous': 'n, at least before their calling, are as liable to be deceived or seduced as other men. This is their own confession; and Paul says that they were sometimes deceived, [Titus 3:3] \"', 'next': 'Ans. An exception, doubtless, unworthy him that makes it; who, had he not resolved to say all that ever had been said by any to the business in hand, would scarcely, I presume, hav'}"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch014.xhtml', 'previous': ' ever, and yet every present member thereof lose his interest and part in him; yea, the abiding of the Spirit in the apostles themselves was not absolutely promised, [John 15:10] \"', 'next': 'Ans. 1. The design of this discourse is to prove that this promise is not made to believers in general, or those who through the word are brought to believe in Christ in all genera'}"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch022.xhtml', 'previous': 'all moral operations \u2014 [Romans 7:19] -22, opened \u2014 The second, that sin cannot reign in a regenerate person \u2014 The third, that regenerate _persons sin not with their whole consent \u2014', 'next': \"Answer to the argument at the entrance proposed \u2014 Believers never sin with their whole consent and wills \u2014 Mr. G.'s attempt to remove the answer \u2014 His exceptions considered and rem\"}"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch024.xhtml', 'previous': ' The first, of his knowledge of the general course of the Scriptures \u2014 Of the experience of his own heart \u2014 And his observations of the ways of others \u2014 Of his rational abilities \u2014', 'next': \"Ezekiel 18:24, 25, proposed to consideration \u2014 Mr. G.'s sense of this place \u2014 The words opened \u2014 Observations for the opening of the text \u2014 The words farther weighed \u2014 An entrance \"}"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch024.xhtml', 'previous': 'y that all who died in the wilderness of the children of Israel went to hell and came short of eternal life, and yet they all fell there because of their iniquities. But he adds, \u2014', 'next': 'Sect. 4. \"Again; that which God here threateneth against that double or twofold iniquity of backsliding is opposed to that life which is promised to repentance and perseverance in '}"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: Five leading arguments are adduced in proof of the perseverance of the saints: \u2014 It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] [James 1:16] -18; [Romans 11:29] [Isaiah 40:27] -31, 44"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: The latter I at present only intend. Saith he, 1. \"I know them;\" 2. \"I give them eternal life;\" 3. \"They shall never perish;\" 4. \"No man shall pluck them out of my hand;\" 5. \"My Father is omnipotent, and hath a sovereignty over all, and he taketh care of them,"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: As to the matter in hand, this is evident by the light of this single consideration, that in such an ecclesiastical body of Christ there are always, or may be, \u2014 and Christ himself, in the rules and laws that he hath given for the government thereof, did suppo"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: That they should be saved by Christ, and yet not washed in his blood, not sanctified by his Spirit (which to be is to be regenerate), is another new notion of the new gospel The countenance which Mr. Goodwin would beg to his doctrine from that of our Savior to"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.inline_structural_markers: The proposition is ready at hand in the words, \"He that is born of God doth not, cannot commit sin.\" The reason of the proposition confirming the truth thereof is twofold: \u2014 1. Because he is born of God; 2. Because His seed, whereof he is so born, remaineth."
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: repeated_windows"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: suspicious_large_number_starts"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: enumerator_sequence_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: weak_page_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: dense_source_window_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: top_of_page_text_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: bottom_of_page_text_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: paragraph_split_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: inline_structural_markers"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_windows"
+        }
+      ],
+      "blocker_count": 1,
+      "review_debt_count": 34,
+      "ready": false
+    },
     "anomalies_count": 206,
     "unmatched_quotes": 0,
     "font": "adobe-carlson-pro",
@@ -293,10 +1825,10 @@
   },
   {
     "vol": "1",
-    "rank": 11,
-    "score": 12.2,
-    "need": 12.2,
-    "grade": "good",
+    "rank": 10,
+    "score": 25.1,
+    "need": 25.1,
+    "grade": "fair",
     "qa_level": "FULL",
     "coverage": 99.97,
     "greek_coverage": 100.0,
@@ -310,6 +1842,448 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "unresolved_modern_references",
+          "message": "Unresolved modern references remain.",
+          "severity": "blocker",
+          "value": 3
+        },
+        {
+          "code": "untranslated_substantial_foreign_passages",
+          "message": "Substantial foreign passages remain untranslated.",
+          "severity": "blocker",
+          "value": 3
+        },
+        {
+          "code": "weak_page_coverage",
+          "message": "Some PDF pages have no strong text-window match in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "dense_source_window_loss",
+          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+          "severity": "blocker"
+        },
+        {
+          "code": "top_of_page_text_loss",
+          "message": "Some first body lines near the top of PDF pages are not found in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "unresolved_modern_references",
+          "message": "Modern notes manifest contains unresolved main-body reference candidates.",
+          "severity": "blocker"
+        },
+        {
+          "code": "untranslated_substantial_foreign_passages",
+          "message": "Modern notes manifest contains substantial foreign passages without a high-confidence translation popup.",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "syllabus_anchor_candidates",
+          "message": "Some introduced scholastic syllabus runs appear unflattened or need triage",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 72.63% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7263,
+          "samples": [
+            {
+              "word": "incarnate",
+              "epub": 36,
+              "tagged": 0
+            },
+            {
+              "word": "nestorius",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "consummate",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "invocate",
+              "epub": 7,
+              "tagged": 0
+            },
+            {
+              "word": "inanimate",
+              "epub": 6,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 53.88% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5388,
+          "samples": [
+            {
+              "phrase": "quarto (Amsterdam"
+            },
+            {
+              "phrase": "nobis a praelo a capite"
+            },
+            {
+              "phrase": "operis absentibus"
+            },
+            {
+              "phrase": "Salus Electorum Sanguis"
+            },
+            {
+              "phrase": "quam conspici"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.weak_pages: 3"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.weak_pages: 4"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.weak_pages: 5"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.weak_pages: 6"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.weak_pages: 533"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 3"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 4"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 5"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 6"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 7"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 9"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 10"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 21"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 26"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 27"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 34"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 35"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 51"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 53"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 56"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 76"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 78"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 83"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 90"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 101"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 105"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 106"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 117"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 148"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 150"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 188"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 194"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 203"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 223"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 239"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 269"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 297"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 319"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 328"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 332"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 341"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 356"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 374"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 375"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 379"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: (1st,) That the Word ceased"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: front_matter_toc_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: repeated_phrases"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: front_matter_toc_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_windows"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_phrases"
+        }
+      ],
+      "blocker_count": 8,
+      "review_debt_count": 58,
+      "ready": false
+    },
     "anomalies_count": 0,
     "unmatched_quotes": 0,
     "font": "adobe-garamond-pro",
@@ -322,37 +2296,10 @@
     ]
   },
   {
-    "vol": "7",
-    "rank": 12,
-    "score": 12.1,
-    "need": 12.1,
-    "grade": "good",
-    "qa_level": "FULL",
-    "coverage": 99.77,
-    "greek_coverage": 100.0,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 99.66,
-    "latin_tagging": 51.19,
-    "latin_translation": 71.43,
-    "total_citations": 4,
-    "unresolved_citations": 0,
-    "splits": 0,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "anomalies_count": 0,
-    "unmatched_quotes": 0,
-    "font": "sabon-next-lt",
-    "treatises": 3,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": []
-  },
-  {
     "vol": "12",
-    "rank": 13,
-    "score": 5.2,
-    "need": 5.2,
+    "rank": 11,
+    "score": 16.5,
+    "need": 16.5,
     "grade": "good",
     "qa_level": "FULL",
     "coverage": 99.93,
@@ -367,6 +2314,186 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 1,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "dense_source_window_loss",
+          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Noteref leading spaces exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 1,
+            "budget": 0
+          },
+          "samples": [
+            {
+              "file": "EPUB/ch027.xhtml",
+              "text": "<a class=\"noteref noteref-trans\" epub:type=\"noteref\""
+            }
+          ]
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 78.12% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7812,
+          "samples": [
+            {
+              "word": "annotator",
+              "epub": 69,
+              "tagged": 1
+            },
+            {
+              "word": "smalcius",
+              "epub": 47,
+              "tagged": 8
+            },
+            {
+              "word": "faustus",
+              "epub": 24,
+              "tagged": 1
+            },
+            {
+              "word": "jus",
+              "epub": 44,
+              "tagged": 21
+            },
+            {
+              "word": "franciscus",
+              "epub": 21,
+              "tagged": 1
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 47.38% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.4738,
+          "samples": [
+            {
+              "phrase": "as \"quantilla causa"
+            },
+            {
+              "phrase": "Valentinus Smalcius"
+            },
+            {
+              "phrase": "Nicolaus Arnoldus"
+            },
+            {
+              "phrase": "Dionysius \u2021  Petavius"
+            },
+            {
+              "phrase": "Ptolemaeus, Valentinus secundus"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 145"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: possible_beta_code_residue"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: repeated_phrases"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: low_latin_word_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: missing_enumerator_markers"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: front_matter_toc_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: top_of_page_text_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: bottom_of_page_text_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: suspicious_large_number_starts"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: enumerator_sequence_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: missing_latin_clauses"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_word_coverage"
+        }
+      ],
+      "blocker_count": 3,
+      "review_debt_count": 17,
+      "ready": false
+    },
     "anomalies_count": 0,
     "unmatched_quotes": 0,
     "font": "centaur",
@@ -376,64 +2503,10 @@
     "recommended_actions": []
   },
   {
-    "vol": "14",
-    "rank": 14,
-    "score": 5.2,
-    "need": 5.2,
-    "grade": "good",
-    "qa_level": "FULL",
-    "coverage": 99.87,
-    "greek_coverage": 100.0,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 99.66,
-    "latin_tagging": 67.02,
-    "latin_translation": 52.05,
-    "total_citations": 62,
-    "unresolved_citations": 0,
-    "splits": 0,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "anomalies_count": 0,
-    "unmatched_quotes": 0,
-    "font": "brill-font",
-    "treatises": 2,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": []
-  },
-  {
-    "vol": "5",
-    "rank": 15,
-    "score": 4.4,
-    "need": 4.4,
-    "grade": "good",
-    "qa_level": "FULL",
-    "coverage": 99.99,
-    "greek_coverage": 100.0,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 99.71,
-    "latin_tagging": 84.02,
-    "latin_translation": 75.63,
-    "total_citations": 44,
-    "unresolved_citations": 0,
-    "splits": 0,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "anomalies_count": 0,
-    "unmatched_quotes": 0,
-    "font": "garamond-premier-pro",
-    "treatises": 2,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": []
-  },
-  {
     "vol": "15",
-    "rank": 16,
-    "score": 3.5,
-    "need": 3.5,
+    "rank": 12,
+    "score": 15.4,
+    "need": 15.4,
     "grade": "good",
     "qa_level": "FULL",
     "coverage": 99.93,
@@ -448,6 +2521,120 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 2
+        },
+        {
+          "code": "weak_page_coverage",
+          "message": "Some PDF pages have no strong text-window match in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "overlong_heading_candidates",
+          "message": "Some chapter headings are long enough to suggest swallowed body text",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 55.06% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5506,
+          "samples": [
+            {
+              "word": "alexandria",
+              "epub": 13,
+              "tagged": 0
+            },
+            {
+              "word": "victor",
+              "epub": 12,
+              "tagged": 0
+            },
+            {
+              "word": "polycarpus",
+              "epub": 10,
+              "tagged": 0
+            },
+            {
+              "word": "regulate",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "epiphanius",
+              "epub": 9,
+              "tagged": 1
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 51.46% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5146,
+          "samples": [
+            {
+              "phrase": "Musculus, Grotius"
+            },
+            {
+              "phrase": "Santesius, Pamelius"
+            },
+            {
+              "phrase": "Alcuinus, Amatorius, Rabanus"
+            },
+            {
+              "phrase": "Strabo, Rupertus Titiensis, Berno, Radulphus Tangrensis"
+            },
+            {
+              "phrase": "Baronius, ad an. Christi"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: That in no approved writers for the space of two hundred years aider Christ is t"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        }
+      ],
+      "blocker_count": 6,
+      "review_debt_count": 5,
+      "ready": false
+    },
     "anomalies_count": 2,
     "unmatched_quotes": 0,
     "font": "new-caledonia-lt-std",
@@ -457,37 +2644,10 @@
     "recommended_actions": []
   },
   {
-    "vol": "3",
-    "rank": 17,
-    "score": 3.3,
-    "need": 3.3,
-    "grade": "good",
-    "qa_level": "FULL",
-    "coverage": 99.97,
-    "greek_coverage": 100.0,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 99.94,
-    "latin_tagging": 79.17,
-    "latin_translation": 84.21,
-    "total_citations": 25,
-    "unresolved_citations": 0,
-    "splits": 0,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "anomalies_count": 0,
-    "unmatched_quotes": 0,
-    "font": "arno-pro",
-    "treatises": 1,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": []
-  },
-  {
     "vol": "9",
-    "rank": 18,
-    "score": 2.8,
-    "need": 2.8,
+    "rank": 13,
+    "score": 15.0,
+    "need": 15.0,
     "grade": "good",
     "qa_level": "FULL",
     "coverage": 99.93,
@@ -502,6 +2662,123 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "dense_source_window_loss",
+          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+          "severity": "blocker"
+        },
+        {
+          "code": "top_of_page_text_loss",
+          "message": "Some first body lines near the top of PDF pages are not found in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "roman_heading_candidates",
+          "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements",
+          "severity": "blocker"
+        },
+        {
+          "code": "overlong_heading_candidates",
+          "message": "Some chapter headings are long enough to suggest swallowed body text",
+          "severity": "blocker"
+        },
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 25.00% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.25,
+          "samples": [
+            {
+              "word": "ultimate",
+              "epub": 14,
+              "tagged": 0
+            },
+            {
+              "word": "incarnate",
+              "epub": 9,
+              "tagged": 0
+            },
+            {
+              "word": "abram",
+              "epub": 6,
+              "tagged": 0
+            },
+            {
+              "word": "celebrate",
+              "epub": 6,
+              "tagged": 0
+            },
+            {
+              "word": "steam",
+              "epub": 5,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 10.34% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.1034,
+          "samples": [
+            {
+              "phrase": "Quis talia fando"
+            },
+            {
+              "phrase": "anguis in herba"
+            },
+            {
+              "phrase": "Gloria est"
+            },
+            {
+              "phrase": "aliquo fama cum"
+            },
+            {
+              "phrase": "laus bonorum, incorrupta"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        }
+      ],
+      "blocker_count": 7,
+      "review_debt_count": 5,
+      "ready": false
+    },
     "anomalies_count": 0,
     "unmatched_quotes": 0,
     "font": "im-fell-english",
@@ -511,10 +2788,548 @@
     "recommended_actions": []
   },
   {
+    "vol": "14",
+    "rank": 14,
+    "score": 14.4,
+    "need": 14.4,
+    "grade": "good",
+    "qa_level": "FULL",
+    "coverage": 99.87,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.66,
+    "latin_tagging": 67.02,
+    "latin_translation": 52.05,
+    "total_citations": 62,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "weak_page_coverage",
+          "message": "Some PDF pages have no strong text-window match in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "dense_source_window_loss",
+          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+          "severity": "blocker"
+        },
+        {
+          "code": "front_matter_toc_loss",
+          "message": "Some early CONTENTS pages have no strong text-window match in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "bottom_of_page_text_loss",
+          "message": "Some last body lines near the bottom of PDF pages are not found in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        },
+        {
+          "code": "missing_latin_clauses",
+          "message": "Some dense Latin passages from the PDF are missing from the EPUB",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "inline_structural_markers",
+          "message": "Some list or roman markers appear embedded in prose instead of starting their own paragraph",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 67.02% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.6702,
+          "samples": [
+            {
+              "word": "celsus",
+              "epub": 44,
+              "tagged": 0
+            },
+            {
+              "word": "prelate",
+              "epub": 26,
+              "tagged": 0
+            },
+            {
+              "word": "anno",
+              "epub": 22,
+              "tagged": 4
+            },
+            {
+              "word": "credo",
+              "epub": 15,
+              "tagged": 0
+            },
+            {
+              "word": "eleutherius",
+              "epub": 15,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 52.05% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5205,
+          "samples": [
+            {
+              "phrase": "ultima Papae"
+            },
+            {
+              "phrase": "mihi ostentatam, tantam, tam bonam, tam optatam, tam insperatam"
+            },
+            {
+              "phrase": "Oculis male lippus inunctis"
+            },
+            {
+              "phrase": "in amicorum vitiis tam cernis acutum, Quam"
+            },
+            {
+              "phrase": "ancillam cum filio suo"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        }
+      ],
+      "blocker_count": 8,
+      "review_debt_count": 5,
+      "ready": false
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "brill-font",
+    "treatises": 2,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
+    "vol": "10",
+    "rank": 15,
+    "score": 13.2,
+    "need": 13.2,
+    "grade": "good",
+    "qa_level": "FULL",
+    "coverage": 99.94,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.58,
+    "latin_tagging": 58.82,
+    "latin_translation": 38.82,
+    "total_citations": 20,
+    "unresolved_citations": 0,
+    "splits": 1,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 1,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "dense_source_window_loss",
+          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+          "severity": "blocker"
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "bug_regression_over_budget",
+          "message": "Syllabus-anchor candidates exceeds its budget.",
+          "severity": "blocker",
+          "value": {
+            "observed": 25,
+            "budget": 16
+          },
+          "samples": [
+            {
+              "key": "EPUB/ch008.xhtml#p172-syllabus-providence-is-a-word-which-in-its-proper-signification-may-seem-to",
+              "action": "likely_false_positive",
+              "file": "EPUB/ch008.xhtml",
+              "anchor_index": 172,
+              "item_range": "p173-p174",
+              "anchor": "ee, or the counsel of his will,\" Ephesians 1:11, for whatsoever he doth now it pleased him from the beginning, Psalm 115:3; seeing, also, that known unto God are all his works from eternity; therefore, three things concerning his providence are considerable: \u2014",
+              "items": [
+                {
+                  "marker": "1.",
+                  "text": "His decree or purpose, 57 whereby he hath disposed of all things in order, and appointed them for certain ends, which he hath fore-ordained."
+                },
+                {
+                  "marker": "2.",
+                  "text": "His prescience, whereby he certainly fore-knoweth all things that shall come to pass."
+                }
+              ],
+              "marker_family": "arabic",
+              "item_count": 2,
+              "announced_count": 3,
+              "positive_reasons": [
+                "sequential-marker-family",
+                "count-category-formula",
+                "introductory-punctuation",
+                "parallel-opening-word"
+              ],
+              "hard_exclusions": [
+                "developed-item"
+              ],
+              "whitelist_key": "EPUB/ch008.xhtml#p172-syllabus-providence-is-a-word-which-in-its-proper-signification-may-seem-to"
+            },
+            {
+              "key": "EPUB/ch021.xhtml#p699-syllabus-chapter-3-an-unfolding-of-the-remaining-texts-of-scripture-produced-for",
+              "action": "likely_false_positive",
+              "file": "EPUB/ch021.xhtml",
+              "anchor_index": 699,
+              "item_range": "p700-p707",
+              "anchor": "Chapter 3. An unfolding of the remaining texts of Scripture produced for the confirmation of the first general objection or argument for universal redemption.",
+              "items": [
+                {
+                  "marker": "2.",
+                  "text": "1 John 2:l, 2, largely opened and vindicated."
+                },
+                {
+                  "marker": "3.",
+                  "text": "John 6:51 explained."
+                },
+                {
+                  "marker": "4.",
+                  "text": "A vindication of other texts produced by Thomas More, viz.: \u2014"
+                },
+                {
+                  "marker": "(1.)",
+                  "text": "2 Corinthians 5:19."
+                },
+                {
+                  "marker": "(2.)",
+                  "text": "John 1:9."
+                },
+                {
+                  "marker": "(3.)",
+                  "text": "John 1:29."
+                },
+                {
+                  "marker": "(4.)",
+                  "text": "John 3:17."
+                },
+                {
+                  "marker": "(5.)",
+                  "text": "John 4:42; 1 John 4:14; John 6:51."
+                }
+              ],
+              "marker_family": "arabic",
+              "item_count": 8,
+              "announced_count": null,
+              "positive_reasons": [
+                "count-category-formula",
+                "compact-first-item",
+                "compact-run"
+              ],
+              "hard_exclusions": [
+                "scripture-density",
+                "inconsistent-sequence"
+              ],
+              "whitelist_key": "EPUB/ch021.xhtml#p699-syllabus-chapter-3-an-unfolding-of-the-remaining-texts-of-scripture-produced-for"
+            },
+            {
+              "key": "EPUB/ch021.xhtml#p708-syllabus-chapter-4-answer-to-the-second-general-objection-or-argument-for-the",
+              "action": "likely_false_positive",
+              "file": "EPUB/ch021.xhtml",
+              "anchor_index": 708,
+              "item_range": "p709-p713",
+              "anchor": "Chapter 4. Answer to the second general objection or argument for the universality of redemption.",
+              "items": [
+                {
+                  "marker": "2.",
+                  "text": "From the word \"all\" in several scriptures, viz.: \u2014"
+                },
+                {
+                  "marker": "1.",
+                  "text": "1 Timothy 2:4, 6. 2. 2 Peter 3:9."
+                },
+                {
+                  "marker": "3.",
+                  "text": "Hebrews 2:9."
+                },
+                {
+                  "marker": "4.",
+                  "text": "2 Corinthians 5:14, 15. 5. 1 Corinthians 15:22."
+                },
+                {
+                  "marker": "6.",
+                  "text": "Romans 5:18."
+                }
+              ],
+              "marker_family": "arabic",
+              "item_count": 5,
+              "announced_count": null,
+              "positive_reasons": [
+                "count-category-formula",
+                "compact-first-item",
+                "compact-run"
+              ],
+              "hard_exclusions": [
+                "scripture-density",
+                "multiple-sentences",
+                "inconsistent-sequence"
+              ],
+              "whitelist_key": "EPUB/ch021.xhtml#p708-syllabus-chapter-4-answer-to-the-second-general-objection-or-argument-for-the"
+            },
+            {
+              "key": "EPUB/ch021.xhtml#p714-syllabus-chapter-5-the-last-objection-or-argument-from-scripture-answered",
+              "action": "likely_false_positive",
+              "file": "EPUB/ch021.xhtml",
+              "anchor_index": 714,
+              "item_range": "p715-p719",
+              "anchor": "Chapter 5. The last objection or argument from Scripture answered.",
+              "items": [
+                {
+                  "marker": "3.",
+                  "text": "From texts which seem to hold out a perishing of some for whom Christ died, viz.: \u2014"
+                },
+                {
+                  "marker": "1.",
+                  "text": "Romans 14:15."
+                },
+                {
+                  "marker": "2.",
+                  "text": "1 Corinthians 8:11."
+                },
+                {
+                  "marker": "3.",
+                  "text": "2 Peter 2:1."
+                },
+                {
+                  "marker": "4.",
+                  "text": "Hebrews 10:29."
+                }
+              ],
+              "marker_family": "arabic",
+              "item_count": 5,
+              "announced_count": null,
+              "positive_reasons": [
+                "count-category-formula",
+                "compact-run"
+              ],
+              "hard_exclusions": [
+                "scripture-density",
+                "inconsistent-sequence"
+              ],
+              "whitelist_key": "EPUB/ch021.xhtml#p714-syllabus-chapter-5-the-last-objection-or-argument-from-scripture-answered"
+            },
+            {
+              "key": "EPUB/ch021.xhtml#p726-syllabus-arg-6-from-scripture-assertions-and-consequences-answers-to-the-proofs-of",
+              "action": "likely_false_positive",
+              "file": "EPUB/ch021.xhtml",
+              "anchor_index": 726,
+              "item_range": "p727-p736",
+              "anchor": "Arg. 6. From Scripture assertions and consequences. Answers to the proofs of this sixth argument: \u2014",
+              "items": [
+                {
+                  "marker": "1.",
+                  "text": "From 1 John 4:14; John 1:4, 7; 1 Timothy 2:4."
+                },
+                {
+                  "marker": "2.",
+                  "text": "From some texts before vindicated."
+                },
+                {
+                  "marker": "3.",
+                  "text": "From Psalm 19:4; Romans 10:18; Acts 14:17, etc."
+                },
+                {
+                  "marker": "4.",
+                  "text": "From John 16:7-11, etc."
+                },
+                {
+                  "marker": "5.",
+                  "text": "From Ezekiel 18:23, 32, 33:11, etc."
+                },
+                {
+                  "marker": "6.",
+                  "text": "From Matthew 28:19, 20; Mark 16:15; Isaiah 45:22, etc."
+                },
+                {
+                  "marker": "7.",
+                  "text": "From Acts 2:38, 39, etc."
+                },
+                {
+                  "marker": "8.",
+                  "text": "From 1 Corinthians 15:21, 22, 45-47; Romans 3:22-25, etc."
+                }
+              ],
+              "marker_family": "arabic",
+              "item_count": 10,
+              "announced_count": null,
+              "positive_reasons": [
+                "sequential-marker-family",
+                "count-category-formula",
+                "introductory-punctuation",
+                "compact-first-item",
+                "compact-run",
+                "parallel-period-ended-syllabus"
+              ],
+              "hard_exclusions": [
+                "scripture-density"
+              ],
+              "whitelist_key": "EPUB/ch021.xhtml#p726-syllabus-arg-6-from-scripture-assertions-and-consequences-answers-to-the-proofs-of"
+            }
+          ]
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "syllabus_anchor_candidates",
+          "message": "Some introduced scholastic syllabus runs appear unflattened or need triage",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 58.82% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5882,
+          "samples": [
+            {
+              "word": "ejusdem",
+              "epub": 17,
+              "tagged": 2
+            },
+            {
+              "word": "tantidem",
+              "epub": 12,
+              "tagged": 0
+            },
+            {
+              "word": "scotus",
+              "epub": 4,
+              "tagged": 0
+            },
+            {
+              "word": "mediate",
+              "epub": 3,
+              "tagged": 0
+            },
+            {
+              "word": "apella",
+              "epub": 4,
+              "tagged": 1
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 38.82% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.3882,
+          "samples": [
+            {
+              "phrase": "Elenchus Controversiarum"
+            },
+            {
+              "phrase": "Martii, anno Domini"
+            },
+            {
+              "phrase": "Tantum religio"
+            },
+            {
+              "phrase": "suadere malorum"
+            },
+            {
+              "phrase": "in quibus possimus"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: inline_structural_markers"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_windows"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: suspicious_large_number_starts"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: weak_page_coverage"
+        }
+      ],
+      "blocker_count": 3,
+      "review_debt_count": 10,
+      "ready": false
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "eb-garamond",
+    "treatises": 4,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
     "vol": "8",
-    "rank": 19,
-    "score": 2.7,
-    "need": 2.7,
+    "rank": 16,
+    "score": 10.6,
+    "need": 10.6,
     "grade": "good",
     "qa_level": "FULL",
     "coverage": 99.95,
@@ -529,6 +3344,149 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "unresolved_anomalies",
+          "message": "Text anomalies remain unless specifically verified and whitelisted.",
+          "severity": "blocker",
+          "value": 7
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 56.36% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5636,
+          "samples": [
+            {
+              "word": "vice-chancellor",
+              "epub": 4,
+              "tagged": 0
+            },
+            {
+              "word": "masham",
+              "epub": 3,
+              "tagged": 0
+            },
+            {
+              "word": "commensurate",
+              "epub": 3,
+              "tagged": 0
+            },
+            {
+              "word": "apud",
+              "epub": 3,
+              "tagged": 0
+            },
+            {
+              "word": "indicate",
+              "epub": 3,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 64.46% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.6446,
+          "samples": [
+            {
+              "phrase": "Christus in petra"
+            },
+            {
+              "phrase": "quid sequitur"
+            },
+            {
+              "phrase": "Quid meruere"
+            },
+            {
+              "phrase": "Delicta puniri"
+            },
+            {
+              "phrase": "Bonum totius"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: orphan_endnotes"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: front_matter_toc_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: suspicious_large_number_starts"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_windows"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: weak_page_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: dense_source_window_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: top_of_page_text_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: bottom_of_page_text_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: missing_latin_clauses"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        }
+      ],
+      "blocker_count": 1,
+      "review_debt_count": 14,
+      "ready": false
+    },
     "anomalies_count": 7,
     "unmatched_quotes": 0,
     "font": "cardo",
@@ -538,64 +3496,358 @@
     "recommended_actions": []
   },
   {
-    "vol": "4",
-    "rank": 20,
-    "score": 2.0,
-    "need": 2.0,
+    "vol": "7",
+    "rank": 17,
+    "score": 7.9,
+    "need": 7.9,
     "grade": "good",
     "qa_level": "FULL",
-    "coverage": 99.95,
+    "coverage": 99.77,
     "greek_coverage": 100.0,
     "hebrew_coverage": 100.0,
-    "latin_coverage": 99.59,
-    "latin_tagging": 57.1,
-    "latin_translation": 54.67,
-    "total_citations": 15,
+    "latin_coverage": 99.66,
+    "latin_tagging": 51.19,
+    "latin_translation": 71.43,
+    "total_citations": 4,
     "unresolved_citations": 0,
     "splits": 0,
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 51.19% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5119
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 71.43% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7143,
+          "samples": [
+            {
+              "phrase": "sui juris"
+            },
+            {
+              "phrase": "amor patriae"
+            },
+            {
+              "phrase": "immensam cupido"
+            },
+            {
+              "phrase": "Ammianus Marcellinus"
+            },
+            {
+              "phrase": "animae vehicula"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_windows"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: enumerator_sequence_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: dense_source_window_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: front_matter_toc_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        }
+      ],
+      "blocker_count": 0,
+      "review_debt_count": 9,
+      "ready": true
+    },
     "anomalies_count": 0,
     "unmatched_quotes": 0,
-    "font": "palatino",
-    "treatises": 4,
+    "font": "sabon-next-lt",
+    "treatises": 3,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": []
   },
   {
-    "vol": "16",
-    "rank": 21,
-    "score": 2.0,
-    "need": 2.0,
+    "vol": "3",
+    "rank": 18,
+    "score": 6.9,
+    "need": 6.9,
     "grade": "good",
     "qa_level": "FULL",
-    "coverage": 99.95,
+    "coverage": 99.97,
     "greek_coverage": 100.0,
     "hebrew_coverage": 100.0,
-    "latin_coverage": 99.96,
-    "latin_tagging": 63.76,
-    "latin_translation": 56.13,
-    "total_citations": 40,
+    "latin_coverage": 99.94,
+    "latin_tagging": 79.17,
+    "latin_translation": 84.21,
+    "total_citations": 25,
     "unresolved_citations": 0,
     "splits": 0,
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "dense_source_window_loss",
+          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 79.17% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7917,
+          "samples": [
+            {
+              "word": "metaphor",
+              "epub": 10,
+              "tagged": 0
+            },
+            {
+              "word": "operator",
+              "epub": 9,
+              "tagged": 0
+            },
+            {
+              "word": "incarnate",
+              "epub": 9,
+              "tagged": 0
+            },
+            {
+              "word": "balaam",
+              "epub": 6,
+              "tagged": 0
+            },
+            {
+              "word": "denominate",
+              "epub": 6,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 84.21% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.8421,
+          "samples": [
+            {
+              "phrase": "Solis ad occasum, quum frigidus"
+            },
+            {
+              "phrase": "Sancto, \u2020  Athanas"
+            },
+            {
+              "phrase": "frustra praestantissimus sapientiae"
+            },
+            {
+              "phrase": "solitus est, si recludantur tyrannorum"
+            },
+            {
+              "phrase": "aspici laniatus et ictus; quando, ut corpora verberibus, ita saevitia"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.dense_source_window_loss: 37"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch006.xhtml', 'previous': 'the beginning; and \" Malus bonum cum [Translated: Translation: \"When a bad man pretends to be good\"] simulat, tunc est pessimus .\" [Translated: Translation: \"then he is the worst\"];', 'next': 'These things, therefore, can have here no place.'}"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: enumerator_sequence_candidates"
+        }
+      ],
+      "blocker_count": 1,
+      "review_debt_count": 6,
+      "ready": false
+    },
     "anomalies_count": 0,
     "unmatched_quotes": 0,
-    "font": "georgia",
-    "treatises": 5,
+    "font": "arno-pro",
+    "treatises": 1,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
+    "vol": "5",
+    "rank": 19,
+    "score": 6.8,
+    "need": 6.8,
+    "grade": "good",
+    "qa_level": "FULL",
+    "coverage": 99.99,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.71,
+    "latin_tagging": 84.02,
+    "latin_translation": 75.63,
+    "total_citations": 44,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "heal_readiness": {
+      "blockers": [],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 84.02% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.8402,
+          "samples": [
+            {
+              "word": "socinus",
+              "epub": 29,
+              "tagged": 2
+            },
+            {
+              "word": "reus",
+              "epub": 13,
+              "tagged": 5
+            },
+            {
+              "word": "thomas",
+              "epub": 6,
+              "tagged": 0
+            },
+            {
+              "word": "schlichtingius",
+              "epub": 5,
+              "tagged": 0
+            },
+            {
+              "word": "grotius",
+              "epub": 5,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 75.63% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7563,
+          "samples": [
+            {
+              "phrase": "propitiatio est"
+            },
+            {
+              "phrase": "quam sanctae, quam"
+            },
+            {
+              "phrase": "quam purae ab omni"
+            },
+            {
+              "phrase": "Unum bonum est, quod beatae vitae causa et firmamentum est, sibi fidere"
+            },
+            {
+              "phrase": "nemo unquam"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: repeated_phrases"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_phrases"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: missing_latin_clauses"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        }
+      ],
+      "blocker_count": 0,
+      "review_debt_count": 7,
+      "ready": true
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "garamond-premier-pro",
+    "treatises": 2,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": []
   },
   {
     "vol": "6",
-    "rank": 22,
-    "score": 1.6,
-    "need": 1.6,
+    "rank": 20,
+    "score": 6.3,
+    "need": 6.3,
     "grade": "good",
     "qa_level": "FULL",
     "coverage": 99.96,
@@ -610,6 +3862,118 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 16.42% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.1642,
+          "samples": [
+            {
+              "word": "door",
+              "epub": 46,
+              "tagged": 0
+            },
+            {
+              "word": "alas",
+              "epub": 22,
+              "tagged": 0
+            },
+            {
+              "word": "succor",
+              "epub": 19,
+              "tagged": 0
+            },
+            {
+              "word": "pleas",
+              "epub": 16,
+              "tagged": 0
+            },
+            {
+              "word": "hate",
+              "epub": 13,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 73.81% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7381,
+          "samples": [
+            {
+              "phrase": "eramus unus"
+            },
+            {
+              "phrase": "verbum praecepti"
+            },
+            {
+              "phrase": "nos quorum causa"
+            },
+            {
+              "phrase": "juranti Deo credimus"
+            },
+            {
+              "phrase": "Anathema Maranatha"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: weak_page_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: dense_source_window_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: front_matter_toc_loss"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: enumerator_sequence_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_windows"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        }
+      ],
+      "blocker_count": 0,
+      "review_debt_count": 10,
+      "ready": true
+    },
     "anomalies_count": 0,
     "unmatched_quotes": 0,
     "font": "baskerville",
@@ -619,10 +3983,149 @@
     "recommended_actions": []
   },
   {
+    "vol": "16",
+    "rank": 21,
+    "score": 6.3,
+    "need": 6.3,
+    "grade": "good",
+    "qa_level": "FULL",
+    "coverage": 99.95,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.96,
+    "latin_tagging": 63.76,
+    "latin_translation": 56.13,
+    "total_citations": 40,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "heal_readiness": {
+      "blockers": [],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 63.76% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.6376,
+          "samples": [
+            {
+              "word": "prolegomena",
+              "epub": 49,
+              "tagged": 1
+            },
+            {
+              "word": "morinus",
+              "epub": 51,
+              "tagged": 3
+            },
+            {
+              "word": "cappellus",
+              "epub": 37,
+              "tagged": 3
+            },
+            {
+              "word": "elias",
+              "epub": 30,
+              "tagged": 9
+            },
+            {
+              "word": "grotius",
+              "epub": 23,
+              "tagged": 4
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 56.13% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5613,
+          "samples": [
+            {
+              "phrase": "praeceptis Dominicis et Deum"
+            },
+            {
+              "phrase": "ad sacrilegi sacerdotis sacrificia miscere; quando ipsa"
+            },
+            {
+              "phrase": "vel eligendi dignos"
+            },
+            {
+              "phrase": "vel indignos recusandi, quod et ipsum videmus"
+            },
+            {
+              "phrase": "divina authoritate descendere"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "text_integrity.ignored_warnings: repeated_phrases"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_windows"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: suspicious_large_number_starts"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: enumerator_sequence_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: flat_analysis_chapters"
+        }
+      ],
+      "blocker_count": 0,
+      "review_debt_count": 10,
+      "ready": true
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "georgia",
+    "treatises": 5,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
     "vol": "2",
-    "rank": 23,
-    "score": 0.4,
-    "need": 0.4,
+    "rank": 22,
+    "score": 5.8,
+    "need": 5.8,
     "grade": "good",
     "qa_level": "FULL",
     "coverage": 99.99,
@@ -637,10 +4140,207 @@
     "warnings": 0,
     "errors": 0,
     "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 28.45% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.2845,
+          "samples": [
+            {
+              "word": "mediator",
+              "epub": 164,
+              "tagged": 3
+            },
+            {
+              "word": "adam",
+              "epub": 51,
+              "tagged": 0
+            },
+            {
+              "word": "poor",
+              "epub": 51,
+              "tagged": 1
+            },
+            {
+              "word": "sum",
+              "epub": 42,
+              "tagged": 1
+            },
+            {
+              "word": "elsewhere",
+              "epub": 33,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 33.33% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.3333,
+          "samples": [
+            {
+              "phrase": "VII., VIII"
+            },
+            {
+              "phrase": "Trinitatis ad extra"
+            },
+            {
+              "phrase": "super vitas"
+            },
+            {
+              "phrase": "austere, severe"
+            },
+            {
+              "phrase": "admodum prae filiis hominum"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 1,
+      "review_debt_count": 2,
+      "ready": false
+    },
     "anomalies_count": 0,
     "unmatched_quotes": 0,
     "font": "hoefler-text",
     "treatises": 3,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
+    "vol": "4",
+    "rank": 23,
+    "score": 5.8,
+    "need": 5.8,
+    "grade": "good",
+    "qa_level": "FULL",
+    "coverage": 99.95,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.59,
+    "latin_tagging": 57.1,
+    "latin_translation": 54.67,
+    "total_citations": 15,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "heal_readiness": {
+      "blockers": [],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 57.10% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.571,
+          "samples": [
+            {
+              "word": "advocate",
+              "epub": 31,
+              "tagged": 0
+            },
+            {
+              "word": "abba",
+              "epub": 31,
+              "tagged": 1
+            },
+            {
+              "word": "communicate",
+              "epub": 18,
+              "tagged": 0
+            },
+            {
+              "word": "iii",
+              "epub": 16,
+              "tagged": 1
+            },
+            {
+              "word": "adhere",
+              "epub": 15,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 54.67% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5467,
+          "samples": [
+            {
+              "phrase": "de facto"
+            },
+            {
+              "phrase": "Pietate et religione atque"
+            },
+            {
+              "phrase": "una sapientia"
+            },
+            {
+              "phrase": "deorum hnmortalium"
+            },
+            {
+              "phrase": "omnia regi"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: inline_structural_markers"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: enumerator_sequence_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: repeated_windows"
+        }
+      ],
+      "blocker_count": 0,
+      "review_debt_count": 8,
+      "ready": true
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "palatino",
+    "treatises": 4,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": []

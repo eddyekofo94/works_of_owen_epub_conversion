@@ -1,0 +1,2037 @@
+{
+  "volume": "10",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/input/owen-v10.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v10/output/volume_10.epub",
+  "generated_at": "2026-07-05T15:11:13.103516+00:00",
+  "status": "warn",
+  "warning_count": 4,
+  "warnings": [
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "syllabus_anchor_candidates",
+      "message": "Some introduced scholastic syllabus runs appear unflattened or need triage"
+    },
+    {
+      "code": "unenriched_legacy_footnotes",
+      "message": "Modern notes manifest contains existing source footnotes needing editorial enrichment."
+    }
+  ],
+  "pdf": {
+    "page_count": 828,
+    "skipped_detected": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "epub": {
+    "spine_text_files": 104,
+    "paragraph_count": 3368
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 262672,
+    "epub_content_tokens": 263334,
+    "coverage_ratio": 0.9994,
+    "missing_word_samples": [],
+    "excess_word_samples": [
+      {
+        "word": "historical",
+        "pdf": 2,
+        "epub": 10
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "chapters",
+        "pdf": 5,
+        "epub": 12
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "modern",
+        "pdf": 5,
+        "epub": 11
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 807,
+    "weak_page_count": 2,
+    "weak_pages": [
+      {
+        "page": 63,
+        "hit_ratio": 0.333,
+        "sample": "unite my heart to fear thy name psalm the god in whose hand try breath is and whose are all try ways thou hast"
+      },
+      {
+        "page": 143,
+        "hit_ratio": 0.0,
+        "sample": "christ galatians he that believeth not is condemned mark without faith it is impossible to please god hebrews other foundation can no man lay"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 35198,
+    "missing_dense_window_pages": 3,
+    "missing_dense_windows": [
+      {
+        "page": 107,
+        "sample": "flesh john idem by nature the children of wrath even as others ephesians by"
+      },
+      {
+        "page": 319,
+        "sample": "to be taken and destroyed sheep and goats matthew john passim those on whom"
+      },
+      {
+        "page": 320,
+        "sample": "in thee and that my name might be declared throughout all the earth chap"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 822,
+    "top_windows_usable": 776,
+    "skipped_top_window_count": 7,
+    "skipped_top_windows": [
+      {
+        "page": 176,
+        "window": "by furnishing him with fullness of all gifts and graces christ had natural all-sufficient",
+        "sample": "(2.) By furnishing him with a fullness of all gifts and graces: — [1.] Christ had a natural all-sufficient perfection of his deity;",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 215,
+        "window": "the actual inauguration or solemn admission of christ into his office committing all judgment",
+        "sample": "[2.] The actual inauguration or solemn admission of Christ into his office; \"committing all judgment unto the Son,\"",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 318,
+        "window": "if it be answered god bestows faith on some not on others reply is",
+        "sample": "[If it be answered], \"God bestows faith on some, not on others,\" I reply, Is this distinguishing grace purchased for those some comparatively, in",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 338,
+        "window": "people of israel were certainly in all remarkable things that happened unto them typical",
+        "sample": "people of Israel were certainly, in all remarkable things that happened unto them, typical of the church of God; as the apostle at large [declares],",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 473,
+        "window": "of the truth known and professed upon any motives and inducements whatsoever which he",
+        "sample": "of the truth known and professed, upon any motives and inducements whatsoever; which he assureth [them] to be no less than a total casting off",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 540,
+        "window": "as elect who by the benefit of his death do become believers and so",
+        "sample": "as elect, who, by the benefit of his death, do become believers, and so obtain assurance that he died for them. [As] for such of those that are",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 545,
+        "window": "viii augustine de cor et grat cap per hunt mediato-rem deus ostendit eos quos",
+        "sample": "VIII. AUGUSTINE, de Cor. et Grat. cap. 40: [A.D. 420]: — \"Per hunt Mediato-rem Deus ostendit eos, quos ejus sanguine redemit, facere se ex",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 750,
+    "bottom_windows_usable": 704,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 2745,
+    "split_candidate_count": 1,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch021.xhtml",
+        "previous": "Chapter 6. The means used by the fore-recounted agents in this work: —",
+        "next": "I."
+      }
+    ],
+    "structural_start_exclusions": 191,
+    "short_fragment_count": 35,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "JOHN WHITE"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "text": "TO THE CHRISTIAN READER."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόξα ."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "I."
+      },
+      {
+        "file": "EPUB/ch021.xhtml",
+        "text": "II."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "TO THE READER."
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "READER,"
+      },
+      {
+        "file": "EPUB/ch027.xhtml",
+        "text": "Whence he saith,"
+      },
+      {
+        "file": "EPUB/ch030.xhtml",
+        "text": "VI."
+      },
+      {
+        "file": "EPUB/ch048.xhtml",
+        "text": "Arg. 15."
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "Where, —"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Universalists."
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "Scriptural Redemption."
+      },
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "Idem, de Ingrat., cap. 9.: —"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "COGGESHALL, APRIL 25, 1648."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "J.O."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "May 15th, [1650.]"
+      },
+      {
+        "file": "EPUB/ch064.xhtml",
+        "text": "Thus far he."
+      },
+      {
+        "file": "EPUB/ch065.xhtml",
+        "text": "To all which I say, —"
+      },
+      {
+        "file": "EPUB/ch068.xhtml",
+        "text": "Of Grotius' judgment herein."
+      },
+      {
+        "file": "EPUB/ch072.xhtml",
+        "text": "Here two things may be observed: —"
+      },
+      {
+        "file": "EPUB/ch073.xhtml",
+        "text": "Right also is twofold: —"
+      },
+      {
+        "file": "EPUB/ch074.xhtml",
+        "text": "Much every way."
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "If the second, —"
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόξα ."
+      },
+      {
+        "file": "EPUB/ch075.xhtml",
+        "text": "Dublin Castle, December 20, 1649."
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
+        "text": "Also, Orpheus in the hymns, —"
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
+        "text": "Hence, these common sayings, —"
+      },
+      {
+        "file": "EPUB/ch083.xhtml",
+        "text": "And these: —"
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "— ῶ πάτερ πάρειμί σοι , etc."
+      },
+      {
+        "file": "EPUB/ch084.xhtml",
+        "text": "And verse 8:"
+      },
+      {
+        "file": "EPUB/ch086.xhtml",
+        "text": "We go on to the third argument."
+      },
+      {
+        "file": "EPUB/ch089.xhtml",
+        "text": "He thus proceeds: —"
+      },
+      {
+        "file": "EPUB/ch091.xhtml",
+        "text": "Our opponent thus proceeds: —"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch020.xhtml",
+        "text": "In 1650, Mr. Home, minister at Lynn in Norfolk, a man, according to Palmer (Nonconf. Mem., 3. pp. 6, 7), \"of exemplary and primitive piety,\" and author of several works, published a reply to Owen's work, under the title, \"The Open Door for Man's Approach to Go"
+      }
+    ],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 2,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "13. [A.D. 350]: —"
+      },
+      {
+        "file": "EPUB/ch085.xhtml",
+        "text": "389 It remains, then, that we should now consider, in the third place, what testimony God has given, and is still giving, to this essential attribute of his in the works of providence. This Paul takes notice of, Romans 1"
+      }
+    ],
+    "roman_heading_candidate_count": 1,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch058.xhtml",
+        "text": "V. CYRIL of Jerusalem, Cataches."
+      }
+    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": [],
+    "syllabus_anchor_candidate_count": 25,
+    "syllabus_anchor_candidates": [
+      {
+        "key": "EPUB/ch008.xhtml#p172-syllabus-providence-is-a-word-which-in-its-proper-signification-may-seem-to",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch008.xhtml",
+        "anchor_index": 172,
+        "item_range": "p173-p174",
+        "anchor": "ee, or the counsel of his will,\" Ephesians 1:11, for whatsoever he doth now it pleased him from the beginning, Psalm 115:3; seeing, also, that known unto God are all his works from eternity; therefore, three things concerning his providence are considerable: —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "His decree or purpose, 57 whereby he hath disposed of all things in order, and appointed them for certain ends, which he hath fore-ordained."
+          },
+          {
+            "marker": "2.",
+            "text": "His prescience, whereby he certainly fore-knoweth all things that shall come to pass."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": 3,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "parallel-opening-word"
+        ],
+        "hard_exclusions": [
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch008.xhtml#p172-syllabus-providence-is-a-word-which-in-its-proper-signification-may-seem-to"
+      },
+      {
+        "key": "EPUB/ch021.xhtml#p699-syllabus-chapter-3-an-unfolding-of-the-remaining-texts-of-scripture-produced-for",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch021.xhtml",
+        "anchor_index": 699,
+        "item_range": "p700-p707",
+        "anchor": "Chapter 3. An unfolding of the remaining texts of Scripture produced for the confirmation of the first general objection or argument for universal redemption.",
+        "items": [
+          {
+            "marker": "2.",
+            "text": "1 John 2:l, 2, largely opened and vindicated."
+          },
+          {
+            "marker": "3.",
+            "text": "John 6:51 explained."
+          },
+          {
+            "marker": "4.",
+            "text": "A vindication of other texts produced by Thomas More, viz.: —"
+          },
+          {
+            "marker": "(1.)",
+            "text": "2 Corinthians 5:19."
+          },
+          {
+            "marker": "(2.)",
+            "text": "John 1:9."
+          },
+          {
+            "marker": "(3.)",
+            "text": "John 1:29."
+          },
+          {
+            "marker": "(4.)",
+            "text": "John 3:17."
+          },
+          {
+            "marker": "(5.)",
+            "text": "John 4:42; 1 John 4:14; John 6:51."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 8,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula",
+          "compact-first-item",
+          "compact-run"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch021.xhtml#p699-syllabus-chapter-3-an-unfolding-of-the-remaining-texts-of-scripture-produced-for"
+      },
+      {
+        "key": "EPUB/ch021.xhtml#p708-syllabus-chapter-4-answer-to-the-second-general-objection-or-argument-for-the",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch021.xhtml",
+        "anchor_index": 708,
+        "item_range": "p709-p713",
+        "anchor": "Chapter 4. Answer to the second general objection or argument for the universality of redemption.",
+        "items": [
+          {
+            "marker": "2.",
+            "text": "From the word \"all\" in several scriptures, viz.: —"
+          },
+          {
+            "marker": "1.",
+            "text": "1 Timothy 2:4, 6. 2. 2 Peter 3:9."
+          },
+          {
+            "marker": "3.",
+            "text": "Hebrews 2:9."
+          },
+          {
+            "marker": "4.",
+            "text": "2 Corinthians 5:14, 15. 5. 1 Corinthians 15:22."
+          },
+          {
+            "marker": "6.",
+            "text": "Romans 5:18."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 5,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula",
+          "compact-first-item",
+          "compact-run"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "multiple-sentences",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch021.xhtml#p708-syllabus-chapter-4-answer-to-the-second-general-objection-or-argument-for-the"
+      },
+      {
+        "key": "EPUB/ch021.xhtml#p714-syllabus-chapter-5-the-last-objection-or-argument-from-scripture-answered",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch021.xhtml",
+        "anchor_index": 714,
+        "item_range": "p715-p719",
+        "anchor": "Chapter 5. The last objection or argument from Scripture answered.",
+        "items": [
+          {
+            "marker": "3.",
+            "text": "From texts which seem to hold out a perishing of some for whom Christ died, viz.: —"
+          },
+          {
+            "marker": "1.",
+            "text": "Romans 14:15."
+          },
+          {
+            "marker": "2.",
+            "text": "1 Corinthians 8:11."
+          },
+          {
+            "marker": "3.",
+            "text": "2 Peter 2:1."
+          },
+          {
+            "marker": "4.",
+            "text": "Hebrews 10:29."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 5,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula",
+          "compact-run"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch021.xhtml#p714-syllabus-chapter-5-the-last-objection-or-argument-from-scripture-answered"
+      },
+      {
+        "key": "EPUB/ch021.xhtml#p726-syllabus-arg-6-from-scripture-assertions-and-consequences-answers-to-the-proofs-of",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch021.xhtml",
+        "anchor_index": 726,
+        "item_range": "p727-p736",
+        "anchor": "Arg. 6. From Scripture assertions and consequences. Answers to the proofs of this sixth argument: —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "From 1 John 4:14; John 1:4, 7; 1 Timothy 2:4."
+          },
+          {
+            "marker": "2.",
+            "text": "From some texts before vindicated."
+          },
+          {
+            "marker": "3.",
+            "text": "From Psalm 19:4; Romans 10:18; Acts 14:17, etc."
+          },
+          {
+            "marker": "4.",
+            "text": "From John 16:7-11, etc."
+          },
+          {
+            "marker": "5.",
+            "text": "From Ezekiel 18:23, 32, 33:11, etc."
+          },
+          {
+            "marker": "6.",
+            "text": "From Matthew 28:19, 20; Mark 16:15; Isaiah 45:22, etc."
+          },
+          {
+            "marker": "7.",
+            "text": "From Acts 2:38, 39, etc."
+          },
+          {
+            "marker": "8.",
+            "text": "From 1 Corinthians 15:21, 22, 45-47; Romans 3:22-25, etc."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 10,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "compact-first-item",
+          "compact-run",
+          "parallel-period-ended-syllabus"
+        ],
+        "hard_exclusions": [
+          "scripture-density"
+        ],
+        "whitelist_key": "EPUB/ch021.xhtml#p726-syllabus-arg-6-from-scripture-assertions-and-consequences-answers-to-the-proofs-of"
+      },
+      {
+        "key": "EPUB/ch021.xhtml#p729-syllabus-3-from-psalm-19-4-romans-10-18-acts-14-17-etc",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch021.xhtml",
+        "anchor_index": 729,
+        "item_range": "p730-p739",
+        "anchor": "3. From Psalm 19:4; Romans 10:18; Acts 14:17, etc.",
+        "items": [
+          {
+            "marker": "4.",
+            "text": "From John 16:7-11, etc."
+          },
+          {
+            "marker": "5.",
+            "text": "From Ezekiel 18:23, 32, 33:11, etc."
+          },
+          {
+            "marker": "6.",
+            "text": "From Matthew 28:19, 20; Mark 16:15; Isaiah 45:22, etc."
+          },
+          {
+            "marker": "7.",
+            "text": "From Acts 2:38, 39, etc."
+          },
+          {
+            "marker": "8.",
+            "text": "From 1 Corinthians 15:21, 22, 45-47; Romans 3:22-25, etc."
+          },
+          {
+            "marker": "9.",
+            "text": "From Matthew 28:19, 20; 2 Corinthians 5:19, etc."
+          },
+          {
+            "marker": "10.",
+            "text": "From Matthew 5:44, 48; 1 Timothy 2:1-4, etc."
+          },
+          {
+            "marker": "11.",
+            "text": "From 1 Timothy 2:3, 8, etc."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 10,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "compact-first-item",
+          "compact-run",
+          "parallel-period-ended-syllabus"
+        ],
+        "hard_exclusions": [
+          "scripture-density"
+        ],
+        "whitelist_key": "EPUB/ch021.xhtml#p729-syllabus-3-from-psalm-19-4-romans-10-18-acts-14-17-etc"
+      },
+      {
+        "key": "EPUB/ch021.xhtml#p733-syllabus-7-from-acts-2-38-39-etc",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch021.xhtml",
+        "anchor_index": 733,
+        "item_range": "p734-p743",
+        "anchor": "7. From Acts 2:38, 39, etc.",
+        "items": [
+          {
+            "marker": "8.",
+            "text": "From 1 Corinthians 15:21, 22, 45-47; Romans 3:22-25, etc."
+          },
+          {
+            "marker": "9.",
+            "text": "From Matthew 28:19, 20; 2 Corinthians 5:19, etc."
+          },
+          {
+            "marker": "10.",
+            "text": "From Matthew 5:44, 48; 1 Timothy 2:1-4, etc."
+          },
+          {
+            "marker": "11.",
+            "text": "From 1 Timothy 2:3, 8, etc."
+          },
+          {
+            "marker": "12.",
+            "text": "From 1 Corinthians 6:10, 11, etc."
+          },
+          {
+            "marker": "13.",
+            "text": "From Titus 2:11, 13, 3:4, 5, etc."
+          },
+          {
+            "marker": "14.",
+            "text": "From John 3:19, etc."
+          },
+          {
+            "marker": "15.",
+            "text": "From Scripture expostulations with men."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 10,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "compact-first-item",
+          "compact-run",
+          "parallel-period-ended-syllabus"
+        ],
+        "hard_exclusions": [
+          "scripture-density"
+        ],
+        "whitelist_key": "EPUB/ch021.xhtml#p733-syllabus-7-from-acts-2-38-39-etc"
+      },
+      {
+        "key": "EPUB/ch031.xhtml#p1004-syllabus-if-any-shall-conceive-that-these-words-because-we-hope-in-the",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch031.xhtml",
+        "anchor_index": 1004,
+        "item_range": "p1005-p1007",
+        "anchor": "cludes nothing but an assertion of the true God and dependence on him, in opposition to all the idols of the Gentiles, and other vain conceits whereby they exalted themselves into the throne of the Most High. But that Christ should be said to be a Savior of, —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "Those who are never saved from their sins, as he saves his people, Matthew 1:21; —"
+          },
+          {
+            "marker": "2.",
+            "text": "Of those who never hear one word of saving or a Savior; —"
+          },
+          {
+            "marker": "3.",
+            "text": "That he should be a Savior in a twofold sense, — (1.) For all, (2.) For believers; —"
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "compact-run"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "expository-whereby"
+        ],
+        "whitelist_key": "EPUB/ch031.xhtml#p1004-syllabus-if-any-shall-conceive-that-these-words-because-we-hope-in-the"
+      },
+      {
+        "key": "EPUB/ch046.xhtml#p1413-syllabus-3-consider-what-it-is-to-lie-under-the-effects-of-god",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch046.xhtml",
+        "anchor_index": 1413,
+        "item_range": "p1414-p1420",
+        "anchor": "3. Consider what it is to lie under the effects of God's wrath, according to the declaration of the Scripture, and then see how the elect are delivered therefrom, before their actual calling. Now, this consists in divers things; as, —",
+        "items": [
+          {
+            "marker": "(1.)",
+            "text": "To be in such a state of alienation from God as that none of their services are acceptable to him: \"The prayer of the wicked is an abomination to the LORD,\" Proverbs 28:9."
+          },
+          {
+            "marker": "(2.)",
+            "text": "To have no outward enjoyment sanctified, but to have all things unclean unto them, Titus 1:15."
+          },
+          {
+            "marker": "(3.)",
+            "text": "To be under the power of Satan who rules at his pleasure in the children of disobedience, Ephesians 2:2."
+          },
+          {
+            "marker": "(4.)",
+            "text": "To be in bondage unto death, Hebrews 2:15."
+          },
+          {
+            "marker": "(5.)",
+            "text": "To be under the curse and condemning power of the law, Galatians 3:13."
+          },
+          {
+            "marker": "(6.)",
+            "text": "To be obnoxious to the judgment of God, and to be guilty of eternal death and damnation, Romans 3:19."
+          },
+          {
+            "marker": "(7.)",
+            "text": "To be under the power and dominion of sin, reigning, in them, Romans 6:19. These and such like are those which we call the effects of God's anger."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 7,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-formula",
+          "introductory-punctuation"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "developed-item",
+          "final-developed-continuation"
+        ],
+        "whitelist_key": "EPUB/ch046.xhtml#p1413-syllabus-3-consider-what-it-is-to-lie-under-the-effects-of-god"
+      },
+      {
+        "key": "EPUB/ch046.xhtml#p1415-syllabus-2-to-have-no-outward-enjoyment-sanctified-but-to-have-all-things",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch046.xhtml",
+        "anchor_index": 1415,
+        "item_range": "p1416-p1420",
+        "anchor": "(2.) To have no outward enjoyment sanctified, but to have all things unclean unto them, Titus 1:15.",
+        "items": [
+          {
+            "marker": "(3.)",
+            "text": "To be under the power of Satan who rules at his pleasure in the children of disobedience, Ephesians 2:2."
+          },
+          {
+            "marker": "(4.)",
+            "text": "To be in bondage unto death, Hebrews 2:15."
+          },
+          {
+            "marker": "(5.)",
+            "text": "To be under the curse and condemning power of the law, Galatians 3:13."
+          },
+          {
+            "marker": "(6.)",
+            "text": "To be obnoxious to the judgment of God, and to be guilty of eternal death and damnation, Romans 3:19."
+          },
+          {
+            "marker": "(7.)",
+            "text": "To be under the power and dominion of sin, reigning, in them, Romans 6:19. These and such like are those which we call the effects of God's anger."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 5,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "final-developed-continuation"
+        ],
+        "whitelist_key": "EPUB/ch046.xhtml#p1415-syllabus-2-to-have-no-outward-enjoyment-sanctified-but-to-have-all-things"
+      },
+      {
+        "key": "EPUB/ch048.xhtml#p1478-syllabus-christ-then-by-his-death-did-merit-and-purchase-for-all-those",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch048.xhtml",
+        "anchor_index": 1478,
+        "item_range": "p1479-p1480",
+        "anchor": "om he died, all those things which in the Scripture are assigned to be the fruits and effects of his death. These are the things purchased and merited by his blood-shedding, and death; which may be referred unto two heads: — First, Such as are privative; as, —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "Deliverence from the hand of our enemies, Luke 1:74; from the wrath to come, 1 Thessalonians 1:10."
+          },
+          {
+            "marker": "2.",
+            "text": "The destruction and abolition of death in his power, Hebrews 2:14; 3. Of the works of the devil, 1 John 3:8."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": 2,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "announced-count-matches-run"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "final-developed-continuation"
+        ],
+        "whitelist_key": "EPUB/ch048.xhtml#p1478-syllabus-christ-then-by-his-death-did-merit-and-purchase-for-all-those"
+      },
+      {
+        "key": "EPUB/ch053.xhtml#p1724-syllabus-ans-a-notable-or-eminent-inversion-of-the-word-world-in-this",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch053.xhtml",
+        "anchor_index": 1724,
+        "item_range": "p1725-p1727",
+        "anchor": "e to save, as the words eminently hold out. The saving of them who then are called the world was the very purpose and design of God in sending his Son. Now, that these are not all men, but only believers of Jews and Gentiles throughout the world, is evident: —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "Because all are not saved, and the Lord hath said \"he will do all his pleasure, and his purpose shall stand.\""
+          },
+          {
+            "marker": "2.",
+            "text": "Because the most of men were at the instant actually damned. Did he send his Son that they might be saved?"
+          },
+          {
+            "marker": "3.",
+            "text": "Because Christ was appointed for the fall of some, Luke 2:34, and, therefore, not that all and everyone might be saved."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation"
+        ],
+        "hard_exclusions": [
+          "multiple-sentences",
+          "proof-language"
+        ],
+        "whitelist_key": "EPUB/ch053.xhtml#p1724-syllabus-ans-a-notable-or-eminent-inversion-of-the-word-world-in-this"
+      },
+      {
+        "key": "EPUB/ch057.xhtml#p2082-syllabus-4-christ-sends-the-means-and-reveals-the-way-of-life-to",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch057.xhtml",
+        "anchor_index": 2082,
+        "item_range": "p2083-p2086",
+        "anchor": "4. Christ sends the means and reveals the way of life to all them for whom he died.",
+        "items": [
+          {
+            "marker": "5.",
+            "text": "The new covenant of grace was confirmed to all the elect in the blood of Jesus."
+          },
+          {
+            "marker": "6.",
+            "text": "Christ, by his death, purchased, upon covenant and compact, an assured peculiar people, the pleasure of the Lord prospering to the end in his hand."
+          },
+          {
+            "marker": "7.",
+            "text": "Christ loved his church, and gave himself for it."
+          },
+          {
+            "marker": "8.",
+            "text": "Christ died for the infidelity of the elect."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 4,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "parallel-period-ended-syllabus"
+        ],
+        "hard_exclusions": [],
+        "whitelist_key": "EPUB/ch057.xhtml#p2082-syllabus-4-christ-sends-the-means-and-reveals-the-way-of-life-to"
+      },
+      {
+        "key": "EPUB/ch065.xhtml#p2323-syllabus-now-i-had-three-reasons-among-others-that-prevailed-with-me-to",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch065.xhtml",
+        "anchor_index": 2323,
+        "item_range": "p2324-p2325",
+        "anchor": " (into whose tents he was afterward a renegado) to be inconsistent with any satisfaction at all; yea, that which Grotius maintains per tantundem. But now, if you extend that gospel phrase to the compass I have mentioned, they have not the least color so to do.",
+        "items": [
+          {
+            "marker": "(2.)",
+            "text": "Whereas the Scripture mentioneth that \"through Christ is preached the forgiveness of sins,\" Acts 13:38, I do suppose that phrase to be comprehensive of the whole manifestation of God in the covenant of grace."
+          },
+          {
+            "marker": "(3.)",
+            "text": "God expressly saith that this is his covenant, \"That he will be merciful to our unrighteousness,\" Hebrews 8:12."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-formula"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "developed-item",
+          "expository-whereby"
+        ],
+        "whitelist_key": "EPUB/ch065.xhtml#p2323-syllabus-now-i-had-three-reasons-among-others-that-prevailed-with-me-to"
+      },
+      {
+        "key": "EPUB/ch065.xhtml#p2328-syllabus-1-pardon-implieth-christ-s-death-as-a-cause-but-i-would",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch065.xhtml",
+        "anchor_index": 2328,
+        "item_range": "p2329-p2330",
+        "anchor": "1. \"Pardon implieth Christ's death as a cause; but I would he had showed the Scripture that makes pardon so large a thing as to comprise the whole dispensation of grace, or that maketh Christ's death to be a part of it, or comprised in it.",
+        "items": [
+          {
+            "marker": "2.",
+            "text": "\"If such a word were in the Scripture, will he not confess it to be figurative and not proper, and so not fit for this dispute."
+          },
+          {
+            "marker": "3.",
+            "text": "\"Else when he saith, that Christ's death procured our pardon, he meaneth that it procured itself.\" So he."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch065.xhtml#p2328-syllabus-1-pardon-implieth-christ-s-death-as-a-cause-but-i-would"
+      },
+      {
+        "key": "EPUB/ch065.xhtml#p2342-syllabus-3-the-freedom-then-of-pardon-hath-not-its-foundation-in-any",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch065.xhtml",
+        "anchor_index": 2342,
+        "item_range": "p2343-p2344",
+        "anchor": "3. \"The freedom, then, of pardon hath not its foundation in any defect of the merit or satisfaction of Christ, but in three other things: —",
+        "items": [
+          {
+            "marker": "(1.)",
+            "text": "\"The will of God freely appointing the satisfaction of Christ, John 3:16; Romans 5:8; 1 John 4:9."
+          },
+          {
+            "marker": "(2.)",
+            "text": "\"In a gracious acceptation of that decreed satisfaction in our steads; so many, no more."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 2,
+        "announced_count": 3,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "compact-run"
+        ],
+        "hard_exclusions": [
+          "scripture-density"
+        ],
+        "whitelist_key": "EPUB/ch065.xhtml#p2342-syllabus-3-the-freedom-then-of-pardon-hath-not-its-foundation-in-any"
+      },
+      {
+        "key": "EPUB/ch067.xhtml#p2397-syllabus-my-intention-in-the-place-excepted-against-being-cleared-i-shall-now",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch067.xhtml",
+        "anchor_index": 2397,
+        "item_range": "p2398-p2399",
+        "anchor": "My intention in the place excepted against being cleared, I shall now tender my thoughts to these two things: —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "The distinct consideration of the acts of the will of God, before and after the satisfaction of Christ, as also before and after our believing, towards us, as unto justification."
+          },
+          {
+            "marker": "2.",
+            "text": "The distinct estate of the sinner upon that consideration, with what is the right to the fruits of the death of Christ which the elect of God have before believing."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": 2,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "announced-count-matches-run",
+          "parallel-opening-word"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "long-final-item"
+        ],
+        "whitelist_key": "EPUB/ch067.xhtml#p2397-syllabus-my-intention-in-the-place-excepted-against-being-cleared-i-shall-now"
+      },
+      {
+        "key": "EPUB/ch068.xhtml#p2415-syllabus-reason-itself-would-fain-speak-in-this-cause-but-that-the-scriptures",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch068.xhtml",
+        "anchor_index": 2415,
+        "item_range": "p2416-p2417",
+        "anchor": "Reason itself would fain speak in this cause, but that the scriptures do so abound. Many places are noted in the margin. 290 James 1:17; 2 Timothy 2:19; Psalm 33:9-11; Acts 15:18, etc., may be added. A mutable god is of the dunghill.",
+        "items": [
+          {
+            "marker": "2.",
+            "text": "That the death of Christ is not comprised in the first consideration of God's mind and act of his will towards sinners to be saved, is assumed gratis."
+          },
+          {
+            "marker": "3.",
+            "text": "\"He is not,\" saith he, \"averse from all ways of laying down this anger.\""
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": 11,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch068.xhtml#p2415-syllabus-reason-itself-would-fain-speak-in-this-cause-but-that-the-scriptures"
+      },
+      {
+        "key": "EPUB/ch075.xhtml#p2649-syllabus-5-all-other-causes-concurring-on-the-part-of-christ-for-our",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch075.xhtml",
+        "anchor_index": 2649,
+        "item_range": "p2650-p2655",
+        "anchor": "(5.) All other causes concurring on the part of Christ for our deliverance are, first, either not of the same kind with his death; or, secondly, bottomed on his death and flowing from thence: so that, summarily, all may be resolved thereinto.",
+        "items": [
+          {
+            "marker": "(6.)",
+            "text": "The conditions on our part, in the sense intended, are often mentioned, never proved; nor, I am persuaded, will ever be. But he adds: —"
+          },
+          {
+            "marker": "2.",
+            "text": "\"He saith the elect are said to die and rise with Christ.\" Saith he, —"
+          },
+          {
+            "marker": "(1.)",
+            "text": "Not in respect of time, as if we died and rose at the same time, either really or in God's esteem."
+          },
+          {
+            "marker": "(2.)",
+            "text": "Not that we died in his dying, and rose in his rising. But, —"
+          },
+          {
+            "marker": "(3.)",
+            "text": "It is spoken of the distant mediate effects of his death, and the immediate effects of his Spirit on us, rising by regeneration to union and communion with Christ.\" So he."
+          },
+          {
+            "marker": "(1.)",
+            "text": "I pass the first and second exceptions, notwithstanding that of God's not esteeming of us as in Christ, upon his performance of the acts of his mediation for us, might admit of some consideration."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 6,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch075.xhtml#p2649-syllabus-5-all-other-causes-concurring-on-the-part-of-christ-for-our"
+      },
+      {
+        "key": "EPUB/ch075.xhtml#p2650-syllabus-6-the-conditions-on-our-part-in-the-sense-intended-are-often",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch075.xhtml",
+        "anchor_index": 2650,
+        "item_range": "p2651-p2655",
+        "anchor": "(6.) The conditions on our part, in the sense intended, are often mentioned, never proved; nor, I am persuaded, will ever be. But he adds: —",
+        "items": [
+          {
+            "marker": "2.",
+            "text": "\"He saith the elect are said to die and rise with Christ.\" Saith he, —"
+          },
+          {
+            "marker": "(1.)",
+            "text": "Not in respect of time, as if we died and rose at the same time, either really or in God's esteem."
+          },
+          {
+            "marker": "(2.)",
+            "text": "Not that we died in his dying, and rose in his rising. But, —"
+          },
+          {
+            "marker": "(3.)",
+            "text": "It is spoken of the distant mediate effects of his death, and the immediate effects of his Spirit on us, rising by regeneration to union and communion with Christ.\" So he."
+          },
+          {
+            "marker": "(1.)",
+            "text": "I pass the first and second exceptions, notwithstanding that of God's not esteeming of us as in Christ, upon his performance of the acts of his mediation for us, might admit of some consideration."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 5,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula",
+          "introductory-punctuation"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch075.xhtml#p2650-syllabus-6-the-conditions-on-our-part-in-the-sense-intended-are-often"
+      },
+      {
+        "key": "EPUB/ch075.xhtml#p2652-syllabus-1-not-in-respect-of-time-as-if-we-died-and-rose",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch075.xhtml",
+        "anchor_index": 2652,
+        "item_range": "p2653-p2655",
+        "anchor": "(1.) Not in respect of time, as if we died and rose at the same time, either really or in God's esteem.",
+        "items": [
+          {
+            "marker": "(2.)",
+            "text": "Not that we died in his dying, and rose in his rising. But, —"
+          },
+          {
+            "marker": "(3.)",
+            "text": "It is spoken of the distant mediate effects of his death, and the immediate effects of his Spirit on us, rising by regeneration to union and communion with Christ.\" So he."
+          },
+          {
+            "marker": "(1.)",
+            "text": "I pass the first and second exceptions, notwithstanding that of God's not esteeming of us as in Christ, upon his performance of the acts of his mediation for us, might admit of some consideration."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch075.xhtml#p2652-syllabus-1-not-in-respect-of-time-as-if-we-died-and-rose"
+      },
+      {
+        "key": "EPUB/ch075.xhtml#p2685-syllabus-2-knowledge-saith-he-and-possession-of-a-deliverance-are-far-different",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch075.xhtml",
+        "anchor_index": 2685,
+        "item_range": "p2686-p2687",
+        "anchor": "2. \"Knowledge,\" saith he, \"and possession of a deliverance, are far different things.\"",
+        "items": [
+          {
+            "marker": "(1.)",
+            "text": "He maketh them so, who plainly intimates that the reason why it is not apprehended is because it is not possessed, and always speaks disjunctively of them."
+          },
+          {
+            "marker": "(2.)",
+            "text": "Besides, this proposition of the distance of these two is not universally true, as I could easily demonstrate."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch075.xhtml#p2685-syllabus-2-knowledge-saith-he-and-possession-of-a-deliverance-are-far-different"
+      },
+      {
+        "key": "EPUB/ch075.xhtml#p2716-syllabus-1-this-argument-for-what-indeed-it-will-prove-is-handled-at",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch075.xhtml",
+        "anchor_index": 2716,
+        "item_range": "p2717-p2721",
+        "anchor": "(1.) This argument, for what indeed it will prove, is handled at large in my treatise of Redemption, as also re-urged in the pages foregoing. Against actual justification from eternity it hath its efficacy.",
+        "items": [
+          {
+            "marker": "(2.)",
+            "text": "It doth also conclude that the elect, whilst unbelievers, are not actually and de facto put in possession of the issues of love, faith being with the first of them. But, —"
+          },
+          {
+            "marker": "(3.)",
+            "text": "That they have not, upon the grounds fore-mentioned, a right to these things; or, —"
+          },
+          {
+            "marker": "(4.)",
+            "text": "That justification is not the immediate effect of the death of Christ (being the sole things in question), it hath the same unhappiness with the former, not once too mention."
+          },
+          {
+            "marker": "3.",
+            "text": "\"If we are justified only by faith, then certainly not before faith; but we are justified only by faith: ergo.\""
+          },
+          {
+            "marker": "(1.)",
+            "text": "If I mistake not, it is not justification before faith, but a right to the fruits of the death of Christ before faith, that is to be proved."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 5,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch075.xhtml#p2716-syllabus-1-this-argument-for-what-indeed-it-will-prove-is-handled-at"
+      },
+      {
+        "key": "EPUB/ch075.xhtml#p2718-syllabus-3-that-they-have-not-upon-the-grounds-fore-mentioned-a-right",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch075.xhtml",
+        "anchor_index": 2718,
+        "item_range": "p2719-p2721",
+        "anchor": "(3.) That they have not, upon the grounds fore-mentioned, a right to these things; or, —",
+        "items": [
+          {
+            "marker": "(4.)",
+            "text": "That justification is not the immediate effect of the death of Christ (being the sole things in question), it hath the same unhappiness with the former, not once too mention."
+          },
+          {
+            "marker": "3.",
+            "text": "\"If we are justified only by faith, then certainly not before faith; but we are justified only by faith: ergo.\""
+          },
+          {
+            "marker": "(1.)",
+            "text": "If I mistake not, it is not justification before faith, but a right to the fruits of the death of Christ before faith, that is to be proved."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula",
+          "introductory-punctuation"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch075.xhtml#p2718-syllabus-3-that-they-have-not-upon-the-grounds-fore-mentioned-a-right"
+      },
+      {
+        "key": "EPUB/ch075.xhtml#p2719-syllabus-4-that-justification-is-not-the-immediate-effect-of-the-death-of",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch075.xhtml",
+        "anchor_index": 2719,
+        "item_range": "p2720-p2721",
+        "anchor": "(4.) That justification is not the immediate effect of the death of Christ (being the sole things in question), it hath the same unhappiness with the former, not once too mention.",
+        "items": [
+          {
+            "marker": "3.",
+            "text": "\"If we are justified only by faith, then certainly not before faith; but we are justified only by faith: ergo.\""
+          },
+          {
+            "marker": "(1.)",
+            "text": "If I mistake not, it is not justification before faith, but a right to the fruits of the death of Christ before faith, that is to be proved."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula",
+          "parallel-opening-word"
+        ],
+        "hard_exclusions": [
+          "long-final-item",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch075.xhtml#p2719-syllabus-4-that-justification-is-not-the-immediate-effect-of-the-death-of"
+      }
+    ],
+    "whitelisted_syllabus_anchor_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 185,
+    "epub_marker_count": 186,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 1,
+    "excess_markers": [
+      {
+        "marker": "(2.)",
+        "pdf": 45,
+        "epub": 46,
+        "examples": [
+          {
+            "location": "EPUB/ch021.xhtml#p579",
+            "context": "(2.) By furnishing him with a fullness of all gifts and graces: —"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p631",
+            "context": "(2.) The will of God in this business is not at all conditional;"
+          },
+          {
+            "location": "EPUB/ch021.xhtml#p661",
+            "context": "(2.) Acts exercised by God in this business: —"
+          }
+        ]
+      }
+    ],
+    "orphan_candidate_count": 0,
+    "orphan_candidates": []
+  },
+  "repeated_windows": [
+    {
+      "phrase": "that we might be made the righteousness of god in",
+      "count": 13
+    },
+    {
+      "phrase": "we might be made the righteousness of god in him",
+      "count": 13
+    },
+    {
+      "phrase": "made him to be sin for us who knew no",
+      "count": 8
+    },
+    {
+      "phrase": "him to be sin for us who knew no sin",
+      "count": 8
+    },
+    {
+      "phrase": "hath set forth to be propitiation through faith in his",
+      "count": 7
+    },
+    {
+      "phrase": "set forth to be propitiation through faith in his blood",
+      "count": 7
+    },
+    {
+      "phrase": "propitiation through faith in his blood to declare his righteousness",
+      "count": 7
+    },
+    {
+      "phrase": "to be sin for us who knew no sin that",
+      "count": 7
+    },
+    {
+      "phrase": "known unto god are all his works from the beginning",
+      "count": 6
+    },
+    {
+      "phrase": "even so father for so it seemed good in thy",
+      "count": 6
+    },
+    {
+      "phrase": "so father for so it seemed good in thy sight",
+      "count": 6
+    },
+    {
+      "phrase": "us that we might be made the righteousness of god",
+      "count": 6
+    },
+    {
+      "phrase": "whom god hath set forth to be propitiation through faith",
+      "count": 6
+    },
+    {
+      "phrase": "god hath set forth to be propitiation through faith in",
+      "count": 6
+    },
+    {
+      "phrase": "forth to be propitiation through faith in his blood to",
+      "count": 6
+    },
+    {
+      "phrase": "to be propitiation through faith in his blood to declare",
+      "count": 6
+    },
+    {
+      "phrase": "be propitiation through faith in his blood to declare his",
+      "count": 6
+    },
+    {
+      "phrase": "through faith in his blood to declare his righteousness for",
+      "count": 6
+    },
+    {
+      "phrase": "faith in his blood to declare his righteousness for the",
+      "count": 6
+    },
+    {
+      "phrase": "in his blood to declare his righteousness for the remission",
+      "count": 6
+    },
+    {
+      "phrase": "his blood to declare his righteousness for the remission of",
+      "count": 6
+    },
+    {
+      "phrase": "blood to declare his righteousness for the remission of sins",
+      "count": 6
+    },
+    {
+      "phrase": "be sin for us who knew no sin that we",
+      "count": 6
+    },
+    {
+      "phrase": "sin for us who knew no sin that we might",
+      "count": 6
+    },
+    {
+      "phrase": "for us who knew no sin that we might be",
+      "count": 6
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 822,
+    "epub_greek_word_count": 845,
+    "pdf_greek_unique_words": 464,
+    "epub_greek_unique_words": 482,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 18,
+    "epub_hebrew_word_count": 18,
+    "pdf_hebrew_unique_words": 16,
+    "epub_hebrew_unique_words": 16,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 40,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 0,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 1417,
+    "epub_latin_word_count": 1418,
+    "epub_tagged_latin_word_count": 834,
+    "pdf_latin_unique_words": 927,
+    "epub_latin_unique_words": 927,
+    "epub_tagged_unique_words": 546,
+    "latin_word_coverage_ratio": 0.9958,
+    "latin_tagging_ratio": 0.5882,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "ejusdem",
+        "epub": 17,
+        "tagged": 2
+      },
+      {
+        "word": "tantidem",
+        "epub": 12,
+        "tagged": 0
+      },
+      {
+        "word": "scotus",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "mediate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "apella",
+        "epub": 4,
+        "tagged": 1
+      },
+      {
+        "word": "intermediate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "clamor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "rumor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "expiate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "diatriba",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "suetonius",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "francis",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "legislator",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "tremor",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "phoebus",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "philo",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "inanimate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "sicut",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "populus",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "pontus",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "apollo",
+        "epub": 3,
+        "tagged": 1
+      },
+      {
+        "word": "diodorus",
+        "epub": 3,
+        "tagged": 1
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 95,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 255,
+    "translated_latin_runs_count": 99,
+    "latin_translation_ratio": 0.3882,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "Elenchus Controversiarum"
+      },
+      {
+        "phrase": "Martii, anno Domini"
+      },
+      {
+        "phrase": "Tantum religio"
+      },
+      {
+        "phrase": "suadere malorum"
+      },
+      {
+        "phrase": "in quibus possimus"
+      },
+      {
+        "phrase": "AEneas Sylvius"
+      },
+      {
+        "phrase": "in forma pauperis"
+      },
+      {
+        "phrase": "postquam Christiana"
+      },
+      {
+        "phrase": "gradibus itur in coelum"
+      },
+      {
+        "phrase": "cornicula risum, furtivis nudata coloribus"
+      },
+      {
+        "phrase": "libero arbitrio, sed dividatur"
+      },
+      {
+        "phrase": "filia unius noctis"
+      },
+      {
+        "phrase": "simplicis intelligentiae"
+      },
+      {
+        "phrase": "necessitate naturae"
+      },
+      {
+        "phrase": "Tantae molis"
+      },
+      {
+        "phrase": "voluntas signi"
+      },
+      {
+        "phrase": "Loquitur ex aliorum sententia"
+      },
+      {
+        "phrase": "cui credatis"
+      },
+      {
+        "phrase": "furtivis nudata coloribus"
+      },
+      {
+        "phrase": "usque et usque"
+      }
+    ]
+  },
+  "modern_notes_quality": {
+    "manifest_found": true,
+    "generated_at": "2026-07-05T17:09:41",
+    "unresolved_modern_references": 0,
+    "untranslated_substantial_foreign_passages": 0,
+    "unenriched_legacy_footnotes": 69,
+    "summary": {
+      "total_items": 295,
+      "body_translation_popups": 36,
+      "body_citation_popups": 17,
+      "footnote_enrichments": 173,
+      "unresolved_modern_references": 0,
+      "untranslated_substantial_foreign_passages": 0,
+      "unenriched_legacy_footnotes": 69
+    },
+    "samples": [
+      {
+        "id": "5308cb1bb8720cdd",
+        "scope": "footnote",
+        "footnote": 7,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- John 6:42, 7:52. \"Natura sic apparet vitiata ut hoc majoris vitii sit, non videre.\" — Aug.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 17
+      },
+      {
+        "id": "edb028b764d7e321",
+        "scope": "footnote",
+        "footnote": 10,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- Philippians lib. quod sit Deus immutabilis.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 6
+      },
+      {
+        "id": "bf4760df44e00175",
+        "scope": "footnote",
+        "footnote": 11,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"In ordine volitorum divinorum, quaedam sunt quae omnem actum creaturae praece-dunt, quaedam quae sequuntur.\" — Corv, ad Molin., cap. 5. sect. 1, p. 67.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 24
+      },
+      {
+        "id": "793606b6ca437867",
+        "scope": "footnote",
+        "footnote": 13,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Multa tamen arbitror Deum velle; quae non vellet, adeoque nec juste velle posset, nisi aliqua actio creaturae praecederet.\" — Ad Ames., p. 24.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 22
+      },
+      {
+        "id": "2fc9157cae7e85b8",
+        "scope": "footnote",
+        "footnote": 16,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Volitiones aliquae Dei cessant certo quodam tempore.\" — Episcop. Disp. de Vol. Dei., thes. 7",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 14
+      },
+      {
+        "id": "d8c18bb5f3584aa1",
+        "scope": "footnote",
+        "footnote": 20,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Possunt homines etectionem suam irritam et frustraneam reddere.\" — Rem. Apol., cap. 9. p. 105.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 14
+      },
+      {
+        "id": "41e3ab731111e88d",
+        "scope": "footnote",
+        "footnote": 24,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Ad gloriam participandam pro isto tempore quo credunt electi sunt.\" — Rem. Apol., p. 190.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 14
+      },
+      {
+        "id": "598a3167b29c5092",
+        "scope": "footnote",
+        "footnote": 27,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Quis enim comminetur poenam ei, quem peremptorio decreto a poena immunem esse vult ?\" — Rem. Apol., cap. 17. p. 187.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 19
+      },
+      {
+        "id": "d55a162025b5285a",
+        "scope": "footnote",
+        "footnote": 32,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- Vid. Sam. Rhaetorfort. Exercit. de Grat., ex. 1. cap. 4.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 10
+      },
+      {
+        "id": "3b96c2c90d7841a6",
+        "scope": "footnote",
+        "footnote": 34,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Scientia visionis dicitur, quia ea quae videntur, apud nos habent esse distinctum extra videntem.\" — Aq. p. q. 14, a. 9, c.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 21
+      },
+      {
+        "id": "8cb48481cbc29e6d",
+        "scope": "footnote",
+        "footnote": 39,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Deus ita omnium salutem ex aequo vult, ut illam ex aequo optet et desideret.\" — Corv. ad Molin., cap. 31. sect. 1.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 21
+      },
+      {
+        "id": "c6e50d4eb8f8e2f2",
+        "scope": "footnote",
+        "footnote": 42,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Reprobatio populi Judaici fuit actio temporaria et quae bono ipsorum Judaeorum si modo sanabiles adhuc essent, animumque advertere vellent, servire poterat, utque ei fini serviret a Deo facta erat.\" — Rem. Apol., cap. 20. p. 221.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 35
+      },
+      {
+        "id": "eae83462ef87ea22",
+        "scope": "footnote",
+        "footnote": 44,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Concedimus in Deo desideria, quae nunquam implentur.\" — Corv. ad Molin., cap. v. sect. 2.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 14
+      },
+      {
+        "id": "84e2d6a9c5406ad9",
+        "scope": "footnote",
+        "footnote": 45,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Bona quaedam Deus optat et desiderat.\" — Rem. Confes., cap. 2. sect. 9.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 12
+      },
+      {
+        "id": "9110a761562e78b5",
+        "scope": "footnote",
+        "footnote": 47,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Deum futura contingentia, decreto suo determinasse ad alterutram partem (intellige quae a libera creaturae voluntate patrantur), falsum, absurdum, et multiplicis blasphemiae praevium abominor et exsecror.\" — Armin. Declarat. Senten.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 28
+      },
+      {
+        "id": "f1a77c086d355c15",
+        "scope": "footnote",
+        "footnote": 51,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Deus non semper ex praescientia finem intendit.\" — Armin., Antip., p. 667; Corv. ad Molin., cap. 5. sect. 5.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 18
+      },
+      {
+        "id": "d44438add5401715",
+        "scope": "footnote",
+        "footnote": 56,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"An actus divinae providentiae omnium rerum conservatrix, sit affirmativus po-tentiae, an tantum negativus voluntatis, quo nolit res ereatas perdere.\" — Rem. Apol., cap. 6.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 24
+      },
+      {
+        "id": "f5fbef341e8e5ff2",
+        "scope": "footnote",
+        "footnote": 60,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- Rem. Apol., cap. 6.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 4
+      },
+      {
+        "id": "67f02df1b144b188",
+        "scope": "footnote",
+        "footnote": 61,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Qui sic homines voluit esse liberos ut fecit sacrilegos.\" — Aug.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 10
+      },
+      {
+        "id": "05f8fc92f901f446",
+        "scope": "footnote",
+        "footnote": 63,
+        "action": "none",
+        "confidence": "low",
+        "source": "heuristic",
+        "exact_text": "- \"Deus influxu suo nihil confert creaturae, quo ad agendum incitetur ac adjuvetur.\" — Corv. ad Molin., cap. 3. sect. 15, p. 35.",
+        "owen_translated_or_paraphrased": false,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Existing footnote appears to contain foreign text or an archaic reference, but no high-confidence enrichment is available.",
+        "word_count": 21
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {},
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

@@ -23,6 +23,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts.cli_utils import bold, cyan, dim, green, magenta, red, yellow
+from scripts.heal_readiness import blocker_penalty, classify_state_data
 
 from shared import get_volume_dir, get_volume_label
 
@@ -173,8 +174,11 @@ def gather_volume_data(vol: int) -> dict:
         data["latin_coverage"] = lat_cov_info.get("latin_word_coverage_ratio")
         data["latin_tagging"] = lat_cov_info.get("latin_tagging_ratio")
         data["latin_translation"] = lat_trans_info.get("latin_translation_ratio")
+        data["latin_tagging_samples"] = lat_cov_info.get("untagged_latin_word_samples", [])
+        data["latin_translation_samples"] = lat_trans_info.get("untranslated_latin_samples", [])
         data["splits"] = splits
         data["text_warnings"] = text_int.get("warning_count", 0)
+        data["text_warning_details"] = text_int.get("warnings", [])
     else:
         data["coverage"] = None
         data["greek_coverage"] = None
@@ -182,8 +186,11 @@ def gather_volume_data(vol: int) -> dict:
         data["latin_coverage"] = None
         data["latin_tagging"] = None
         data["latin_translation"] = None
+        data["latin_tagging_samples"] = []
+        data["latin_translation_samples"] = []
         data["splits"] = None
         data["text_warnings"] = None
+        data["text_warning_details"] = []
 
     # bug regression report
     if bug_reg:
@@ -194,12 +201,28 @@ def gather_volume_data(vol: int) -> dict:
         regressions = [c for c in checks if c.get("status") == "regression"]
         data["regressions"] = len(regressions)
         data["regression_details"] = [
-            {"label": c.get("label"), "actual": c.get("actual"), "budget": c.get("budget")}
+            {
+                "label": c.get("label"),
+                "observed": c.get("observed", c.get("actual")),
+                "actual": c.get("actual", c.get("observed")),
+                "budget": c.get("budget"),
+                "samples": c.get("samples", []),
+            }
             for c in regressions
         ]
     else:
         data["regressions"] = None
         data["regression_details"] = []
+
+    stale_whitelist_entries: list[str] = []
+    unused_text_integrity = text_int.get("unused_whitelist_text_integrity", {}) if text_int else {}
+    unused_epub_warnings = audit.get("unused_whitelist_epub_warnings", []) if audit else []
+    for category, entries in unused_text_integrity.items():
+        for entry in entries:
+            stale_whitelist_entries.append(f"text_integrity.{category}: {entry}")
+    for entry in unused_epub_warnings:
+        stale_whitelist_entries.append(f"epub_warnings: {entry}")
+    data["stale_whitelist_entries"] = stale_whitelist_entries
 
     # derive QA level
     has_audit = audit != {}
@@ -302,8 +325,8 @@ def score_volume(d: dict) -> float:
 
     # coverage
     cov = d.get("coverage")
-    if cov is not None:
-        score += min((1.0 - cov) * 4000, 20.0)
+    if cov is not None and cov < 0.995:
+        score += min((0.995 - cov) * 4000, 20.0)
 
     # Greek coverage
     gc = d.get("greek_coverage")
@@ -327,20 +350,24 @@ def score_volume(d: dict) -> float:
                 score += 5.0
 
         # Latin tagging
-        if "low_latin_tagging" not in ignored_warnings:
-            lat_tag = d.get("latin_tagging")
-            if lat_tag is not None:
+        lat_tag = d.get("latin_tagging")
+        if lat_tag is not None:
+            if "low_latin_tagging" not in ignored_warnings:
                 score += min((1.0 - lat_tag) * 10, 5.0)
-            elif d["qa_level"] != "NONE":
-                score += 2.0
+            elif lat_tag < 0.990:
+                score += min((0.990 - lat_tag) * 3, 1.5)
+        elif "low_latin_tagging" not in ignored_warnings and d["qa_level"] != "NONE":
+            score += 2.0
 
         # Latin translation
-        if "low_latin_translation_coverage" not in ignored_warnings:
-            lat_trans = d.get("latin_translation")
-            if lat_trans is not None:
+        lat_trans = d.get("latin_translation")
+        if lat_trans is not None:
+            if "low_latin_translation_coverage" not in ignored_warnings:
                 score += min((1.0 - lat_trans) * 10, 5.0)
-            elif d["qa_level"] != "NONE":
-                score += 2.0
+            elif lat_trans < 0.990:
+                score += min((0.990 - lat_trans) * 3, 1.5)
+        elif "low_latin_translation_coverage" not in ignored_warnings and d["qa_level"] != "NONE":
+            score += 2.0
 
     # Unresolved citations ratio penalty
     total_cite = d.get("total_citations", 0)
@@ -377,6 +404,8 @@ def score_volume(d: dict) -> float:
     unmatched_quotes = d.get("unmatched_quotes")
     if unmatched_quotes is not None:
         score += min(unmatched_quotes * 0.5, 10.0)
+
+    score += blocker_penalty(d)
 
     return round(score, 1)
 
@@ -561,6 +590,7 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
     lines.append("")
 
     for d in ranked:
+        readiness = classify_state_data(d)
         v = d["vol"]
         s = d["score"]
         if s < 20:
@@ -588,6 +618,8 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
         lines.append(f"- **Citations:** total={d.get('total_citations', 0)}, unresolved={d.get('unresolved_citations', 0)}")
         lines.append(f"- **Splits:** {d.get('splits', '?')}")
         lines.append(f"- **Regressions:** {d.get('regressions', '?')}")
+        lines.append(f"- **Heal readiness blockers:** {readiness['blocker_count']}")
+        lines.append(f"- **Heal readiness review debt:** {readiness['review_debt_count']}")
         lines.append(f"- **Suspected anomalies:** {d.get('anomalies_count', '?')}")
         lines.append(f"- **Unmatched quotes:** {d.get('unmatched_quotes', '?')}")
         lines.append(f"- **Recommended:** {_actions_to_text(d['recommended_actions'])}")
@@ -600,6 +632,7 @@ def write_markdown_report(ranked: list[dict], path: Path) -> None:
 def write_json_report(ranked: list[dict], path: Path) -> None:
     export = []
     for d in ranked:
+        readiness = classify_state_data(d)
         s = d["score"]
         if s < 20:
             grade = "good"
@@ -628,6 +661,7 @@ def write_json_report(ranked: list[dict], path: Path) -> None:
             "warnings": d.get("audit_warnings"),
             "errors": d.get("audit_errors"),
             "regressions": d.get("regressions"),
+            "heal_readiness": readiness,
             "anomalies_count": d.get("anomalies_count"),
             "unmatched_quotes": d.get("unmatched_quotes"),
             "font": d["font"],

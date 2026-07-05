@@ -35,7 +35,7 @@ _V10_ARMINIANISM_TITLE_PAGE = '''<section class="treatise-title-page" epub:type=
 <div class="title-line-medium">Contingency,</div>
 <div class="title-connector">Advancing Themselves into the Throne of God in Heaven, and Deposing His Sacred Providence from the Government of the World.</div>
 <div class="title-rule" aria-hidden="true"></div>
-<div class="quote-block"><p>"Known unto God are all his works from the beginning of the world." — Acts 15:18.</div></div>
+<div class="quote-block"><p>"Known unto God are all his works from the beginning of the world." — Acts 15:18.</p></div>
 </section>'''
 
 _V10_DEATH_OF_DEATH_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -217,6 +217,10 @@ OVERRIDES = {
         'ViceChancelor': 'Vice-Chancellor',
         'LoRD': 'LORD',
         'Jude 1:4 4, "Ordained': 'Jude 1:4, "Ordained',
+        'Jude 1:4, "Ordained to this condemnation 2 Peter 2:12, "Made': 'Jude 1:4, "Ordained to this condemnation;" 2 Peter 2:12, "Made',
+        'Jude 1:4 4,12,13': 'Jude 1:4, 12, 13',
+        'John 10:1 10 passim': 'John 10:1-10 passim',
+        'chap. Romans 8:278:28-30': 'Romans 8:28-30',
         'no t to': 'not to',
         'w _hole_': 'whole',
         'not of t he': 'not of the',
@@ -271,6 +275,7 @@ OVERRIDES = {
         r'\n\n3\. chap\. 1, etc\.': r' 3. chap. 1, etc.',
         r'book\n\n9\. "The Thracians': r'book 9.\n\n"The Thracians',
         r'sect\.\n\n8\. But from': r'sect. 8.\n\nBut from',
+        r'John in\.\n\n3\. "That which is born of the flesh is \[\[BLOCKQUOTE\]\] "Neither is it considerable whether they be the children of believers or of heathens; for all infants have the same innocency," Rem\. Apol\. "That which we have by birth can be no evil of sin, because to be born is plainly involuntary,"\n\nflesh," John 3:6\. Idem\.': r'John 3:3. "That which is born of the flesh is flesh," John 3:6.\n\n[[BLOCKQUOTE]] "Neither is it considerable whether they be the children of believers or of heathens; for all infants have the same innocency," Rem. Apol. "That which we have by birth can be no evil of sin, because to be born is plainly involuntary," Idem.',
         r'John in\.\n\n3\. "That which': r'John 3:3.\n\n"That which',
     },
 }
@@ -322,6 +327,35 @@ def post_extract_hook(data):
             ch['raw_text'] = ch['raw_text'].replace(old_opusc, new_opusc)
             print("Successfully fixed Opusc. 6. list artifact!")
             break
+
+    # 6. Repair small OCR/table fragments that otherwise remain visible to
+    # raw intermediate audits even though Stage 2 can repair the rendered text.
+    raw_replacements = {
+        '''John in.
+
+3. "That which is born of the flesh is [[BLOCKQUOTE]] "Neither is it considerable whether they be the children of believers or of heathens; for all infants have the same innocency," Rem. Apol. "That which we have by birth can be no evil of sin, because to be born is plainly involuntary,"
+
+flesh," John 3:6. Idem.''': '''John 3:3. "That which is born of the flesh is flesh," John 3:6.
+
+[[BLOCKQUOTE]] "Neither is it considerable whether they be the children of believers or of heathens; for all infants have the same innocency," Rem. Apol. "That which we have by birth can be no evil of sin, because to be born is plainly involuntary," Idem.''',
+        '''[[BLOCKQUOTE]] "The providence of God doth not determine the free-will of man to this or that particular, [f76]
+
+|"Unite my heart to fear thy<br>name," Psalm 86:11. "The God<br>in whose hand thy breath is, and<br>whose are all thy ways, thou hast<br>not glorified," Daniel 5:23.|or to one part of the<br>contradiction," Arminius.| |---|---| |See<br>Matthew 27:1, compared<br>with<br>Acts 2:23, and 4:27,28;<br>Luke 24:27;<br>John 19:31-36.<br>For the necessity of other events,<br>see<br>Exodus 21:17;<br>Job 14:5;<br>Matthew 19:7, etc.|"The will of man ought to be<br>free from all kind of internal<br>and external necessity in its<br>actions," Rem. That is, God<br>cannot lay such a necessity<br>upon any thing as that it shall<br>infallibly come to pass as he<br>intendeth. See the contrary in<br>the places cited.|''': '''[[BLOCKQUOTE]] "The providence of God doth not determine the free-will of man to this or that particular, or to one part of the contradiction," Arminius.
+
+"Unite my heart to fear thy name," Psalm 86:11. "The God in whose hand thy breath is, and whose are all thy ways, thou hast not glorified," Daniel 5:23.
+
+[[BLOCKQUOTE]] "The will of man ought to be free from all kind of internal and external necessity in its actions," Rem. That is, God cannot lay such a necessity upon any thing as that it shall infallibly come to pass as he intendeth. See the contrary in the places cited. See Matthew 27:1, compared with Acts 2:23, and 4:27,28; Luke 24:27; John 19:31-36. For the necessity of other events, see Exodus 21:17; Job 14:5; Matthew 19:7, etc.''',
+        'Jude 1:4 4, "Ordained to this condemnation 2 Peter 2:12, "Made': 'Jude 1:4, "Ordained to this condemnation;" 2 Peter 2:12, "Made',
+        'Jude 1:4 4,12,13': 'Jude 1:4, 12, 13',
+        'John 10:1 10 passim': 'John 10:1-10 passim',
+        'chap. Romans 8:278:28-30': 'Romans 8:28-30',
+    }
+    for ch in chapters:
+        raw_text = ch.get('raw_text', '')
+        for old, new in raw_replacements.items():
+            if old in raw_text:
+                raw_text = raw_text.replace(old, new)
+        ch['raw_text'] = raw_text
 
     return data
 
