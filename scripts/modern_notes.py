@@ -337,10 +337,18 @@ def generate_manifest(vol_num: int, intermediate: dict[str, Any]) -> dict[str, A
         "body_translation_popups": sum(1 for i in items if i["action"] == "translation_popup"),
         "body_citation_popups": sum(1 for i in items if i["action"] == "citation_popup"),
         "footnote_enrichments": sum(1 for i in items if i["action"] == "enrich_existing_footnote"),
-        "unresolved_modern_references": sum(1 for i in items if i["scope"] == "body" and i["action"] == "none"),
+        "unresolved_modern_references": sum(
+            1 for i in items
+            if i["scope"] == "body"
+            and i["action"] == "none"
+            and not i.get("owen_translated_or_paraphrased")
+        ),
         "untranslated_substantial_foreign_passages": sum(
             1 for i in items
-            if i["scope"] == "body" and i["action"] == "none" and i.get("word_count", 0) >= 5
+            if i["scope"] == "body"
+            and i["action"] == "none"
+            and i.get("word_count", 0) >= 5
+            and not i.get("owen_translated_or_paraphrased")
         ),
         "unenriched_legacy_footnotes": sum(1 for i in items if i["scope"] == "footnote" and i["action"] == "none"),
     }

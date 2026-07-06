@@ -77,6 +77,12 @@ _V13_REVIEW_SCHISM_TITLE_PAGE = '''<section class="treatise-title-page" epub:typ
 <div class="title-connector">with a Vindication of the</div>
 <div class="title-line-medium">Congregational Churches in England</div>
 <div class="title-connector">from the Imputation Thereof.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="greek-title"><span lang="el" xml:lang="el">Δοῦλον Κυρίου οὐ δεῖ μάχεσθαι.</span></div>
+<div class="title-source">2 Timothy 2:24.</div>
+<div class="greek-title"><span lang="el" xml:lang="el">Δεῖ τὸν ἐπίσκοπον ἀνέγκλητον εῖναι, ὡς Θεοῦ οἰκονόμον, μὴ αὐθάδη, μὴ ὀργίλον, μὴ πάροινον, μὴ πλήκτην, μὴ αἰσχροκερδῆ.</span></div>
+<div class="title-source">Titus 1:7.</div>
+<div class="title-source">Oxford: 1657.</div>
 </section>'''
 
 _V13_ANSWER_CAWDREY_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -84,6 +90,10 @@ _V13_ANSWER_CAWDREY_TITLE_PAGE = '''<section class="treatise-title-page" epub:ty
 <div class="title-connector">of</div>
 <div class="title-line-major">Mr Cawdrey</div>
 <div class="title-connector">About the Nature of Schism.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="greek-title"><span lang="el" xml:lang="el">Δεῖ τὸν ἐπίσκοπον ἀνέγκλητον εἶναι, ὡς Θεοῦ οἰκονόμον, μὴ αὐθάδη, μὴ ὀργίλον, μὴ πάροινον, μὴ πλήκτην, μὴ αἰσχροκερδῆ.</span></div>
+<div class="title-source">Titus 1:7.</div>
+<div class="title-source">Oxford: 1658.</div>
 </section>'''
 
 _V13_VINDICATION_NONCONFORMISTS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -91,6 +101,9 @@ _V13_VINDICATION_NONCONFORMISTS_TITLE_PAGE = '''<section class="treatise-title-p
 <div class="title-connector">of the</div>
 <div class="title-line-major">Nonconformists</div>
 <div class="title-connector">from the Charge of Schism.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block">"Coitio Christianorum merito sane illicita, si illicitis par; merito damnanda, si quis de ea queritur eo titulo quo de factionibus querela est. In cujus perniciem aliquando convenimus? Hoc sumus congregati quod et dispersi; hoc universi quod et singuli; neminem laedentes, neminem contristantes; quum probi, cum boni coeunt, cum pii, cum casti congregantur, non est factio dicenda, sed curia."</div>
+<div class="title-source">Tertullian.</div>
 </section>'''
 
 _V13_TRUTH_INNOCENCE_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -101,6 +114,11 @@ _V13_TRUTH_INNOCENCE_TITLE_PAGE = '''<section class="treatise-title-page" epub:t
 <div class="title-connector">and the Authority of the</div>
 <div class="title-line-medium">Civil Magistrate Over the Consciences</div>
 <div class="title-line-medium">of Men in Matters of Religion.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block">Non partum studiis agimur; sed sumsimus arma, Consiliis inimica tuis, discordia vecors.</div>
+<div class="greek-title"><span lang="el" xml:lang="el">Οὐδὲν ἄτερ γραφῆς.</span></div>
+<div class="title-source">Clemens Alexandrinus.</div>
+<div class="title-source">London: 1669.</div>
 </section>'''
 
 _V13_TWO_QUESTIONS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -121,6 +139,12 @@ _V13_PEACE_OFFERING_TITLE_PAGE = '''<section class="treatise-title-page" epub:ty
 <div class="title-line-major">A Peace-offering,</div>
 <div class="title-connector">in an Apology and Humble Plea for</div>
 <div class="title-line-medium">Indulgence and Liberty of Conscience.</div>
+<div class="title-rule" aria-hidden="true"></div>
+<div class="quote-block">"Ambigua de religione capita quae plurimum habere videntur obscuritatis, tantis tamdiu animis decertata, apud sapientes hoc fere certum reliquerunt, nusquam minus inveniri veritatem, quam ubi cogitur assensus."</div>
+<div class="title-source">Hugo Grotius.</div>
+<div class="quote-block">"Exiguam sedem sacris littusque rogamus Innocuum, et cunctis undamque, auramque patentem."</div>
+<div class="title-source">Altered from Aeneid 7.229-230.</div>
+<div class="title-source">London: 1667.</div>
 </section>'''
 
 _V13_GROUNDS_REASONS_TITLE_PAGE = '''<section class="treatise-title-page" epub:type="titlepage">
@@ -299,7 +323,7 @@ OVERRIDES = {
         '"sectaries, the "troublers of England,"': '"sectaries," the "troublers of England,"',
         'even as Christ Jesus. 2 Thessalonians': 'even as Christ Jesus." 2 Thessalonians',
         'the word of God." Obey them': 'the word of God." "Obey them',
-        'pastors in separate congregations.': 'pastors in separate congregations."',
+        'create themselves pastors in separate congregations.\n\n**Ans.**': 'create themselves pastors in separate congregations."\n\n**Ans.**',
         'will rejoice, Philippians 1:16-18.': 'will rejoice," Philippians 1:16-18.',
         'service of your faith, etc., Philippians 2:17.': 'service of your faith," etc., Philippians 2:17.',
         'body: so also is Christ, 1 Corinthians 12:12.': 'body: so also is Christ," 1 Corinthians 12:12.',
@@ -313,6 +337,12 @@ OVERRIDES = {
         'dis]qualifications': 'disqualifications',
         'particuIar': 'particular',
         'ChurchPeace': 'Church Peace',
+        'churchcommunion': 'church-communion',
+        'churchgovernment': 'church-government',
+        'churchmember': 'church-member',
+        'churchmembers': 'church-members',
+        'preeminence': 'pre-eminence',
+        'religione eapita': 'religione capita',
         'MiI': 'Mil.',
         'Mil.. Glor.': 'Mil. Glor.',
         # Spacing fixes

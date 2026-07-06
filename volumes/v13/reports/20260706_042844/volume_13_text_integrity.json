@@ -1,0 +1,1254 @@
+{
+  "volume": "13",
+  "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/input/owen-v13.pdf",
+  "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/output/volume_13.epub",
+  "generated_at": "2026-07-06T02:28:40.133489+00:00",
+  "status": "warn",
+  "warning_count": 8,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "syllabus_anchor_candidates",
+      "message": "Some introduced scholastic syllabus runs appear unflattened or need triage"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication"
+    }
+  ],
+  "pdf": {
+    "page_count": 749,
+    "skipped_detected": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "epub": {
+    "spine_text_files": 83,
+    "paragraph_count": 2237
+  },
+  "word_coverage": {
+    "pdf_content_tokens": 247367,
+    "epub_content_tokens": 249572,
+    "coverage_ratio": 0.9994,
+    "missing_word_samples": [
+      {
+        "word": "self",
+        "pdf": 13,
+        "epub": 6
+      },
+      {
+        "word": "fellow",
+        "pdf": 3,
+        "epub": 0
+      },
+      {
+        "word": "re",
+        "pdf": 3,
+        "epub": 1
+      }
+    ],
+    "excess_word_samples": [
+      {
+        "word": "prefatory",
+        "pdf": 14,
+        "epub": 30
+      },
+      {
+        "word": "editor",
+        "pdf": 0,
+        "epub": 12
+      },
+      {
+        "word": "volume",
+        "pdf": 5,
+        "epub": 13
+      },
+      {
+        "word": "digital",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "historical",
+        "pdf": 0,
+        "epub": 8
+      },
+      {
+        "word": "theological",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "footnotes",
+        "pdf": 0,
+        "epub": 7
+      },
+      {
+        "word": "modern",
+        "pdf": 5,
+        "epub": 11
+      }
+    ]
+  },
+  "page_coverage": {
+    "pages_checked": 725,
+    "weak_page_count": 3,
+    "weak_pages": [
+      {
+        "page": 72,
+        "hit_ratio": 0.0,
+        "sample": "eshcol cluster of the fruit of canaan brought to the borders for the encouragement 0f the saints travelling thitherward with their faces towards zion"
+      },
+      {
+        "page": 437,
+        "hit_ratio": 0.333,
+        "sample": "truth and innocence vindicated in survey of discourse concerning ecclesiastical polity and the authority of the civil magistrate over the consciences of subjects in"
+      },
+      {
+        "page": 682,
+        "hit_ratio": 0.0,
+        "sample": "peace-offering in an apology and humble plea for indulgence and liberty of conscience by sundry protestants differing in some things from the present establishment"
+      }
+    ]
+  },
+  "dense_source_window_integrity": {
+    "dense_windows_checked": 33469,
+    "missing_dense_window_pages": 40,
+    "missing_dense_windows": [
+      {
+        "page": 31,
+        "sample": "the law of nature being pre supposed we find them farther speaking often one"
+      },
+      {
+        "page": 46,
+        "sample": "or no may better serve to illustrate plutarch's discourse of socrates demon than any"
+      },
+      {
+        "page": 50,
+        "sample": "and jesuits pretending falsely by their impostures to the power of miracle working though"
+      },
+      {
+        "page": 58,
+        "sample": "they may interest themselves in holy soul concerning affairs both in respect of their"
+      },
+      {
+        "page": 68,
+        "sample": "is an ignorant congregation of which thanks to our prelates pluralists non residents homilies"
+      },
+      {
+        "page": 76,
+        "sample": "eshcol cluster of the fruit of canaan rules of walking in fellowship with reference"
+      },
+      {
+        "page": 77,
+        "sample": "election appointment acceptation submission galatians acts thessalonians acts corinthians which do not gire them"
+      },
+      {
+        "page": 87,
+        "sample": "commandment and is peculiarly the law of christ john thessalonians john the state and"
+      },
+      {
+        "page": 95,
+        "sample": "daily while it is called to day lest any of you be hardened through"
+      },
+      {
+        "page": 99,
+        "sample": "the command with the threatenings attending its non performance the great glory of the"
+      },
+      {
+        "page": 102,
+        "sample": "alone with submission to the all disposing sovereignty of god of others how freely"
+      },
+      {
+        "page": 105,
+        "sample": "of god because many false prophets are gone out into the world john if"
+      },
+      {
+        "page": 112,
+        "sample": "it especially seeing that upon consideration and supposition of our fellow membership it is"
+      },
+      {
+        "page": 136,
+        "sample": "the administration of discipline in particular chapter after while through the craft of satan"
+      },
+      {
+        "page": 140,
+        "sample": "the adjacent region to metropolis and such like things as the poor primitive pilgrims"
+      },
+      {
+        "page": 143,
+        "sample": "to the civil wherever there was metropolis in civil political sense there was seated"
+      },
+      {
+        "page": 145,
+        "sample": "was pleading against the donatists basil in epist ad amphiloch con distinguisheth between αιρεσις"
+      },
+      {
+        "page": 151,
+        "sample": "to mention their old altare contra altare anti popes anti-councils look all over their"
+      },
+      {
+        "page": 152,
+        "sample": "quiet the contest of the franciscans and dominicans about the blessed virgin burn bellarmine's"
+      },
+      {
+        "page": 158,
+        "sample": "chapter objections against the former discourse proposed to consideration separation from any church in"
+      },
+      {
+        "page": 177,
+        "sample": "of the catholic church all profane ignorant self justiciaries all idolaters worshippers or adorers"
+      },
+      {
+        "page": 182,
+        "sample": "numerical ordinances the union of this church is not really church union mean of"
+      },
+      {
+        "page": 216,
+        "sample": "the generality of their priests and people that of self righteousness that is in"
+      },
+      {
+        "page": 223,
+        "sample": "and at ephesus chapter as was that of corinth corinthians corinthians and those mentioned"
+      },
+      {
+        "page": 251,
+        "sample": "sacraments which excludes them from being fideles or church members and makes them at"
+      },
+      {
+        "page": 253,
+        "sample": "so doing for besides what they have to plead as to the non institution"
+      },
+      {
+        "page": 270,
+        "sample": "disadvantage manifested in behalf of their brethren nor much pain themselves to re enforce"
+      },
+      {
+        "page": 271,
+        "sample": "return unto it out of vulgar discourses about ministers calling church government or the"
+      },
+      {
+        "page": 314,
+        "sample": "contrary let him cease from cavilling at words and by expressions which is facile"
+      },
+      {
+        "page": 323,
+        "sample": "is no schism is that afore mentioned that schism in the scripture notion is"
+      },
+      {
+        "page": 330,
+        "sample": "forms of the practice of new and old england of admission of church members"
+      },
+      {
+        "page": 349,
+        "sample": "will speak for itself with all impartial men much less shall insist on commendation"
+      },
+      {
+        "page": 351,
+        "sample": "how they came into such possession of all church state in england that all"
+      },
+      {
+        "page": 353,
+        "sample": "the consideration of the severals of them to re assume this discourse for what"
+      },
+      {
+        "page": 364,
+        "sample": "albae nos viles pulli nati infelicibus ovis juv l4l shall farther attend unto them"
+      },
+      {
+        "page": 368,
+        "sample": "of it are relieved by scheme of my self contradictions in the close his"
+      },
+      {
+        "page": 369,
+        "sample": "sober man freed from pride passion self fullness and prejudice shall be pleased to"
+      },
+      {
+        "page": 377,
+        "sample": "are schism and errors in the faith are schism and schism and apostasy are"
+      },
+      {
+        "page": 382,
+        "sample": "limited nature of schism in its evangelically-ecclesiastical sense neither shall at present allotting very"
+      },
+      {
+        "page": 389,
+        "sample": "brief vindication of the nonconformists from the charge of schism as it was managed"
+      }
+    ]
+  },
+  "front_matter_toc_integrity": {
+    "front_toc_pages_checked": 0,
+    "front_toc_windows_checked": 0,
+    "missing_front_toc_pages": 0,
+    "missing_front_toc_samples": []
+  },
+  "top_of_page_integrity": {
+    "top_windows_checked": 745,
+    "top_windows_usable": 720,
+    "skipped_top_window_count": 8,
+    "skipped_top_windows": [
+      {
+        "page": 154,
+        "window": "confidence that am not in expectation of any hasty confutation of them mean that",
+        "sample": "confidence that I am not in expectation of any hasty confutation of them, — I mean, that which is so indeed. [As for] the earnestness of their",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 320,
+        "window": "difficulty he may be reconciled to himself affirming the very same thing that do",
+        "sample": "difficulty, he may be reconciled to himself, affirming the very same thing that I do, p. 113 [p. 137]. It is of Rome in that sense wherein it claims",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 368,
+        "window": "reported to be wherein it seems have transgressed the rule μηποτ ερδειν γεροντα",
+        "sample": "reported to be;\" p. 121 [234]; wherein, it seems, I have transgressed the rule, Μήποτ ε͂ ἔρδειν γέροντα.",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 369,
+        "window": "he says rome we account no church at all crimen inauditum caesar is it",
+        "sample": "He says, \"Rome we account no church at all,\" p. 156 [p. 155.] \"Crimen inauditum, C. Caesar.\" \"Is it meet that any one should be",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 481,
+        "window": "thus in the title of the book he asserts the power of the magistrate",
+        "sample": "Thus, in the title of the book he asserts \"the power of the magistrate over the consciences of men;\" elsewhere [he] confines \"the whole work and",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 512,
+        "window": "dis qualifications mentioned and when he hath done so declare that so they do",
+        "sample": "[dis]qualifications mentioned, and when he hath done so declare that so they do, and yet require obedience unto them. Besides, if this judgment be",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 618,
+        "window": "into his mind and will which inquiry as suppose may be thus satisfied that",
+        "sample": "into his mind and will? which inquiry, as I suppose, may be [thus] satisfied, — that they are so to practice and so to abstain, without being",
+        "reason": "font-encoded Greek/Hebrew window"
+      },
+      {
+        "page": 635,
+        "window": "therein and for my part wish we had more who did so for be",
+        "sample": "therein; and for my part, I wish we had more [who] did so: for, be it spoken, as I hope, without offense on the part of others, so without fear",
+        "reason": "font-encoded Greek/Hebrew window"
+      }
+    ],
+    "missing_top_window_count": 0,
+    "missing_top_windows": []
+  },
+  "bottom_of_page_integrity": {
+    "bottom_windows_checked": 696,
+    "bottom_windows_usable": 679,
+    "skipped_bottom_window_count": 0,
+    "skipped_bottom_windows": [],
+    "missing_bottom_window_count": 0,
+    "missing_bottom_windows": []
+  },
+  "paragraph_integrity": {
+    "paragraphs_checked": 1782,
+    "split_candidate_count": 2,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch048.xhtml",
+        "previous": "ld be restrained. It is far from my purpose to return him any answer in the like manner to these things; to do it \" — opus est mangone perito Qui Smithfieldensi polleat eloquio.\" †",
+        "next": "Yet some instances of prodigious excesses in this kind will, in our process, be reflected on; and it may be the repetition of them may make an appearance, unto some less considerat"
+      },
+      {
+        "file": "EPUB/ch054.xhtml",
+        "previous": " if they do not, and fain would have it thought that he may do so justly. But these things are certain unto us in this matter, and are so many κύριαι δόξαι in Christian religion: —",
+        "next": "That if the supreme magistrate command any thing in the worship of God that is idolatrous, we are not to practice it accordingly, because we must obey God rather than men. Nextly, "
+      }
+    ],
+    "structural_start_exclusions": 117,
+    "short_fragment_count": 35,
+    "short_fragments": [
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "M AY 11, 1644."
+      },
+      {
+        "file": "EPUB/ch002.xhtml",
+        "text": "JOSEPH CARYL."
+      },
+      {
+        "file": "EPUB/ch003.xhtml",
+        "text": "John Owen"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "and again,"
+      },
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "Whence I conclude, —"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "to which add that of the apostle,"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "text": "Whence.it appears, that, —"
+      },
+      {
+        "file": "EPUB/ch012.xhtml",
+        "text": "Τῷ Θεῷ ἀριστομεγίστῳ δόζα ."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "2 Thessalonians 3:1,2,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "1 Timothy 1:16-18,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Song of Solomon 6:4,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Acts 18:26,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Motives hereunto are, —"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "James 1:27,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Romans 12:13,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Motives to this duty are: —"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "1 Corinthians 12:26,27,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "Proverbs 29:1,"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "text": "2 Timothy 2:19,"
+      },
+      {
+        "file": "EPUB/ch025.xhtml",
+        "text": "I say, then, —"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "To The Reader"
+      },
+      {
+        "file": "EPUB/ch029.xhtml",
+        "text": "CHRISTIAN READER,"
+      },
+      {
+        "file": "EPUB/ch038.xhtml",
+        "text": "The first two are, that, —"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch045.xhtml",
+        "text": "I answer, —"
+      },
+      {
+        "file": "EPUB/ch050.xhtml",
+        "text": "So also, p. 70:"
+      },
+      {
+        "file": "EPUB/ch050.xhtml",
+        "text": "That is,"
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "he is God, and not man."
+      },
+      {
+        "file": "EPUB/ch053.xhtml",
+        "text": "— \"Illum aspice contra Qui vocat.\""
+      },
+      {
+        "file": "EPUB/ch054.xhtml",
+        "text": "Theoph. Why so?"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "Yours"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "J.O."
+      },
+      {
+        "file": "EPUB/ch062.xhtml",
+        "text": "How can this be forced?"
+      },
+      {
+        "file": "EPUB/ch077.xhtml",
+        "text": "END OF VOL. 13"
+      }
+    ],
+    "adjacent_duplicate_count": 0,
+    "adjacent_duplicates": [],
+    "inline_structural_candidate_count": 0,
+    "inline_structural_candidates": [],
+    "reference_continuation_split_count": 0,
+    "reference_continuation_splits": [],
+    "citation_continuation_split_count": 0,
+    "citation_continuation_splits": [],
+    "suspicious_large_number_start_count": 3,
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "10. I no way doubt of the perpetual existence of innumerable believers in every age, and such as made the profession that is absolutely necessary to salvation, one way or other, though I question a regular association of"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "text": "22. In what sense this church is visible was before declared. Men elected, redeemed, justified, as such, are not visible, for that which makes them so is not; but this hinders not but they may be so upon the other consid"
+      },
+      {
+        "file": "EPUB/ch023.xhtml",
+        "text": "29. There being, then, in the world a great multitude, which no man can number, of all nations, kindreds, people, and language, professing the doctrine of the gospel, not tied to mountains or hills, John 4:21, 23, but wo"
+      }
+    ],
+    "roman_heading_candidate_count": 4,
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "II. From the law of nations. For, —"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "V. From the promises of gospel times. For, —"
+      },
+      {
+        "file": "EPUB/ch057.xhtml",
+        "text": "VI. From the equity of gospel rules For, —"
+      },
+      {
+        "file": "EPUB/ch059.xhtml",
+        "text": "IV. The payment of tithes, —"
+      }
+    ],
+    "overlong_heading_candidate_count": 0,
+    "overlong_heading_candidates": [],
+    "frontmatter_heading_body_candidate_count": 0,
+    "frontmatter_heading_body_candidates": [],
+    "syllabus_anchor_candidate_count": 8,
+    "syllabus_anchor_candidates": [
+      {
+        "key": "EPUB/ch016.xhtml#p438-syllabus-1-god-s-infinite-mercy-patience-forbearance-long-suffering-and-free-grace",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch016.xhtml",
+        "anchor_index": 438,
+        "item_range": "p439-p442",
+        "anchor": "ercy, patience, forbearance, long-suffering, and free grace towards us, sparing, pardoning, pitying, bearing with us, in innumerable daily, hourly failings and provocations; especially all this being proposed for our imitation in our measure, Matthew 18:23-35.",
+        "items": [
+          {
+            "marker": "2.",
+            "text": "The goodness, unwearied and unchangeable love of the Lord Jesus Christ putting in every day for us, not ceasing to plead in our behalf, notwithstanding our continual backsliding, 1 John 2:1, 2."
+          },
+          {
+            "marker": "3.",
+            "text": "The experience which our own hearts have of the need wherein we stand of others' patience, forbearance, and pardon, Ecclesiastes 7:20-22."
+          },
+          {
+            "marker": "4.",
+            "text": "The strictness of the command, with the threatenings attending its nonperformance."
+          },
+          {
+            "marker": "5.",
+            "text": "The great glory of the gospel, which is in the walking of the brethren with a right foot as to this rule."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 4,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch016.xhtml#p438-syllabus-1-god-s-infinite-mercy-patience-forbearance-long-suffering-and-free-grace"
+      },
+      {
+        "key": "EPUB/ch016.xhtml#p448-syllabus-now-to-a-right-performance-of-this-duty-and-in-the-discharge",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch016.xhtml",
+        "anchor_index": 448,
+        "item_range": "p449-p453",
+        "anchor": "Now, to a right performance of this duty, and in the discharge of it, are required, —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "A due valuation, strong desire, and high esteem of the church's prosperity, in every member of it, Psalm 122:6."
+          },
+          {
+            "marker": "2.",
+            "text": "Bowels of compassion as a fruit of love; to be sensible of, and intimately moved for, the several burdens of the saints, Colossians 3:12."
+          },
+          {
+            "marker": "3.",
+            "text": "Courage and boldness to own them without shame in all conditions, 2 Timothy 1:16,17."
+          },
+          {
+            "marker": "4.",
+            "text": "Personal visitations in sicknesses, troubles, and restraints, to advise, comfort, and refresh them, Matthew 25:36."
+          },
+          {
+            "marker": "5.",
+            "text": "Suitable supportment, by administration of spiritual or temporal assistances, to the condition wherein they are. The motives are the same as to the former rule."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 5,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "introductory-formula",
+          "introductory-punctuation",
+          "parallel-period-ended-syllabus"
+        ],
+        "hard_exclusions": [
+          "scripture-density",
+          "final-developed-continuation"
+        ],
+        "whitelist_key": "EPUB/ch016.xhtml#p448-syllabus-now-to-a-right-performance-of-this-duty-and-in-the-discharge"
+      },
+      {
+        "key": "EPUB/ch021.xhtml#p648-syllabus-1-the-several-considerations-of-the-church-wherein-and-with-which-union",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch021.xhtml",
+        "anchor_index": 648,
+        "item_range": "p649-p650",
+        "anchor": "1. The several considerations of the church wherein and with which union is to be preserved.",
+        "items": [
+          {
+            "marker": "2.",
+            "text": "What that union is, and wherein it doth consist, which, according to the mind of Christ, we are to keep and observe with the church, under the several notions of it respectively."
+          },
+          {
+            "marker": "3.",
+            "text": "And how that union is broken, and what is that sin whereby it is done."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch021.xhtml#p648-syllabus-1-the-several-considerations-of-the-church-wherein-and-with-which-union"
+      },
+      {
+        "key": "EPUB/ch022.xhtml#p654-syllabus-to-begin-with-the-first-thing-proposed-the-church-of-christ-living",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch022.xhtml",
+        "anchor_index": 654,
+        "item_range": "p655-p657",
+        "anchor": "TO begin with the first thing proposed: The church of Christ living in this world, as to our present concernment, is taken in Scripture three ways: —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "For the mystical body of Christ, his elect, redeemed, justified, and sanctified ones throughout the world; commonly called the church catholic militant."
+          },
+          {
+            "marker": "2.",
+            "text": "For the universality of men throughout the world called by the preaching of the word, visibly professing and yielding obedience to the gospel; called by some the church catholic visible."
+          },
+          {
+            "marker": "3.",
+            "text": "For a particular church of some place, wherein the instituted worship of God in Christ is celebrated according to his mind."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 3,
+        "announced_count": 3,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation",
+          "announced-count-matches-run"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "proof-language"
+        ],
+        "whitelist_key": "EPUB/ch022.xhtml#p654-syllabus-to-begin-with-the-first-thing-proposed-the-church-of-christ-living"
+      },
+      {
+        "key": "EPUB/ch026.xhtml#p964-syllabus-2-were-i-fully-to-handle-the-things-pointed-to-in-this",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch026.xhtml",
+        "anchor_index": 964,
+        "item_range": "p965-p967",
+        "anchor": "nciples which, in this discourse, I have not been occasioned to draw forth at all or to improve. Many things of great weight and importance must come under debate and consideration before a clear account can be given of the case stated in this objection; as, —",
+        "items": [
+          {
+            "marker": "(1.)",
+            "text": "The true nature of an instituted church under the gospel, as to the matter, form, and all other necessary constitutive causes, is to be investigated and found out."
+          },
+          {
+            "marker": "(2.)",
+            "text": "The nature and form of such a church is to be exemplified from the Scripture and the stories of the first churches, before sensibly infected with the poison of that apostasy which ensued."
+          },
+          {
+            "marker": "(3.)",
+            "text": "The extent of the apostasy under Antichrist, as to the ruining of instituted churches, making them to be Babylon, and their worship fornication, is duly and carefully to be examined."
+          }
+        ],
+        "marker_family": "unknown",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation"
+        ],
+        "hard_exclusions": [
+          "developed-item"
+        ],
+        "whitelist_key": "EPUB/ch026.xhtml#p964-syllabus-2-were-i-fully-to-handle-the-things-pointed-to-in-this"
+      },
+      {
+        "key": "EPUB/ch036.xhtml#p1114-syllabus-the-reader-must-pardon-me-for-producing-and-insisting-on-these-things",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch036.xhtml",
+        "anchor_index": 1114,
+        "item_range": "p1115-p1116",
+        "anchor": "don me for producing and insisting on these things, seeing I do it with this profession, that I can fix on nothing else so much to the purpose in hand; and yet how little these are so cannot but be evident, upon a slight view, to the meanest capacities: for, —",
+        "items": [
+          {
+            "marker": "1.",
+            "text": "He tells us that \"there may be a breach of union with respect to the catholic church upon other considerations;\" not that there may be a breach of the union of the catholic church."
+          },
+          {
+            "marker": "2.",
+            "text": "That there is a bond binding men to the exercise of ordinances; so there is, binding man to all holiness; —and yet he denies the vilest profane persons to break that bond or this union."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula",
+          "introductory-punctuation"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "long-final-item"
+        ],
+        "whitelist_key": "EPUB/ch036.xhtml#p1114-syllabus-the-reader-must-pardon-me-for-producing-and-insisting-on-these-things"
+      },
+      {
+        "key": "EPUB/ch045.xhtml#p1350-syllabus-as-it-should-seem-an-opinion-opposite-unto-this-notion-of-national",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch045.xhtml",
+        "anchor_index": 1350,
+        "item_range": "p1351-p1353",
+        "anchor": " In the meantime, let them pass at their own proper rate and value, which the stamp of civil authority hath put upon them. What is farther discoursed by the author on this subject, proceeding no farther but why may it not be so and so, we are not concerned in.",
+        "items": [
+          {
+            "marker": "3.",
+            "text": "Pages 23, 24, there is a distribution of all dissenters into two parties: —"
+          },
+          {
+            "marker": "(1.)",
+            "text": "Such as say, \"That although they are in a state of separation from our church, yet this separation is no sin.\""
+          },
+          {
+            "marker": "(2.)",
+            "text": "Such as say, \"That a state of separation would be sin, but, notwithstanding their meeting in different places, yet they are not in a state of separation.\""
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 3,
+        "announced_count": null,
+        "positive_reasons": [
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "expository-whereby",
+          "inconsistent-sequence"
+        ],
+        "whitelist_key": "EPUB/ch045.xhtml#p1350-syllabus-as-it-should-seem-an-opinion-opposite-unto-this-notion-of-national"
+      },
+      {
+        "key": "EPUB/ch045.xhtml#p1364-syllabus-2-that-the-rule-here-intended-is-not-the-rule-of-charity",
+        "action": "likely_false_positive",
+        "file": "EPUB/ch045.xhtml",
+        "anchor_index": 1364,
+        "item_range": "p1365-p1366",
+        "anchor": "e things wherein they who agree in the foundation are differently minded or otherwise than one another. But, 3. This was a standing rule for agreement and uniformity in practice in church order and worship, which the apostles had given and delivered unto them.",
+        "items": [
+          {
+            "marker": "4.",
+            "text": "That this rule they did not give only as apostles, but as governors of the church, as appears from Acts 15:5 15."
+          },
+          {
+            "marker": "5.",
+            "text": "Wherefore, what the apostles so did, that any church hath power to do, and ought to do, namely, to establish a rule of all practice in their communion."
+          }
+        ],
+        "marker_family": "arabic",
+        "item_count": 2,
+        "announced_count": null,
+        "positive_reasons": [
+          "sequential-marker-family",
+          "count-category-formula"
+        ],
+        "hard_exclusions": [
+          "developed-item",
+          "long-final-item"
+        ],
+        "whitelist_key": "EPUB/ch045.xhtml#p1364-syllabus-2-that-the-rule-here-intended-is-not-the-rule-of-charity"
+      }
+    ],
+    "whitelisted_syllabus_anchor_candidates": []
+  },
+  "enumerator_integrity": {
+    "pdf_marker_count": 80,
+    "epub_marker_count": 80,
+    "missing_marker_count": 0,
+    "missing_markers": [],
+    "excess_marker_count": 0,
+    "excess_markers": [],
+    "orphan_candidate_count": 2,
+    "orphan_candidates": [
+      {
+        "file": "EPUB/ch023.xhtml",
+        "marker": "(2.)",
+        "family": "paren_decimal",
+        "context": "(2.) That doing so, in the course of our lives we manifest and declare a principle that is utterly inconsistent with the belief of those truths which outwardly we profess; or, —"
+      },
+      {
+        "file": "EPUB/ch042.xhtml",
+        "marker": "[16]",
+        "family": "bracket_decimal",
+        "context": "Nor did I, as is pretended, plead for their presbyterian way in the year [16]46; all the ministers almost in the county of Essex know the contrary, one especially, being a man of great ability and moderation of spirit, and for his knowledge in those things"
+      }
+    ]
+  },
+  "repeated_windows": [
+    {
+      "phrase": "not fear the lord god hath spoken who can but",
+      "count": 3
+    },
+    {
+      "phrase": "fear the lord god hath spoken who can but prophesy",
+      "count": 3
+    },
+    {
+      "phrase": "remember them which have the rule over you who have",
+      "count": 3
+    },
+    {
+      "phrase": "them which have the rule over you who have spoken",
+      "count": 3
+    },
+    {
+      "phrase": "which have the rule over you who have spoken unto",
+      "count": 3
+    },
+    {
+      "phrase": "have the rule over you who have spoken unto you",
+      "count": 3
+    },
+    {
+      "phrase": "the rule over you who have spoken unto you the",
+      "count": 3
+    },
+    {
+      "phrase": "rule over you who have spoken unto you the word",
+      "count": 3
+    },
+    {
+      "phrase": "over you who have spoken unto you the word of",
+      "count": 3
+    },
+    {
+      "phrase": "you who have spoken unto you the word of god",
+      "count": 3
+    },
+    {
+      "phrase": "prayer was made without ceasing of the church unto god",
+      "count": 3
+    },
+    {
+      "phrase": "was made without ceasing of the church unto god for",
+      "count": 3
+    },
+    {
+      "phrase": "made without ceasing of the church unto god for him",
+      "count": 3
+    },
+    {
+      "phrase": "let us consider one another to provoke unto love and",
+      "count": 3
+    },
+    {
+      "phrase": "exhorting one another and so much the more as ye",
+      "count": 3
+    }
+  ],
+  "greek_hebrew_word_coverage": {
+    "pdf_greek_word_count": 1038,
+    "epub_greek_word_count": 1056,
+    "pdf_greek_unique_words": 609,
+    "epub_greek_unique_words": 625,
+    "greek_word_coverage_ratio": 1.0,
+    "pdf_hebrew_word_count": 12,
+    "epub_hebrew_word_count": 12,
+    "pdf_hebrew_unique_words": 10,
+    "epub_hebrew_unique_words": 10,
+    "hebrew_word_coverage_ratio": 1.0,
+    "missing_greek_word_samples": [],
+    "missing_hebrew_word_samples": []
+  },
+  "greek_hebrew_clause_fidelity": {
+    "greek_clauses_checked": 59,
+    "missing_greek_clause_count": 0,
+    "missing_greek_clauses": [],
+    "hebrew_clauses_checked": 0,
+    "missing_hebrew_clause_count": 0,
+    "missing_hebrew_clauses": []
+  },
+  "latin_word_coverage": {
+    "pdf_latin_word_count": 2127,
+    "epub_latin_word_count": 2181,
+    "epub_tagged_latin_word_count": 1423,
+    "pdf_latin_unique_words": 1278,
+    "epub_latin_unique_words": 1287,
+    "epub_tagged_unique_words": 858,
+    "latin_word_coverage_ratio": 0.9944,
+    "latin_tagging_ratio": 0.6525,
+    "missing_latin_word_samples": [],
+    "untagged_latin_word_samples": [
+      {
+        "word": "populi",
+        "epub": 8,
+        "tagged": 0
+      },
+      {
+        "word": "apollos",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "regulate",
+        "epub": 7,
+        "tagged": 0
+      },
+      {
+        "word": "metropolis",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "cenchrea",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "judea",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "hoc",
+        "epub": 11,
+        "tagged": 5
+      },
+      {
+        "word": "aen",
+        "epub": 6,
+        "tagged": 0
+      },
+      {
+        "word": "prelate",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "rigor",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "demonstrandum",
+        "epub": 5,
+        "tagged": 0
+      },
+      {
+        "word": "aquila",
+        "epub": 5,
+        "tagged": 1
+      },
+      {
+        "word": "priscilla",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "affectionate",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "paroecia",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "caecilianus",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "quo",
+        "epub": 5,
+        "tagged": 1
+      },
+      {
+        "word": "bohemia",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "quis",
+        "epub": 6,
+        "tagged": 2
+      },
+      {
+        "word": "merito",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "mayor",
+        "epub": 4,
+        "tagged": 0
+      },
+      {
+        "word": "fate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "divino",
+        "epub": 4,
+        "tagged": 1
+      },
+      {
+        "word": "commensurate",
+        "epub": 3,
+        "tagged": 0
+      },
+      {
+        "word": "galatia",
+        "epub": 3,
+        "tagged": 0
+      }
+    ]
+  },
+  "latin_clause_fidelity": {
+    "latin_clauses_checked": 197,
+    "missing_latin_clause_count": 0,
+    "missing_latin_clauses": []
+  },
+  "latin_translation_coverage": {
+    "tagged_latin_runs_count": 374,
+    "translated_latin_runs_count": 155,
+    "latin_translation_ratio": 0.4144,
+    "untranslated_latin_samples": [
+      {
+        "phrase": "Medio tutissimus"
+      },
+      {
+        "phrase": "Sixtus Senensis"
+      },
+      {
+        "phrase": "in causa facili"
+      },
+      {
+        "phrase": "bonum oritur ex integris"
+      },
+      {
+        "phrase": "ecclesia: puto propterea quia"
+      },
+      {
+        "phrase": "contra ecclesiam"
+      },
+      {
+        "phrase": "facturos esse particulas; et"
+      },
+      {
+        "phrase": "Christo non tantam"
+      },
+      {
+        "phrase": "ecclesia magnas"
+      },
+      {
+        "phrase": "non qua itur, sed qua eundum est"
+      },
+      {
+        "phrase": "Consuetudo sine veritate est vetustas erroris"
+      },
+      {
+        "phrase": "Scinditur incertum studia in contraria vulgus"
+      },
+      {
+        "phrase": "altare contra altare"
+      },
+      {
+        "phrase": "peregrinatur, diversatur"
+      },
+      {
+        "phrase": "fallor est"
+      },
+      {
+        "phrase": "et eodem"
+      },
+      {
+        "phrase": "solo congregationis delectari dissidio"
+      },
+      {
+        "phrase": "dissidium congregationis"
+      },
+      {
+        "phrase": "ad populum phaleras"
+      },
+      {
+        "phrase": "das finem"
+      }
+    ]
+  },
+  "modern_notes_quality": {
+    "manifest_found": true,
+    "generated_at": "2026-07-06T04:27:13",
+    "unresolved_modern_references": 0,
+    "untranslated_substantial_foreign_passages": 0,
+    "unenriched_legacy_footnotes": 0,
+    "summary": {
+      "total_items": 77,
+      "body_translation_popups": 41,
+      "body_citation_popups": 16,
+      "footnote_enrichments": 18,
+      "unresolved_modern_references": 0,
+      "untranslated_substantial_foreign_passages": 0,
+      "unenriched_legacy_footnotes": 0
+    },
+    "samples": [
+      {
+        "id": "df1d6c252728f449",
+        "scope": "body",
+        "chapter": "A Survey of the Second Chapter.",
+        "cid": "ch050",
+        "paragraph_index": 30,
+        "action": "none",
+        "confidence": "medium",
+        "source": "BODY_TRANSLATIONS",
+        "exact_text": "Haec est mea sententia de Messia, seu rege illo promisso, et haec est mea religio, quam coram vobis ingenue profiteor.",
+        "owen_translated_or_paraphrased": true,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Owen appears to translate or paraphrase this passage nearby and no high-confidence modern reference was isolated.",
+        "word_count": 20
+      },
+      {
+        "id": "45042bb07f43ea1b",
+        "scope": "body",
+        "chapter": "A Survey of the Sixth Chapter.",
+        "cid": "ch054",
+        "paragraph_index": 45,
+        "action": "none",
+        "confidence": "medium",
+        "source": "BODY_TRANSLATIONS",
+        "exact_text": "Nobis nihil ex nostro arbitrio indulgere licet; sed nec eligere quod aliquis de arbitrio suo induxerit. Apostolos Domini habemus authores, qui nec ipsi quicquam ex suo arbitrio quod inducerent elegerunt; sed acceptam a Christo disciplinam, fideliter nationibus assignaverunt;",
+        "owen_translated_or_paraphrased": true,
+        "modern_reference": null,
+        "translation_text": null,
+        "note_html": null,
+        "reason": "Owen appears to translate or paraphrase this passage nearby and no high-confidence modern reference was isolated.",
+        "word_count": 38
+      }
+    ]
+  },
+  "ages_artifact_check": {
+    "ages_artifact_count": 0,
+    "ages_artifacts": []
+  },
+  "analysis_extraction_check": {
+    "flat_analysis_count": 0,
+    "flat_analyses": []
+  },
+  "font_config_check": {
+    "font_issue_count": 0,
+    "font_issues": []
+  },
+  "unused_whitelist_text_integrity": {},
+  "limits": {
+    "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
+  }
+}

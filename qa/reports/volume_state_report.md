@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-07-05T22:36:12Z
+Generated: 2026-07-06T03:08:37Z
 
 ## Summary
 
@@ -10,10 +10,10 @@ Generated: 2026-07-05T22:36:12Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 13 | 39.4 | itc-galliard | 5 |  99.89 |  97.44 |  100.0 |  95.58 | 0 | 0 | FULL |
-| 2 | 11 | 25.7 | adobe-carlson-pro | 1 |  99.96 |  100.0 |  100.0 |  99.85 | 0 | 0 | FULL |
-| 3 | 1 | 25.1 | adobe-garamond-pro | 4 |  99.97 |  100.0 |  100.0 |   99.9 | 0 | 0 | FULL |
-| 4 | 12 | 16.5 | centaur | 3 |  99.93 |  99.92 |  100.0 |  99.75 | 0 | 0 | FULL |
+| 1 | 11 | 25.7 | adobe-carlson-pro | 1 |  99.96 |  100.0 |  100.0 |  99.85 | 0 | 0 | FULL |
+| 2 | 1 | 25.1 | adobe-garamond-pro | 4 |  99.97 |  100.0 |  100.0 |   99.9 | 0 | 0 | FULL |
+| 3 | 12 | 16.5 | centaur | 3 |  99.93 |  99.92 |  100.0 |  99.75 | 0 | 0 | FULL |
+| 4 | 13 | 15.5 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.44 | 0 | 0 | FULL |
 | 5 | 15 | 15.4 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.46 | 0 | 0 | FULL |
 | 6 | 9 | 15.0 | im-fell-english | 3 |  99.93 |  100.0 |  100.0 |  99.26 | 0 | 0 | FULL |
 | 7 | 14 | 14.4 | brill-font | 2 |  99.87 |  100.0 |  100.0 |  99.66 | 0 | 0 | FULL |
@@ -156,30 +156,7 @@ Generated: 2026-07-05T22:36:12Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume 13 — Need: 39.4 (👌 Fair) — Rank 6
-
-- **Body font:** itc-galliard
-- **Source type:** ages_pdf
-- **Treatises:** 5
-- **QA level:** FULL
-- **convert.py:** Yes (330 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.89
-- **Greek coverage:** 97.44
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 95.58
-- **Latin tagging:** 69.44
-- **Latin translation:** 46.44
-- **Citations:** total=18, unresolved=0
-- **Splits:** 0
-- **Regressions:** 0
-- **Heal readiness blockers:** 10
-- **Heal readiness review debt:** 16
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** 
-
-### Volume h4 — Need: 39.1 (👌 Fair) — Rank 7
+### Volume h4 — Need: 39.1 (👌 Fair) — Rank 6
 
 - **Body font:** libertinus
 - **Source type:** epub2
@@ -202,7 +179,7 @@ Generated: 2026-07-05T22:36:12Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations; 🔍 Review OCR anomalies
 
-### Volume h3 — Need: 32.9 (👌 Fair) — Rank 8
+### Volume h3 — Need: 32.9 (👌 Fair) — Rank 7
 
 - **Body font:** bembo
 - **Source type:** epub2
@@ -225,7 +202,7 @@ Generated: 2026-07-05T22:36:12Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 11 — Need: 25.7 (👌 Fair) — Rank 9
+### Volume 11 — Need: 25.7 (👌 Fair) — Rank 8
 
 - **Body font:** adobe-carlson-pro
 - **Source type:** ages_pdf
@@ -248,7 +225,7 @@ Generated: 2026-07-05T22:36:12Z
 - **Unmatched quotes:** 0
 - **Recommended:** 🔍 Review OCR anomalies
 
-### Volume 1 — Need: 25.1 (👌 Fair) — Rank 10
+### Volume 1 — Need: 25.1 (👌 Fair) — Rank 9
 
 - **Body font:** adobe-garamond-pro
 - **Source type:** ages_pdf
@@ -271,7 +248,7 @@ Generated: 2026-07-05T22:36:12Z
 - **Unmatched quotes:** 0
 - **Recommended:** resolve_modern_references; translate_substantial_foreign_passages
 
-### Volume 12 — Need: 16.5 (✅ Good) — Rank 11
+### Volume 12 — Need: 16.5 (✅ Good) — Rank 10
 
 - **Body font:** centaur
 - **Source type:** ages_pdf
@@ -290,6 +267,29 @@ Generated: 2026-07-05T22:36:12Z
 - **Regressions:** 1
 - **Heal readiness blockers:** 3
 - **Heal readiness review debt:** 17
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 13 — Need: 15.5 (✅ Good) — Rank 11
+
+- **Body font:** itc-galliard
+- **Source type:** ages_pdf
+- **Treatises:** 5
+- **QA level:** FULL
+- **convert.py:** Yes (360 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.94
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.44
+- **Latin tagging:** 65.25
+- **Latin translation:** 41.44
+- **Citations:** total=18, unresolved=0
+- **Splits:** 2
+- **Regressions:** 0
+- **Heal readiness blockers:** 7
+- **Heal readiness review debt:** 5
 - **Suspected anomalies:** 0
 - **Unmatched quotes:** 0
 - **Recommended:** 

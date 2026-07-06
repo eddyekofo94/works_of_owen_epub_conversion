@@ -2254,8 +2254,14 @@ FOOTNOTE_TRANSLATIONS = {
     "v13_fn1": (
         "<strong>Translation:</strong> &ldquo;The ends of the ages.&rdquo;"
     ),
+    "v13_fn17": (
+        "<strong>Modern Citation:</strong> Sixtus of Siena, <em>Bibliotheca Sancta</em>, Book 2."
+    ),
     "v13_fn25": (
         "<strong>Translation:</strong> &ldquo;In his treatise on the Priesthood of Christ, against the Arminians, Socinians, and Papists, not yet published.&rdquo;"
+    ),
+    "v13_fn27": (
+        "<strong>Modern Citation:</strong> Richard Hooker, <em>Of the Laws of Ecclesiastical Polity</em>, Book 5."
     ),
     "v13_fn31": (
         "<strong>Translation:</strong> &ldquo;Upon which things, may you deign to look with a propitious and serene countenance, and hold them accepted, just as you deigned [to accept] the gifts of your righteous servant Abel, and the sacrifice of our patriarch Abraham;&rdquo;"
@@ -2277,6 +2283,12 @@ FOOTNOTE_TRANSLATIONS = {
     ),
     "v13_fn42": (
         "<strong>Translation:</strong> &ldquo;That assembly of Christians which alone in the world shines with regenerated people is the church; only the assembly of Christians subject to the pope shines with regenerated people; among them alone are those who work miracles. Therefore.&rdquo;"
+    ),
+    "v13_fn46": (
+        "<strong>Modern Citation:</strong> Julius Caesar, <em>Commentarii de Bello Gallico</em> (Commentaries on the Gallic War), Book 6, Chapter 13.<br/><strong>Translation:</strong> &ldquo;If any private or public person has not stood by their decree, they forbid him from sacrifices. This punishment among them is most severe. Those who are so interdicted are counted among the impious and criminal; all withdraw from them, avoid their approach and conversation, lest they receive any harm from contact with them; nor is justice rendered to them when they seek it, nor is any honor shared with them. Over all these Druids one presides, who has supreme authority among them. When he dies, if one of the rest is pre-eminent in dignity, he succeeds; but if several are equal, the matter is decided by the vote of the Druids, and sometimes they even contend for leadership by arms.&rdquo;"
+    ),
+    "v13_fn69": (
+        "<strong>Modern Citation:</strong> Statute of Six Articles, 31 Henry VIII c.14 (1539), commonly called the &ldquo;Bloody Statute,&rdquo; formally <em>An Act Abolishing Diversity in Opinions</em>."
     ),
     "v10_fn81": (
         "<strong>Modern Citation:</strong> Gregory the Great, <em>Moralia in Job</em>, VI.11.<br/><strong>Translation:</strong> &ldquo;Many do the will of God when they strive to avoid it, and by resisting they unwittingly comply with the divine counsel.&rdquo;"

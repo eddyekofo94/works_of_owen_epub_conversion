@@ -1,0 +1,156 @@
+{
+  "volume": "13",
+  "generated_at": "2026-07-06T02:39:17Z",
+  "need": 15.5,
+  "need_gate": false,
+  "strict_ready": false,
+  "blocker_count": 8,
+  "review_debt_count": 5,
+  "blockers": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB",
+      "severity": "blocker"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+      "severity": "blocker"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+      "severity": "blocker"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+      "severity": "blocker"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements",
+      "severity": "blocker"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+      "severity": "blocker"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication",
+      "severity": "blocker"
+    },
+    {
+      "code": "source_text_or_conversion_changes",
+      "message": "Source-text or conversion-affecting files have uncommitted changes and must be explicitly reported before readiness.",
+      "severity": "blocker",
+      "value": 3,
+      "samples": [
+        {
+          "status": "M",
+          "path": "scripts/translation_db.py"
+        },
+        {
+          "status": "M",
+          "path": "volumes/v13/convert.py"
+        },
+        {
+          "status": "M",
+          "path": "volumes/v13/intermediate/volume_13.json"
+        }
+      ]
+    }
+  ],
+  "review_debt": [
+    {
+      "code": "syllabus_anchor_candidates",
+      "message": "Some introduced scholastic syllabus runs appear unflattened or need triage",
+      "severity": "review_debt"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "Latin tagging ratio 65.25% is below 99.00%; verify no Latin text is missing.",
+      "severity": "review_debt",
+      "value": 0.6525,
+      "samples": [
+        {
+          "word": "populi",
+          "epub": 8,
+          "tagged": 0
+        },
+        {
+          "word": "apollos",
+          "epub": 7,
+          "tagged": 0
+        },
+        {
+          "word": "regulate",
+          "epub": 7,
+          "tagged": 0
+        },
+        {
+          "word": "metropolis",
+          "epub": 6,
+          "tagged": 0
+        },
+        {
+          "word": "cenchrea",
+          "epub": 6,
+          "tagged": 0
+        }
+      ]
+    },
+    {
+      "code": "low_latin_translation",
+      "message": "Latin translation ratio 41.44% is below 99.00%; verify no Latin text is missing.",
+      "severity": "review_debt",
+      "value": 0.4144,
+      "samples": [
+        {
+          "phrase": "Medio tutissimus"
+        },
+        {
+          "phrase": "Sixtus Senensis"
+        },
+        {
+          "phrase": "in causa facili"
+        },
+        {
+          "phrase": "bonum oritur ex integris"
+        },
+        {
+          "phrase": "ecclesia: puto propterea quia"
+        }
+      ]
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: low_latin_tagging"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: low_latin_translation_coverage"
+    }
+  ],
+  "inline_modern_note_leaks": [],
+  "source_text_or_conversion_changes": [
+    {
+      "status": "M",
+      "path": "scripts/translation_db.py"
+    },
+    {
+      "status": "M",
+      "path": "volumes/v13/convert.py"
+    },
+    {
+      "status": "M",
+      "path": "volumes/v13/intermediate/volume_13.json"
+    }
+  ]
+}

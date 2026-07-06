@@ -1,0 +1,26 @@
+{
+  "volume": "13",
+  "total_words_audited": 297328,
+  "total_anomalies_count": 1,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "Obj. 2. \"Men are apt to pride themselves in their gifts, and flatter themselves in their performances, so that let them ...",
+        "description": "Paragraph has unmatched double quotes (count: 1)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "Obj. 2. \"Men are apt to pride themselves in their gifts, and flatter themselves in their performances, so that let them ..."
+        ]
+      }
+    ]
+  },
+  "unused_whitelist_anomalies": {}
+}

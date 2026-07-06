@@ -921,236 +921,8 @@
     ]
   },
   {
-    "vol": "13",
-    "rank": 6,
-    "score": 39.4,
-    "need": 39.4,
-    "grade": "fair",
-    "qa_level": "FULL",
-    "coverage": 99.89,
-    "greek_coverage": 97.44,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 95.58,
-    "latin_tagging": 69.44,
-    "latin_translation": 46.44,
-    "total_citations": 18,
-    "unresolved_citations": 0,
-    "splits": 0,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "heal_readiness": {
-      "blockers": [
-        {
-          "code": "greek_coverage_below_threshold",
-          "message": "Greek coverage 97.44% is below 99.00%.",
-          "severity": "blocker",
-          "value": 0.9744
-        },
-        {
-          "code": "latin_coverage_below_threshold",
-          "message": "Latin word coverage 95.58% is below 99.00%.",
-          "severity": "blocker",
-          "value": 0.9558
-        },
-        {
-          "code": "weak_page_coverage",
-          "message": "Some PDF pages have no strong text-window match in the EPUB",
-          "severity": "blocker"
-        },
-        {
-          "code": "dense_source_window_loss",
-          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
-          "severity": "blocker"
-        },
-        {
-          "code": "suspicious_large_number_starts",
-          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
-          "severity": "blocker"
-        },
-        {
-          "code": "roman_heading_candidates",
-          "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements",
-          "severity": "blocker"
-        },
-        {
-          "code": "enumerator_sequence_candidates",
-          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
-          "severity": "blocker"
-        },
-        {
-          "code": "repeated_windows",
-          "message": "Repeated word windows may indicate ghost-layer duplication",
-          "severity": "blocker"
-        },
-        {
-          "code": "missing_greek_clauses",
-          "message": "Some dense Greek passages from the PDF are missing from the EPUB",
-          "severity": "blocker"
-        },
-        {
-          "code": "missing_latin_clauses",
-          "message": "Some dense Latin passages from the PDF are missing from the EPUB",
-          "severity": "blocker"
-        }
-      ],
-      "review_debt": [
-        {
-          "code": "low_latin_tagging",
-          "message": "Latin tagging ratio 69.44% is below 99.00%; verify no Latin text is missing.",
-          "severity": "review_debt",
-          "value": 0.6944,
-          "samples": [
-            {
-              "word": "populi",
-              "epub": 8,
-              "tagged": 0
-            },
-            {
-              "word": "apollos",
-              "epub": 7,
-              "tagged": 0
-            },
-            {
-              "word": "regulate",
-              "epub": 7,
-              "tagged": 0
-            },
-            {
-              "word": "metropolis",
-              "epub": 6,
-              "tagged": 0
-            },
-            {
-              "word": "cenchrea",
-              "epub": 6,
-              "tagged": 0
-            }
-          ]
-        },
-        {
-          "code": "low_latin_translation",
-          "message": "Latin translation ratio 46.44% is below 99.00%; verify no Latin text is missing.",
-          "severity": "review_debt",
-          "value": 0.4644,
-          "samples": [
-            {
-              "phrase": "Medio tutissimus"
-            },
-            {
-              "phrase": "Sixtus Senensis"
-            },
-            {
-              "phrase": "in causa facili"
-            },
-            {
-              "phrase": "bonum oritur ex integris"
-            },
-            {
-              "phrase": "ecclesia: puto propterea quia"
-            }
-          ]
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: k\u03cd\u03c1\u03b9\u03b1\u03b9 \u03b4\u03cc\u03be\u03b1\u03b9 in Christian religion"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: Dum pluit in terras, ut possint sole"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Now, three ways may a man receive"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Motives to the observance of this rule are"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Explication III. The greatness of the work"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Let motives hereunto be"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Now, to a right performance of this duty"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Motives to this duty are"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Now, to a close adhering to the church"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Motives hereunto are"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Now, admonition is twofold"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: These and the like things being duly weighed"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Thus, in general, to take a view of some particular passages"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: The reasonableness of this gospel institution is manifested by the Holy Ghost"
-        }
-      ],
-      "blocker_count": 10,
-      "review_debt_count": 16,
-      "ready": false
-    },
-    "anomalies_count": 0,
-    "unmatched_quotes": 0,
-    "font": "itc-galliard",
-    "treatises": 5,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": []
-  },
-  {
     "vol": "h4",
-    "rank": 7,
+    "rank": 6,
     "score": 39.1,
     "need": 39.1,
     "grade": "fair",
@@ -1344,7 +1116,7 @@
   },
   {
     "vol": "h3",
-    "rank": 8,
+    "rank": 7,
     "score": 32.9,
     "need": 32.9,
     "grade": "fair",
@@ -1533,7 +1305,7 @@
   },
   {
     "vol": "11",
-    "rank": 9,
+    "rank": 8,
     "score": 25.7,
     "need": 25.7,
     "grade": "fair",
@@ -1825,7 +1597,7 @@
   },
   {
     "vol": "1",
-    "rank": 10,
+    "rank": 9,
     "score": 25.1,
     "need": 25.1,
     "grade": "fair",
@@ -2297,7 +2069,7 @@
   },
   {
     "vol": "12",
-    "rank": 11,
+    "rank": 10,
     "score": 16.5,
     "need": 16.5,
     "grade": "good",
@@ -2498,6 +2270,150 @@
     "unmatched_quotes": 0,
     "font": "centaur",
     "treatises": 3,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
+    "vol": "13",
+    "rank": 11,
+    "score": 15.5,
+    "need": 15.5,
+    "grade": "good",
+    "qa_level": "FULL",
+    "coverage": 99.94,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.44,
+    "latin_tagging": 65.25,
+    "latin_translation": 41.44,
+    "total_citations": 18,
+    "unresolved_citations": 0,
+    "splits": 2,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "weak_page_coverage",
+          "message": "Some PDF pages have no strong text-window match in the EPUB",
+          "severity": "blocker"
+        },
+        {
+          "code": "dense_source_window_loss",
+          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+          "severity": "blocker"
+        },
+        {
+          "code": "paragraph_split_candidates",
+          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+          "severity": "blocker"
+        },
+        {
+          "code": "suspicious_large_number_starts",
+          "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+          "severity": "blocker"
+        },
+        {
+          "code": "roman_heading_candidates",
+          "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements",
+          "severity": "blocker"
+        },
+        {
+          "code": "enumerator_sequence_candidates",
+          "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+          "severity": "blocker"
+        },
+        {
+          "code": "repeated_windows",
+          "message": "Repeated word windows may indicate ghost-layer duplication",
+          "severity": "blocker"
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "syllabus_anchor_candidates",
+          "message": "Some introduced scholastic syllabus runs appear unflattened or need triage",
+          "severity": "review_debt"
+        },
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 65.25% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.6525,
+          "samples": [
+            {
+              "word": "populi",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "apollos",
+              "epub": 7,
+              "tagged": 0
+            },
+            {
+              "word": "regulate",
+              "epub": 7,
+              "tagged": 0
+            },
+            {
+              "word": "metropolis",
+              "epub": 6,
+              "tagged": 0
+            },
+            {
+              "word": "cenchrea",
+              "epub": 6,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 41.44% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.4144,
+          "samples": [
+            {
+              "phrase": "Medio tutissimus"
+            },
+            {
+              "phrase": "Sixtus Senensis"
+            },
+            {
+              "phrase": "in causa facili"
+            },
+            {
+              "phrase": "bonum oritur ex integris"
+            },
+            {
+              "phrase": "ecclesia: puto propterea quia"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_tagging"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        }
+      ],
+      "blocker_count": 7,
+      "review_debt_count": 5,
+      "ready": false
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "itc-galliard",
+    "treatises": 5,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": []

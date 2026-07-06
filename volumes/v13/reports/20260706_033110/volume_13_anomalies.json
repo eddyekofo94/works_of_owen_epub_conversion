@@ -1,0 +1,42 @@
+{
+  "volume": "13",
+  "total_words_audited": 297321,
+  "total_anomalies_count": 1,
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": [
+      {
+        "target": "Obj. 2. \"Men are apt to pride themselves in their gifts, and flatter themselves in their performances, so that let them ...",
+        "description": "Paragraph has unmatched double quotes (count: 3)",
+        "chapter": "Chapter 8.",
+        "contexts": [
+          "Obj. 2. \"Men are apt to pride themselves in their gifts, and flatter themselves in their performances, so that let them ..."
+        ]
+      }
+    ]
+  },
+  "unused_whitelist_anomalies": {
+    "Mixed-Case Capitalization Errors": [
+      "ChurchPeace"
+    ],
+    "Structural Nesting Sequence Jumps": [
+      "12."
+    ],
+    "Unmatched Quotation Marks": [
+      "We are so parts of him, of his mystical body, that we and he become thereby, as it were, one Christ: \"For as the body is one",
+      "Obscurius dixerunt prophetae de Christo",
+      "l. That they were the only church of Christ",
+      "1 . There is no necessity; for,\" saith he, \"he confesses the commonwealth",
+      "SIR, I HAVE considered the discourses sent me",
+      "I rest your most; obliged servant in Jesus Christ, our common Master",
+      "Chapter 4:7, \"We have this treasure"
+    ]
+  }
+}

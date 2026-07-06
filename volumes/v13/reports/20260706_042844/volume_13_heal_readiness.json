@@ -1,0 +1,300 @@
+{
+  "volume": "13",
+  "generated_at": "2026-07-06T02:09:47Z",
+  "need": 23.1,
+  "need_gate": false,
+  "strict_ready": false,
+  "blocker_count": 17,
+  "review_debt_count": 19,
+  "blockers": [
+    {
+      "code": "epub_audit_warnings",
+      "message": "EPUB audit warnings remain.",
+      "severity": "blocker",
+      "value": 1
+    },
+    {
+      "code": "unresolved_modern_references",
+      "message": "Unresolved modern references remain.",
+      "severity": "blocker",
+      "value": 2
+    },
+    {
+      "code": "untranslated_substantial_foreign_passages",
+      "message": "Substantial foreign passages remain untranslated.",
+      "severity": "blocker",
+      "value": 2
+    },
+    {
+      "code": "unenriched_legacy_footnotes",
+      "message": "Legacy footnotes remain unenriched.",
+      "severity": "blocker",
+      "value": 4
+    },
+    {
+      "code": "unresolved_anomalies",
+      "message": "Text anomalies remain unless specifically verified and whitelisted.",
+      "severity": "blocker",
+      "value": 1
+    },
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB",
+      "severity": "blocker"
+    },
+    {
+      "code": "dense_source_window_loss",
+      "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
+      "severity": "blocker"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
+      "severity": "blocker"
+    },
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations",
+      "severity": "blocker"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements",
+      "severity": "blocker"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage",
+      "severity": "blocker"
+    },
+    {
+      "code": "repeated_windows",
+      "message": "Repeated word windows may indicate ghost-layer duplication",
+      "severity": "blocker"
+    },
+    {
+      "code": "unresolved_modern_references",
+      "message": "Modern notes manifest contains unresolved main-body reference candidates.",
+      "severity": "blocker"
+    },
+    {
+      "code": "untranslated_substantial_foreign_passages",
+      "message": "Modern notes manifest contains substantial foreign passages without a high-confidence translation popup.",
+      "severity": "blocker"
+    },
+    {
+      "code": "unenriched_legacy_footnotes",
+      "message": "Modern notes manifest contains existing source footnotes needing editorial enrichment.",
+      "severity": "blocker"
+    },
+    {
+      "code": "bug_regression_over_budget",
+      "message": "Untagged Greek characters exceeds its budget.",
+      "severity": "blocker",
+      "value": {
+        "observed": 134,
+        "budget": 55
+      },
+      "samples": [
+        {
+          "file": "EPUB/ch027.xhtml",
+          "text": "Δοῦλον Κυρίου οὐ δεῖ μάχεσθαι."
+        },
+        {
+          "file": "EPUB/ch027.xhtml",
+          "text": "Δεῖ τὸν ἐπίσκοπον ἀνέγκλητον εῖναι, ὡς Θεοῦ οἰκονόμον, μὴ αὐθάδη, μὴ ὀργίλον, μὴ πάροινον, μὴ πλήκτην, μὴ αἰσχροκερδῆ."
+        },
+        {
+          "file": "EPUB/ch046.xhtml",
+          "text": "Οὐδὲν ἄτερ γραφῆς."
+        }
+      ]
+    },
+    {
+      "code": "source_text_or_conversion_changes",
+      "message": "Source-text or conversion-affecting files have uncommitted changes and must be explicitly reported before readiness.",
+      "severity": "blocker",
+      "value": 2,
+      "samples": [
+        {
+          "status": "M",
+          "path": "volumes/v13/convert.py"
+        },
+        {
+          "status": "M",
+          "path": "volumes/v13/intermediate/volume_13.json"
+        }
+      ]
+    }
+  ],
+  "review_debt": [
+    {
+      "code": "syllabus_anchor_candidates",
+      "message": "Some introduced scholastic syllabus runs appear unflattened or need triage",
+      "severity": "review_debt"
+    },
+    {
+      "code": "low_latin_tagging",
+      "message": "Latin tagging ratio 65.25% is below 99.00%; verify no Latin text is missing.",
+      "severity": "review_debt",
+      "value": 0.6525,
+      "samples": [
+        {
+          "word": "populi",
+          "epub": 8,
+          "tagged": 0
+        },
+        {
+          "word": "apollos",
+          "epub": 7,
+          "tagged": 0
+        },
+        {
+          "word": "regulate",
+          "epub": 7,
+          "tagged": 0
+        },
+        {
+          "word": "metropolis",
+          "epub": 6,
+          "tagged": 0
+        },
+        {
+          "word": "cenchrea",
+          "epub": 6,
+          "tagged": 0
+        }
+      ]
+    },
+    {
+      "code": "low_latin_translation",
+      "message": "Latin translation ratio 41.44% is below 99.00%; verify no Latin text is missing.",
+      "severity": "review_debt",
+      "value": 0.4144,
+      "samples": [
+        {
+          "phrase": "Medio tutissimus"
+        },
+        {
+          "phrase": "Sixtus Senensis"
+        },
+        {
+          "phrase": "in causa facili"
+        },
+        {
+          "phrase": "bonum oritur ex integris"
+        },
+        {
+          "phrase": "ecclesia: puto propterea quia"
+        }
+      ]
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.paragraph_splits: kύριαι δόξαι in Christian religion"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.paragraph_splits: Dum pluit in terras, ut possint sole"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Now, three ways may a man receive"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Motives to the observance of this rule are"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Explication III. The greatness of the work"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Let motives hereunto be"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Now, to a right performance of this duty"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Motives to this duty are"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Now, to a close adhering to the church"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Motives hereunto are"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Now, admonition is twofold"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: These and the like things being duly weighed"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: Thus, in general, to take a view of some particular passages"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "text_integrity.inline_structural_markers: The reasonableness of this gospel institution is manifested by the Holy Ghost"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: low_latin_tagging"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: low_latin_translation_coverage"
+    }
+  ],
+  "inline_modern_note_leaks": [],
+  "source_text_or_conversion_changes": [
+    {
+      "status": "M",
+      "path": "volumes/v13/convert.py"
+    },
+    {
+      "status": "M",
+      "path": "volumes/v13/intermediate/volume_13.json"
+    }
+  ]
+}

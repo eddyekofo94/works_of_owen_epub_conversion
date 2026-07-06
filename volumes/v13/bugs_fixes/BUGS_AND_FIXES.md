@@ -117,10 +117,17 @@ See previous sessions.
 
 
 
+
+
+
+
+
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-06-11T23:44:05.447405+00:00
+**Last run:** 2026-07-06T02:36:08.208301+00:00
 **EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v13/output/volume_13.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -131,13 +138,13 @@ Reports:
 | Check | Result |
 |-------|--------|
 | OPF version | 3.0 |
-| XHTML files | 86 |
-| Spine items | 85 |
-| Embedded fonts | 26 |
-| NAV links | 87 |
-| Greek chars / untagged | 5778 / 0 |
+| XHTML files | 85 |
+| Spine items | 84 |
+| Embedded fonts | 22 |
+| NAV links | 86 |
+| Greek chars / untagged | 5764 / 0 |
 | Hebrew chars / untagged | 87 / 0 |
-| Noteref links / endnote anchors | 220 / 220 |
+| Noteref links / endnote anchors | 211 / 211 |
 | AGES boilerplate hits | 0 |
 | Possible Beta Code files | 0 |
 | Escaped language-tag files | 0 |
@@ -162,10 +169,19 @@ Reports:
 
 
 
+
+
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-06-30T16:29:12.500701+00:00
+**Last run:** 2026-07-06T02:36:55.924878+00:00
 **Status:** WARN (8 warnings)
 
 Reports:
@@ -175,11 +191,11 @@ Reports:
 | Check | Result |
 |-------|--------|
 | PDF pages | 749 |
-| EPUB text files | 84 |
-| EPUB paragraphs/headings | 2220 |
-| Approximate PDF-to-EPUB word coverage | 0.9989 |
-| Weak page matches | 4 |
-| Dense source windows checked | 33423 |
+| EPUB text files | 83 |
+| EPUB paragraphs/headings | 2237 |
+| Approximate PDF-to-EPUB word coverage | 0.9994 |
+| Weak page matches | 3 |
+| Dense source windows checked | 33469 |
 | Missing dense source-window pages | 40 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
@@ -189,39 +205,40 @@ Reports:
 | Bottom-of-page body windows checked | 679 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 0 |
-| Structural starts excluded from split warnings | 111 |
-| Short fragments | 32 |
+| Possible faulty paragraph splits | 2 |
+| Structural starts excluded from split warnings | 117 |
+| Short fragments | 35 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
+| Syllabus-anchor candidates | 8 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
-| Suspicious large-number starts | 4 |
+| Suspicious large-number starts | 3 |
 | Roman heading candidates | 4 |
 | Overlong heading candidates | 0 |
 | Front-matter heading/body candidates | 0 |
 | Repeated word windows | 15 |
 | PDF enumerator markers | 80 |
-| EPUB enumerator markers | 90 |
+| EPUB enumerator markers | 80 |
 | Missing enumerator marker forms | 0 |
 | Enumerator sequence candidates | 2 |
-| PDF Greek words / EPUB Greek words | 1038 / 1030 |
-| Greek word coverage ratio | 0.9744 |
+| PDF Greek words / EPUB Greek words | 1038 / 1056 |
+| Greek word coverage ratio | 1.0 |
 | PDF Hebrew words / EPUB Hebrew words | 12 / 12 |
 | Hebrew word coverage ratio | 1.0 |
-| Missing Greek clauses | 1 |
+| Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
 
 Warnings requiring triage:
 
 - `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
 - `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
+- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
+- `syllabus_anchor_candidates`: Some introduced scholastic syllabus runs appear unflattened or need triage
 - `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
 - `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
 - `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 - `repeated_windows`: Repeated word windows may indicate ghost-layer duplication
-- `missing_greek_clauses`: Some dense Greek passages from the PDF are missing from the EPUB
-- `missing_latin_clauses`: Some dense Latin passages from the PDF are missing from the EPUB
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->
