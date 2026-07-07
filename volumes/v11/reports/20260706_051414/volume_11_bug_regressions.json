@@ -1,35 +1,172 @@
 {
   "volume": "11",
-  "status": "pass",
+  "status": "warn",
   "epub_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_audit.json",
   "text_integrity_audit": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_text_integrity.json",
   "output_json": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_bug_regressions.json",
   "output_markdown": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/bugs_fixes/volume_11_bug_regressions.md",
   "extra_warning_codes": {
-    "text_integrity": [],
+    "text_integrity": [
+      "unenriched_legacy_footnotes"
+    ],
     "epub": []
   },
   "text_integrity_checks": [
     {
       "label": "Possible faulty paragraph splits",
-      "observed": 0,
+      "observed": 5,
       "budget": 150,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch005.xhtml",
+          "previous": "k to deal so harshly with some of them with whom he hath to do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo .\" 3",
+          "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "To the same purpose, with application to a particular person, doth that great and holy doctor discourse, De Doctrin. Christiana, lib. 3 cap. 33. ◇",
+          "next": "Saith he,"
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": " \"Nulla,\" saith he, \"quidem nobis incumbit necessitas, ut in tanta exemplarium et editionum varietate et inconstantia, nihil uspiam Ignatio interpolatum ant adsutum affirmemus .\" †",
+          "next": "And, indeed, the foisted passages in many places are so evident, yea shameful, that no man who is not resolved to say any thing, without care of proof or truth, can once appear in "
+        },
+        {
+          "file": "EPUB/ch006.xhtml",
+          "previous": "make the matter more clear, cap. 13, he disputes, that \" Auxilium sine quo nullus perseverat, et per quod quilibet perseverat, est Spiritus Sanctus, divina bonitas et voluntas .\" †",
+          "next": "Every cause of bringing sinful man to God is called by them \"auxilium.' In these three, \" Spiritus Sanctus, divina bonitas, et voluntas ,\" he compriseth the chief causes of perseve"
+        },
+        {
+          "file": "EPUB/ch009.xhtml",
+          "previous": "cally insinuates into their understandings and affections, for their establishment, is an exurgency § of that description of himself which he gives, verse 28: from his eternity , —",
+          "next": "He is \"the everlasting God;\" from his power, — He is \"the Creator of the ends of the earth;\" from his unchangeableness, — \"He fainteth not,\" he waxeth not weary, and therefore ther"
+        }
+      ]
     },
     {
       "label": "Inline structural marker candidates",
-      "observed": 0,
+      "observed": 1,
       "budget": 8,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "file": "EPUB/ch024.xhtml",
+          "text": "and defile themselves daily with the pollutions of the world. This consequence, according to the principles and known tenets of our adversaries, is legitimate and true, inasmuch as they hold 'That true believers may fall so foul and so far that the church, acc"
+        }
+      ]
     },
     {
       "label": "Syllabus-anchor candidates",
-      "observed": 0,
+      "observed": 3,
       "budget": 16,
       "status": "ok",
-      "samples": []
+      "samples": [
+        {
+          "key": "EPUB/ch006.xhtml#p374-syllabus-but-yet-as-there-was-none-of-those-but-one-way-or",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch006.xhtml",
+          "anchor_index": 374,
+          "item_range": "p375-p378",
+          "anchor": " their divinity. So that notwithstanding all their corruptions, these ensuing principles passed currently amongst the most eminent of them as to the doctrine under consideration, which continue in credit with many of their sophistical successors to this day: —",
+          "items": [
+            {
+              "marker": "1.",
+              "text": "That perseverance is a grace of God, bestowed according to predestination, or election, on men; that is, that God gives it to believers that are predestinated and elected."
+            },
+            {
+              "marker": "2.",
+              "text": "That on whomsoever the grace of perseverance is bestowed, they do persevere to the end; and it is impossible in some sense that they should otherwise do."
+            },
+            {
+              "marker": "3.",
+              "text": "That none who are not predestinate, what grace soever they may be made partakers of in this world, shall constantly continue to the end."
+            },
+            {
+              "marker": "4.",
+              "text": "That no believer can by his own strength or power (incited or stirred up by what manlike or rational considerations soever) persevere in the faith, the grace of perseverance being a gift of God."
+            }
+          ],
+          "marker_family": "arabic",
+          "item_count": 4,
+          "announced_count": null,
+          "positive_reasons": [
+            "sequential-marker-family",
+            "count-category-formula",
+            "introductory-formula",
+            "introductory-punctuation"
+          ],
+          "hard_exclusions": [
+            "developed-item"
+          ],
+          "whitelist_key": "EPUB/ch006.xhtml#p374-syllabus-but-yet-as-there-was-none-of-those-but-one-way-or"
+        },
+        {
+          "key": "EPUB/ch006.xhtml#p376-syllabus-2-that-on-whomsoever-the-grace-of-perseverance-is-bestowed-they-do",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch006.xhtml",
+          "anchor_index": 376,
+          "item_range": "p377-p378",
+          "anchor": "2. That on whomsoever the grace of perseverance is bestowed, they do persevere to the end; and it is impossible in some sense that they should otherwise do.",
+          "items": [
+            {
+              "marker": "3.",
+              "text": "That none who are not predestinate, what grace soever they may be made partakers of in this world, shall constantly continue to the end."
+            },
+            {
+              "marker": "4.",
+              "text": "That no believer can by his own strength or power (incited or stirred up by what manlike or rational considerations soever) persevere in the faith, the grace of perseverance being a gift of God."
+            }
+          ],
+          "marker_family": "arabic",
+          "item_count": 2,
+          "announced_count": null,
+          "positive_reasons": [
+            "sequential-marker-family",
+            "count-category-formula",
+            "parallel-opening-word"
+          ],
+          "hard_exclusions": [
+            "developed-item",
+            "long-final-item"
+          ],
+          "whitelist_key": "EPUB/ch006.xhtml#p376-syllabus-2-that-on-whomsoever-the-grace-of-perseverance-is-bestowed-they-do"
+        },
+        {
+          "key": "EPUB/ch008.xhtml#p492-syllabus-as-to-what-is-on-the-other-side-affirmed-that-believers-may",
+          "action": "likely_false_positive",
+          "file": "EPUB/ch008.xhtml",
+          "anchor_index": 492,
+          "item_range": "p493-p494",
+          "anchor": "rit, and to be made naked of the habit of grace or new nature bestowed on them. That, and that only, whereunto this effect is ascribed is sin. Now, there are two ways whereby sin may be supposed to produce such effects in reference to the souls of believers: —",
+          "items": [
+            {
+              "marker": "1.",
+              "text": "Efficiently , by a reaction in the same subject, as frequent acts of vice will debilitate and overthrow an acquired habit whereunto it is opposite."
+            },
+            {
+              "marker": "2.",
+              "text": "Meritoriously , by provoking the Lord to take them away in a way of punishment; for of all punishment sin is the morally procuring cause."
+            }
+          ],
+          "marker_family": "arabic",
+          "item_count": 2,
+          "announced_count": 2,
+          "positive_reasons": [
+            "sequential-marker-family",
+            "count-category-formula",
+            "introductory-formula",
+            "introductory-punctuation",
+            "announced-count-matches-run"
+          ],
+          "hard_exclusions": [
+            "developed-item",
+            "expository-whereby"
+          ],
+          "whitelist_key": "EPUB/ch008.xhtml#p492-syllabus-as-to-what-is-on-the-other-side-affirmed-that-believers-may"
+        }
+      ]
     },
     {
       "label": "Repeated word windows",

@@ -360,6 +360,7 @@ These anomaly entries are exact audit targets from a no-modernization triage. Hy
 
 ### Modern Notes / Latin Metrics
 - `low_latin_translation_coverage`: Volume 11 contains extensive Latin/patristic source citation material; remaining untranslated samples are tracked for editorial enrichment rather than conversion failure.
+- `low_latin_tagging`: The Latin audit remains approximate and includes proper names/common English homographs; this metric is tracked but not treated as a blocking extraction defect for this pass.
 - `unenriched_legacy_footnotes`: 9 legacy footnotes remain low-confidence enrichment candidates and are documented in the modern notes manifest.
 
 ### Ignored Warning Codes

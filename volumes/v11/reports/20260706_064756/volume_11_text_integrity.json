@@ -2,10 +2,23 @@
   "volume": "11",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/input/owen-v11.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-07-06T07:22:12.983059+00:00",
-  "status": "pass",
-  "warning_count": 0,
-  "warnings": [],
+  "generated_at": "2026-07-06T06:46:57.506993+00:00",
+  "status": "warn",
+  "warning_count": 3,
+  "warnings": [
+    {
+      "code": "suspicious_large_number_starts",
+      "message": "Some paragraphs begin with large bare numbers that may be broken reference continuations"
+    },
+    {
+      "code": "roman_heading_candidates",
+      "message": "Some roman numeral headings appear in body paragraphs instead of centered heading elements"
+    },
+    {
+      "code": "enumerator_sequence_candidates",
+      "message": "Some EPUB enumerators look like possible sequence jumps and need triage"
+    }
+  ],
   "pdf": {
     "page_count": 815,
     "skipped_detected": [
@@ -871,7 +884,11 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {},
+  "unused_whitelist_text_integrity": {
+    "ignored_warnings": [
+      "low_latin_tagging"
+    ]
+  },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

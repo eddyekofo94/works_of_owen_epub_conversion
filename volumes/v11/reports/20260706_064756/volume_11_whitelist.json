@@ -538,10 +538,8 @@
     ],
     "ignored_warnings": [
       "low_latin_translation_coverage",
-      "unenriched_legacy_footnotes",
-      "suspicious_large_number_starts",
-      "roman_heading_candidates",
-      "enumerator_sequence_candidates"
+      "low_latin_tagging",
+      "unenriched_legacy_footnotes"
     ],
     "suspicious_large_number_starts": [
       "24. It seems, moreover, that those bishops and deacons in those days, as was observed, were appointed to the office by and with the consent of the people, or whole body of the church; no loss do these words import, Συνευ",

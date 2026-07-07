@@ -2,10 +2,27 @@
   "volume": "11",
   "pdf_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/input/owen-v11.pdf",
   "epub_path": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-07-06T07:22:12.983059+00:00",
-  "status": "pass",
-  "warning_count": 0,
-  "warnings": [],
+  "generated_at": "2026-07-06T03:14:08.692618+00:00",
+  "status": "warn",
+  "warning_count": 4,
+  "warnings": [
+    {
+      "code": "weak_page_coverage",
+      "message": "Some PDF pages have no strong text-window match in the EPUB"
+    },
+    {
+      "code": "paragraph_split_candidates",
+      "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks"
+    },
+    {
+      "code": "syllabus_anchor_candidates",
+      "message": "Some introduced scholastic syllabus runs appear unflattened or need triage"
+    },
+    {
+      "code": "unenriched_legacy_footnotes",
+      "message": "Modern notes manifest contains existing source footnotes needing editorial enrichment."
+    }
+  ],
   "pdf": {
     "page_count": 815,
     "skipped_detected": [
@@ -32,7 +49,7 @@
   },
   "word_coverage": {
     "pdf_content_tokens": 296711,
-    "epub_content_tokens": 297902,
+    "epub_content_tokens": 297903,
     "coverage_ratio": 0.9988,
     "missing_word_samples": [
       {
@@ -81,13 +98,104 @@
   },
   "page_coverage": {
     "pages_checked": 794,
-    "weak_page_count": 0,
-    "weak_pages": []
+    "weak_page_count": 1,
+    "weak_pages": [
+      {
+        "page": 791,
+        "hit_ratio": 0.333,
+        "sample": "to the apostle's purpose his aim being only to draw those wherein they are like them and conformable to them neither is it questioned"
+      }
+    ]
   },
   "dense_source_window_integrity": {
-    "dense_windows_checked": 32477,
-    "missing_dense_window_pages": 0,
-    "missing_dense_windows": []
+    "dense_windows_checked": 32387,
+    "missing_dense_window_pages": 21,
+    "missing_dense_windows": [
+      {
+        "page": 127,
+        "sample": "hereunto was that of the pelagians and semi pelagians which austin opposed in sundry"
+      },
+      {
+        "page": 128,
+        "sample": "much of ancient candid truth in opposition to the pelagians and semi pelagians preserved"
+      },
+      {
+        "page": 129,
+        "sample": "it its principles and causes its relation to the good will of the father"
+      },
+      {
+        "page": 131,
+        "sample": "note by the editor see page f7 to remove from the preceding preface the"
+      },
+      {
+        "page": 135,
+        "sample": "of judging professors to be true believers matthew considered what is the rule of"
+      },
+      {
+        "page": 136,
+        "sample": "unchangeableness and faithfulness of god jude corinthians isaiah jeremiah 31-34 isaiah hebrews 10-12 corinthians"
+      },
+      {
+        "page": 137,
+        "sample": "was known upon the earth revelation jude matthew thessalonians peter 20-22 timothy john hebrews"
+      },
+      {
+        "page": 139,
+        "sample": "gracious promises wherein their refreshments and reserves under such temptations do lie romans corinthians"
+      },
+      {
+        "page": 140,
+        "sample": "do give the least hint to such an assertion romans psalm isaiah 7-10 peter"
+      },
+      {
+        "page": 141,
+        "sample": "corinthians ephesians romans john the temptation arising from the apostasy of hypocrites is neither"
+      },
+      {
+        "page": 142,
+        "sample": "things as they are in themselves are low weak and confused corinthians james yet"
+      },
+      {
+        "page": 143,
+        "sample": "in believing the holy ghost so plentifully witnesseth peter nor do live up to"
+      },
+      {
+        "page": 144,
+        "sample": "in the beginning of its confidence to the end job psalm 5-9 isaiah 28-81"
+      },
+      {
+        "page": 145,
+        "sample": "thing of the greatest evidence and clearness as corinthians galatians neither is any thing"
+      },
+      {
+        "page": 147,
+        "sample": "glorious attributes there is an actual permanency or sameness hebrews nothing in him is"
+      },
+      {
+        "page": 148,
+        "sample": "notwithstanding the seeming contrary engagement of romans from what proportion or analogy this argument"
+      },
+      {
+        "page": 150,
+        "sample": "shall hereafter be fully declared hebrews samuel peter kings corinthians matthew mark kings hosea"
+      },
+      {
+        "page": 151,
+        "sample": "are incompatible with truth or grace psalm 34-36 job kings ezekiel titus but if"
+      },
+      {
+        "page": 152,
+        "sample": "account in love without dissimulation romans doubtless the disciples of christ were bound to"
+      },
+      {
+        "page": 153,
+        "sample": "be deceived the works of the flesh being manifest galatians and he that worketh"
+      },
+      {
+        "page": 154,
+        "sample": "in respect of its fountain termed the faith of god's elect romans acts ephesians"
+      }
+    ]
   },
   "front_matter_toc_integrity": {
     "front_toc_pages_checked": 0,
@@ -173,21 +281,59 @@
         "reason": "font-encoded Greek/Hebrew window"
       }
     ],
-    "missing_top_window_count": 0,
-    "missing_top_windows": []
+    "missing_top_window_count": 1,
+    "missing_top_windows": [
+      {
+        "page": 792,
+        "window": "thirdly it is no punishment at all to hypocrites to be under no possibility",
+        "sample": "\"Thirdly, It is no punishment at all to hypocrites to be under no possibility of being 'renewed again by repentance:' nay, in case they"
+      }
+    ]
   },
   "bottom_of_page_integrity": {
     "bottom_windows_checked": 799,
     "bottom_windows_usable": 791,
     "skipped_bottom_window_count": 0,
     "skipped_bottom_windows": [],
-    "missing_bottom_window_count": 0,
-    "missing_bottom_windows": []
+    "missing_bottom_window_count": 1,
+    "missing_bottom_windows": [
+      {
+        "page": 791,
+        "window": "the proving of the assertion laid down to be proved by it he adds",
+        "sample": "that this pretended \"pregnant reason\" is as barren as the former to the proving of the assertion laid down to be proved by it. He adds, —"
+      }
+    ]
   },
   "paragraph_integrity": {
     "paragraphs_checked": 2086,
-    "split_candidate_count": 0,
-    "split_candidates": [],
+    "split_candidate_count": 5,
+    "split_candidates": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "k to deal so harshly with some of them with whom he hath to do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo .\" 3",
+        "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "To the same purpose, with application to a particular person, doth that great and holy doctor discourse, De Doctrin. Christiana, lib. 3 cap. 33. ◇",
+        "next": "Saith he,"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": " \"Nulla,\" saith he, \"quidem nobis incumbit necessitas, ut in tanta exemplarium et editionum varietate et inconstantia, nihil uspiam Ignatio interpolatum ant adsutum affirmemus .\" †",
+        "next": "And, indeed, the foisted passages in many places are so evident, yea shameful, that no man who is not resolved to say any thing, without care of proof or truth, can once appear in "
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "make the matter more clear, cap. 13, he disputes, that \" Auxilium sine quo nullus perseverat, et per quod quilibet perseverat, est Spiritus Sanctus, divina bonitas et voluntas .\" †",
+        "next": "Every cause of bringing sinful man to God is called by them \"auxilium.' In these three, \" Spiritus Sanctus, divina bonitas, et voluntas ,\" he compriseth the chief causes of perseve"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "cally insinuates into their understandings and affections, for their establishment, is an exurgency § of that description of himself which he gives, verse 28: from his eternity , —",
+        "next": "He is \"the everlasting God;\" from his power, — He is \"the Creator of the ends of the earth;\" from his unchangeableness, — \"He fainteth not,\" he waxeth not weary, and therefore ther"
+      }
+    ],
     "structural_start_exclusions": 251,
     "short_fragment_count": 29,
     "short_fragments": [
@@ -310,8 +456,13 @@
     ],
     "adjacent_duplicate_count": 0,
     "adjacent_duplicates": [],
-    "inline_structural_candidate_count": 0,
-    "inline_structural_candidates": [],
+    "inline_structural_candidate_count": 1,
+    "inline_structural_candidates": [
+      {
+        "file": "EPUB/ch024.xhtml",
+        "text": "and defile themselves daily with the pollutions of the world. This consequence, according to the principles and known tenets of our adversaries, is legitimate and true, inasmuch as they hold 'That true believers may fall so foul and so far that the church, acc"
+      }
+    ],
     "reference_continuation_split_count": 0,
     "reference_continuation_splits": [],
     "citation_continuation_split_count": 0,
@@ -342,12 +493,11 @@
     "overlong_heading_candidates": [],
     "frontmatter_heading_body_candidate_count": 0,
     "frontmatter_heading_body_candidates": [],
-    "syllabus_anchor_candidate_count": 0,
-    "syllabus_anchor_candidates": [],
-    "whitelisted_syllabus_anchor_candidates": [
+    "syllabus_anchor_candidate_count": 3,
+    "syllabus_anchor_candidates": [
       {
         "key": "EPUB/ch006.xhtml#p374-syllabus-but-yet-as-there-was-none-of-those-but-one-way-or",
-        "action": "whitelisted",
+        "action": "likely_false_positive",
         "file": "EPUB/ch006.xhtml",
         "anchor_index": 374,
         "item_range": "p375-p378",
@@ -386,7 +536,7 @@
       },
       {
         "key": "EPUB/ch006.xhtml#p376-syllabus-2-that-on-whomsoever-the-grace-of-perseverance-is-bestowed-they-do",
-        "action": "whitelisted",
+        "action": "likely_false_positive",
         "file": "EPUB/ch006.xhtml",
         "anchor_index": 376,
         "item_range": "p377-p378",
@@ -417,7 +567,7 @@
       },
       {
         "key": "EPUB/ch008.xhtml#p492-syllabus-as-to-what-is-on-the-other-side-affirmed-that-believers-may",
-        "action": "whitelisted",
+        "action": "likely_false_positive",
         "file": "EPUB/ch008.xhtml",
         "anchor_index": 492,
         "item_range": "p493-p494",
@@ -448,7 +598,8 @@
         ],
         "whitelist_key": "EPUB/ch008.xhtml#p492-syllabus-as-to-what-is-on-the-other-side-affirmed-that-believers-may"
       }
-    ]
+    ],
+    "whitelisted_syllabus_anchor_candidates": []
   },
   "enumerator_integrity": {
     "pdf_marker_count": 254,
@@ -708,7 +859,7 @@
   },
   "modern_notes_quality": {
     "manifest_found": true,
-    "generated_at": "2026-07-06T06:01:11",
+    "generated_at": "2026-07-06T05:12:39",
     "unresolved_modern_references": 0,
     "untranslated_substantial_foreign_passages": 0,
     "unenriched_legacy_footnotes": 9,
@@ -871,7 +1022,72 @@
     "font_issue_count": 0,
     "font_issues": []
   },
-  "unused_whitelist_text_integrity": {},
+  "unused_whitelist_text_integrity": {
+    "dense_source_window_loss": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      23,
+      27,
+      40,
+      41,
+      46,
+      100
+    ],
+    "bottom_of_page_text_loss": [
+      48
+    ],
+    "top_of_page_text_loss": [
+      40
+    ],
+    "paragraph_splits": [
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "ilochus] who, spurned by faithless Lycambes [attacked his enemies]\"] gener, Aut acer hostis Bupalo .\" [Translated: Translation: \"a fierce enemy to Bupalus\" (Horace, Epodes 6.14)] 3",
+        "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "nslation: \"I grant him genius, I grant him eloquence and industry\"] fidem et veritatem utinam coluisset .\" [Translated: Translation: \"would that he had cultivated [better things]\"]",
+        "next": "The course and condition of my procedure with him, whether it be such as becometh Christian modesty and sobriety, with an allowance of those ingredients of zeal in contending for t"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "tically insinuates into their understandings and affections, for their establishment, is an exurgency of that description of himself which he gives, verse 28: from his eternity , —",
+        "next": "He is \"the everlasting God;\" from his power, — He is \"the Creator of the ends of the earth;\" from his unchangeableness, — \"He fainteth not,\" he waxeth not weary, and therefore ther"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "nce between regenerate and unregenerate persons in their being drawn away by lust — Farther description of him who is drawn away by lust, and of the difference formerly mentioned —",
+        "next": "Of lust's enticing — How far this may befall regenerate men — To do sin, Romans 7, what it intendeth — Lust conceiving, wherein it consists — Of the bringing forth of sin, and how "
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "motions and suggestions within you, and you shall be filled with him;' that is, 'Ye shall find him moving and assisting you upon all occasions at a higher and more glorious rate.'\"",
+        "next": "Ans. 1. What this \"joining of our wills to the will of the Spirit\" is was in part manifested before. The \"will of the Spirit\" is that we be mortified. His motions hereunto are his "
+      }
+    ],
+    "ignored_warnings": [
+      "weak_pages",
+      "paragraph_splits",
+      "repeated_windows",
+      "missing_enumerator_markers",
+      "low_latin_tagging",
+      "low_latin_word_coverage"
+    ]
+  },
   "limits": {
     "note": "Latin word coverage is approximate. Greek/Hebrew font conversion and editorial punctuation still require targeted review."
   }

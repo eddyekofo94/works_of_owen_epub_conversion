@@ -1,3 +1,36 @@
+# Volume 11 Heal Session Report
+
+- Branch: `heal-v11-20260706`
+- Final Need: **15.2**
+- Project heal threshold: **PASS (<20.0)**
+- Strict by-eye readiness: **BLOCKED**
+- Remaining blocker: 9 unenriched legacy footnotes in the modern-notes manifest
+- Final EPUB audit: PASS, 0 errors, 0 warnings
+- Final text integrity: PASS, 0 warnings, coverage 0.9988
+- Final anomaly count: 0
+- Final bug regression: PASS
+
+## Changed
+
+- Added v11 post-extract cleanup for five clear OCR/markup splits: `_con_ sidered`, `dot.h towards`, `ὅλως f read`, `P _ositive affirmations_`, and `Le _t_ the men`.
+- Regenerated `volumes/v11/intermediate/volume_11.json` and `volumes/v11/output/volume_11.epub`.
+- Updated v11 audit, anomaly, bug-regression, text-integrity, whitelist, and state reports.
+- Archived final reports in this directory.
+
+## Verification
+
+```text
+.venv/bin/python3 volumes/v11/convert.py
+.venv/bin/python3 scripts/audit_epub.py volumes/v11/output/volume_11.epub --out-dir volumes/v11/bugs_fixes
+.venv/bin/python3 scripts/audit_text_integrity.py 11
+.venv/bin/python3 scripts/audit_anomalies.py 11
+.venv/bin/python3 scripts/audit_bug_regressions.py 11
+.venv/bin/python3 scripts/report_volume_state.py --volumes 11 --no-readme
+.venv/bin/python3 -m pytest 'tests/test_bug_regressions.py::test_no_unused_whitelist_entries[11]'
+```
+
+## Whitelist Detail
+
 # Whitelisted Items: Volume 11
 
 *This file explains items that the automated audits flag as warnings, but which human review has determined should be left as-is for Volume 11.*

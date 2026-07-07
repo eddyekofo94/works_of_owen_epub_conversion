@@ -1,7 +1,7 @@
 # Text Integrity Audit: Volume 11
 
-- Status: **PASS**
-- Warnings: 0
+- Status: **WARN**
+- Warnings: 3
 - PDF pages: 815
 - EPUB text files: 30
 - EPUB paragraphs/headings: 2448
@@ -77,6 +77,12 @@
 - Unresolved modern references: 0
 - Untranslated substantial foreign passages: 0
 - Unenriched legacy footnotes: 9
+
+## Warnings
+
+- `suspicious_large_number_starts`: Some paragraphs begin with large bare numbers that may be broken reference continuations
+- `roman_heading_candidates`: Some roman numeral headings appear in body paragraphs instead of centered heading elements
+- `enumerator_sequence_candidates`: Some EPUB enumerators look like possible sequence jumps and need triage
 
 ## Whitelisted Syllabus Anchor Candidates
 

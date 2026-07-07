@@ -1304,300 +1304,8 @@
     ]
   },
   {
-    "vol": "11",
-    "rank": 8,
-    "score": 25.7,
-    "need": 25.7,
-    "grade": "fair",
-    "qa_level": "FULL",
-    "coverage": 99.96,
-    "greek_coverage": 100.0,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 99.85,
-    "latin_tagging": 76.78,
-    "latin_translation": 34.66,
-    "total_citations": 52,
-    "unresolved_citations": 0,
-    "splits": 3,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "heal_readiness": {
-      "blockers": [
-        {
-          "code": "unresolved_anomalies",
-          "message": "Text anomalies remain unless specifically verified and whitelisted.",
-          "severity": "blocker",
-          "value": 206
-        }
-      ],
-      "review_debt": [
-        {
-          "code": "low_latin_tagging",
-          "message": "Latin tagging ratio 76.78% is below 99.00%; verify no Latin text is missing.",
-          "severity": "review_debt",
-          "value": 0.7678,
-          "samples": [
-            {
-              "word": "ergo",
-              "epub": 25,
-              "tagged": 5
-            },
-            {
-              "word": "perpetrate",
-              "epub": 10,
-              "tagged": 0
-            },
-            {
-              "word": "salmasius",
-              "epub": 9,
-              "tagged": 0
-            },
-            {
-              "word": "vedelius",
-              "epub": 8,
-              "tagged": 0
-            },
-            {
-              "word": "predestinate",
-              "epub": 8,
-              "tagged": 0
-            }
-          ]
-        },
-        {
-          "code": "low_latin_translation",
-          "message": "Latin translation ratio 34.66% is below 99.00%; verify no Latin text is missing.",
-          "severity": "review_debt",
-          "value": 0.3466,
-          "samples": [
-            {
-              "phrase": "primi, Deus necessario"
-            },
-            {
-              "phrase": "actum voluntatis circa"
-            },
-            {
-              "phrase": "quia tunc per decimum primi non tentaretur, ergo"
-            },
-            {
-              "phrase": "decimum ipsum tentari non"
-            },
-            {
-              "phrase": "catholicam asserendum est"
-            }
-          ]
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 148"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 150"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 151"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 154"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 155"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 156"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 157"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 162"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 166"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch005.xhtml', 'previous': 'k to deal so harshly with some of them with whom he hath to do. And it is still feared that \"Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo .\" 3', 'next': 'It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,'}"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch010.xhtml', 'previous': 'n, at least before their calling, are as liable to be deceived or seduced as other men. This is their own confession; and Paul says that they were sometimes deceived, [Titus 3:3] \"', 'next': 'Ans. An exception, doubtless, unworthy him that makes it; who, had he not resolved to say all that ever had been said by any to the business in hand, would scarcely, I presume, hav'}"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch014.xhtml', 'previous': ' ever, and yet every present member thereof lose his interest and part in him; yea, the abiding of the Spirit in the apostles themselves was not absolutely promised, [John 15:10] \"', 'next': 'Ans. 1. The design of this discourse is to prove that this promise is not made to believers in general, or those who through the word are brought to believe in Christ in all genera'}"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch022.xhtml', 'previous': 'all moral operations \u2014 [Romans 7:19] -22, opened \u2014 The second, that sin cannot reign in a regenerate person \u2014 The third, that regenerate _persons sin not with their whole consent \u2014', 'next': \"Answer to the argument at the entrance proposed \u2014 Believers never sin with their whole consent and wills \u2014 Mr. G.'s attempt to remove the answer \u2014 His exceptions considered and rem\"}"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch024.xhtml', 'previous': ' The first, of his knowledge of the general course of the Scriptures \u2014 Of the experience of his own heart \u2014 And his observations of the ways of others \u2014 Of his rational abilities \u2014', 'next': \"Ezekiel 18:24, 25, proposed to consideration \u2014 Mr. G.'s sense of this place \u2014 The words opened \u2014 Observations for the opening of the text \u2014 The words farther weighed \u2014 An entrance \"}"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: {'file': 'EPUB/ch024.xhtml', 'previous': 'y that all who died in the wilderness of the children of Israel went to hell and came short of eternal life, and yet they all fell there because of their iniquities. But he adds, \u2014', 'next': 'Sect. 4. \"Again; that which God here threateneth against that double or twofold iniquity of backsliding is opposed to that life which is promised to repentance and perseverance in '}"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: Five leading arguments are adduced in proof of the perseverance of the saints: \u2014 It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6] [James 1:16] -18; [Romans 11:29] [Isaiah 40:27] -31, 44"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: The latter I at present only intend. Saith he, 1. \"I know them;\" 2. \"I give them eternal life;\" 3. \"They shall never perish;\" 4. \"No man shall pluck them out of my hand;\" 5. \"My Father is omnipotent, and hath a sovereignty over all, and he taketh care of them,"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: As to the matter in hand, this is evident by the light of this single consideration, that in such an ecclesiastical body of Christ there are always, or may be, \u2014 and Christ himself, in the rules and laws that he hath given for the government thereof, did suppo"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: That they should be saved by Christ, and yet not washed in his blood, not sanctified by his Spirit (which to be is to be regenerate), is another new notion of the new gospel The countenance which Mr. Goodwin would beg to his doctrine from that of our Savior to"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.inline_structural_markers: The proposition is ready at hand in the words, \"He that is born of God doth not, cannot commit sin.\" The reason of the proposition confirming the truth thereof is twofold: \u2014 1. Because he is born of God; 2. Because His seed, whereof he is so born, remaineth."
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.ignored_warnings: repeated_windows"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: low_latin_translation_coverage"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: suspicious_large_number_starts"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: roman_heading_candidates"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: enumerator_sequence_candidates"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: weak_page_coverage"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: dense_source_window_loss"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: top_of_page_text_loss"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: bottom_of_page_text_loss"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: paragraph_split_candidates"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: inline_structural_markers"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: repeated_windows"
-        }
-      ],
-      "blocker_count": 1,
-      "review_debt_count": 34,
-      "ready": false
-    },
-    "anomalies_count": 206,
-    "unmatched_quotes": 0,
-    "font": "adobe-carlson-pro",
-    "treatises": 1,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": [
-      "review_ocr_anomalies"
-    ]
-  },
-  {
     "vol": "1",
-    "rank": 9,
+    "rank": 8,
     "score": 25.1,
     "need": 25.1,
     "grade": "fair",
@@ -2069,7 +1777,7 @@
   },
   {
     "vol": "12",
-    "rank": 10,
+    "rank": 9,
     "score": 16.5,
     "need": 16.5,
     "grade": "good",
@@ -2276,7 +1984,7 @@
   },
   {
     "vol": "13",
-    "rank": 11,
+    "rank": 10,
     "score": 15.5,
     "need": 15.5,
     "grade": "good",
@@ -2420,7 +2128,7 @@
   },
   {
     "vol": "15",
-    "rank": 12,
+    "rank": 11,
     "score": 15.4,
     "need": 15.4,
     "grade": "good",
@@ -2558,6 +2266,136 @@
     "has_convert_py": true,
     "text_replacements": 2,
     "recommended_actions": []
+  },
+  {
+    "vol": "11",
+    "rank": 12,
+    "score": 15.2,
+    "need": 15.2,
+    "grade": "good",
+    "qa_level": "FULL",
+    "coverage": 99.88,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.84,
+    "latin_tagging": 78.08,
+    "latin_translation": 31.74,
+    "total_citations": 52,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "heal_readiness": {
+      "blockers": [
+        {
+          "code": "unenriched_legacy_footnotes",
+          "message": "Legacy footnotes remain unenriched.",
+          "severity": "blocker",
+          "value": 9
+        }
+      ],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 78.08% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7808,
+          "samples": [
+            {
+              "word": "perpetrate",
+              "epub": 10,
+              "tagged": 0
+            },
+            {
+              "word": "salmasius",
+              "epub": 9,
+              "tagged": 0
+            },
+            {
+              "word": "vedelius",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "co-operate",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "alexandria",
+              "epub": 9,
+              "tagged": 3
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 31.74% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.3174,
+          "samples": [
+            {
+              "phrase": "catena patrum"
+            },
+            {
+              "phrase": "Sancti Sanciti"
+            },
+            {
+              "phrase": "Sancta sanctis"
+            },
+            {
+              "phrase": "actum agere"
+            },
+            {
+              "phrase": "velut amnis"
+            }
+          ]
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: low_latin_translation_coverage"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: unenriched_legacy_footnotes"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: suspicious_large_number_starts"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: roman_heading_candidates"
+        },
+        {
+          "code": "stale_whitelist_entry",
+          "message": "Stale whitelist entry remains and should be cleaned when safe.",
+          "severity": "review_debt",
+          "value": "epub_warnings: enumerator_sequence_candidates"
+        }
+      ],
+      "blocker_count": 1,
+      "review_debt_count": 7,
+      "ready": false
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "adobe-carlson-pro",
+    "treatises": 1,
+    "has_convert_py": true,
+    "text_replacements": 3,
+    "recommended_actions": [
+      "enrich_legacy_footnotes"
+    ]
   },
   {
     "vol": "9",

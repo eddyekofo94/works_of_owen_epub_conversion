@@ -146,6 +146,19 @@ def post_extract_hook(intermediate: dict) -> dict:
         if ch['title'] == 'The Doctrine of the Saints Perseverance':
             ch['is_treatise'] = True
 
+    json_text_replacements = {
+        '_con_ sidered': '_considered_',
+        'dot.h towards': 'doth towards',
+        'ὅλως f read': 'ὅλως read',
+        'P _ositive affirmations_': '_Positive affirmations_',
+        'Le _t_ the men': 'Let the men',
+    }
+    for ch in intermediate.get('chapters', []):
+        raw_text = ch.get('raw_text', '')
+        for target, replacement in json_text_replacements.items():
+            raw_text = raw_text.replace(target, replacement)
+        ch['raw_text'] = raw_text
+
     return intermediate
 
 
@@ -191,6 +204,9 @@ OVERRIDES = {
         "praedestina-tionis": "praedestinationis",
         "I-chabod": "Ichabod",
         "interveni-nces": "interveniences",
+        "_con_ sidered": "_considered_",
+        "dot.h towards": "doth towards",
+        "ὅλως f read": "ὅλως read",
         "[1 John 3:7] 1 John 3:7": "[1 John 3:7]",
         "[1 Corinthians 3:16] 1 Corinthians 3:16": "[1 Corinthians 3:16]",
         "[1 John 4:18] 1 John 4:18": "[1 John 4:18]",
@@ -205,4 +221,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

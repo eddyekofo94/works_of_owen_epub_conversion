@@ -1,0 +1,368 @@
+{
+  "anomalies": {
+    "Hyphenation Anomalies": [],
+    "Punctuation Spacing Blemishes": [],
+    "OCR & Bracket Residues": [],
+    "Mixed-Case Capitalization Errors": [],
+    "Unresolved Citation References": [],
+    "Structural Nesting Sequence Jumps": [],
+    "Invalid Bible References": [],
+    "List Formatting Inconsistencies": [],
+    "Unmatched Quotation Marks": []
+  },
+  "text_integrity": {
+    "skipped_pages": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "skipped_dense_source_windows": [],
+    "weak_pages": [
+      309,
+      335,
+      388,
+      396,
+      466,
+      541,
+      636
+    ],
+    "dense_source_window_loss": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      23,
+      24,
+      25,
+      27,
+      35,
+      36,
+      38,
+      40,
+      41,
+      46,
+      52,
+      64,
+      76,
+      83,
+      92,
+      96,
+      100,
+      107,
+      108,
+      111,
+      114,
+      126
+    ],
+    "bottom_of_page_text_loss": [
+      2,
+      48,
+      158,
+      172,
+      268,
+      314,
+      636
+    ],
+    "top_of_page_text_loss": [
+      40,
+      182,
+      447
+    ],
+    "paragraph_splits": [
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "BY",
+        "next": "John Owen"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "John Owen",
+        "next": "SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL"
+      },
+      {
+        "file": "EPUB/ch001.xhtml",
+        "previous": "SERVANT OF JESUS CHRIST IN THE WORKE OF THE GOSPELL",
+        "next": "OXFORD, PRINTED BY LEON. LICHFIELD PRINTER TO THE UNIVERSITY, FOR TIM. ROBINSON."
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "Your Highness's most humble and most faithful servant",
+        "next": "John Owen"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "John Owen",
+        "next": "TO THE RIGHT WORSHIPFUL, HIS REVERND, LEARNED AND WORTHY FRIENDS AND BRETHREN"
+      },
+      {
+        "file": "EPUB/ch004.xhtml",
+        "previous": "TO THE RIGHT WORSHIPFUL, HIS REVERND, LEARNED AND WORTHY FRIENDS AND BRETHREN",
+        "next": "######"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "ilochus] who, spurned by faithless Lycambes [attacked his enemies]\"] gener, Aut acer hostis Bupalo .\" [Translated: Translation: \"a fierce enemy to Bupalus\" (Horace, Epodes 6.14)] 3",
+        "next": "It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "nslation: \"I grant him genius, I grant him eloquence and industry\"] fidem et veritatem utinam coluisset .\" [Translated: Translation: \"would that he had cultivated [better things]\"]",
+        "next": "The course and condition of my procedure with him, whether it be such as becometh Christian modesty and sobriety, with an allowance of those ingredients of zeal in contending for t"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "st of a crooked and perverse generation, knowing that it is but yet a little while, and he that shall come will come, and will not tarry. Yea, come, Lord Jesus, come. So prays your",
+        "next": "unworthy fellow-laborer and brother in our dear Lord Jesus"
+      },
+      {
+        "file": "EPUB/ch005.xhtml",
+        "previous": "unworthy fellow-laborer and brother in our dear Lord Jesus",
+        "next": "John Owen"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "ople, making it become new Rome, so that the bishop of the church there was to enjoy equal privileges with him whose lot was fallen in the old imperial city. Rut our doctor adds, \u2014",
+        "next": "Sect. 5, \" Illud ex Judaeorum exemplari transcripsisse apostoli videntur; cum Mosaica id lege cautum esset, ut judices et ministri in qualibet civitate ordinarentur , [Deuteronomy "
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "To the same purpose, and with the same confident persuasion, he speaks, Epist. ad Ephesians, [cap. 9]: \u2014",
+        "next": "\u03a1\u03cd\u03c3\u03b5\u03c4\u03b1\u03b9 \u1f51\u03bc\u1fb6\u03c2 \u0399\u03b7\u03c3\u03bf\u1fe6\u03c2 \u03a7\u03c1\u03b9\u03c3\u03c4\u1f78\u03c2 , \u1f41 \u03b6\u03b5\u03bc\u03b5\u03bb\u03b9\u03ce\u03c3\u03b1\u03c2 \u1f51\u03bc\u1fb6\u03c2 \u1f10\u03c0\u1f76 \u03c4\u1f74\u03bd \u03c0\u03ad\u03c4\u03c1\u03b1\u03bd , \u1f60\u03c2 \u03bb\u03af\u03b8\u03bf\u03c5\u03c2 \u1f10\u03ba\u03bb\u03b5\u03ba\u03c4\u03bf\u1f7a\u03c2 \u03b5\u1f50\u03b1\u03c1\u03bc\u03bf\u03bb\u03bf\u03b3\u03bf\u03c5\u03bc\u03ad\u03bd\u03bf\u03c5\u03c2 \u03b5\u1f30\u03c2 \u03bf\u1f30\u03ba\u03bf\u03b4\u03bf\u03bc\u1f74\u03bd \u03b6\u03b5\u03af\u03b1\u03c2 \u03a0\u03b1\u03c4\u03c1\u1f78\u03c2 , \u1f00\u03bd\u03b1\u03c6\u03b5\u03c1\u03bf\u03bc\u03ad\u03bd\u03bf\u03c5\u03c2 \u03b5\u1f30\u03c2 \u03c4\u1f70 \u1f55\u03c8\u03b7 \u03b4\u03b9\u1f70 \u03a7\u03c1\u03b9\u03c3\u03c4\u03bf\u1fe6 , \u03c4\u03bf\u1fe6 \u1f51\u03c0\u1f72\u03c1 "
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "nt with all that are baptized, yet he is never mixed with any that are not worthy; that is, he dwells not with any that obtain not salvation,\" Basil, Lib. de Spir. Sanc. cap. 16; \u2014",
+        "next": "\u039d\u1fe6\u03bd \u03bc\u1f72\u03bd \u03b3\u1f70\u03c1 \u03b5\u1f30 \u03ba\u03b1\u1f76 \u03bc\u1f74 \u1f00\u03bd\u03b1\u03ba\u03ad\u03ba\u03c1\u03b1\u03c4\u03b1\u03b9 \u03c4\u03bf\u1fd6\u03c2 \u1f00\u03bd\u03b1\u03be\u03af\u03bf\u03b9\u03c2 ? \u1f00\u03bb\u03bb\u1f70 \u03bf\u1fe6\u03bd \u03c0\u03b1\u03c1\u03b5\u1fd6\u03bd\u03b1\u03b9 \u03b4\u03bf\u03ba\u03b5\u1fd6 \u03c0\u1ff6\u03c2 \u03c4\u03bf\u1fd6\u03c2 \u1f05\u03c0\u03b1\u03be \u1f10\u03c3\u03c6\u03c1\u03b1\u03b3\u03b9\u03c3\u03bc\u03ad\u03bd\u03bf\u03b9\u03c2 . By that seeming presence of the Holy Ghost with hypocrites that are baptize"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "previous": "of Prosper, De Ingrat., I shall transcribe the 10th chapter, to present to the reader the substance and pith of that treatise, as also the state of the controversy in those days: \u2014",
+        "next": "\u2014 \"Quam sans tides sit vestra patescat, Gratia qua Christi populus sumus, hoc cohibetur Limite vobiscum, et formam hanc adscribitis illi: Ut cunctos vocet ilia quidem, invitetque; "
+      },
+      {
+        "file": "EPUB/ch008.xhtml",
+        "previous": " of many in these days \u2014 The great offense given and taken thereby, with the provision made for its removal \u2014 The nature of that offense and temptation thence arising considered _\u2014",
+        "next": "Answer to some arguings of Mr. G., chap. 9, from thence against the truth proposed \u2014 The use of trials and shakings \u2014 Grounds of believers' assurance that they are so \u2014 The same fa"
+      },
+      {
+        "file": "EPUB/ch009.xhtml",
+        "previous": "tically insinuates into their understandings and affections, for their establishment, is an exurgency of that description of himself which he gives, verse 28: from his eternity , \u2014",
+        "next": "He is \"the everlasting God;\" from his power, \u2014 He is \"the Creator of the ends of the earth;\" from his unchangeableness, \u2014 \"He fainteth not,\" he waxeth not weary, and therefore ther"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "soluteness evinced \u2014 Proved from Isaiah 46:9-11; Psalm 33:9-11; Hebrews 6:17, 18, etc. \u2014 These places explained \u2014 The same truth by sundry reasons and arguments farther confirmed \u2014",
+        "next": "Purpose in God of the continuance of his love and favor to believers manifested by an induction of instances out of Scripture; the first from Romans 8:28 proposed, and farther clea"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": "postle's discourse manifested \u2014 The progress of Mr. G.'s exposition of this place considered \u2014 Whether men love God antecedently to his predestination and their effectual calling \u2014",
+        "next": "To pre-ordain and pre-ordinate different \u2014 No assurance granted of the consolation professed to be intended \u2014 The great uncertainty of the dependence of the acts of God's grace men"
+      },
+      {
+        "file": "EPUB/ch010.xhtml",
+        "previous": " intended \u2014 The great uncertainty of the dependence of the acts of God's grace mentioned on one another \u2014 The efficacy of every one of them resolved finally into the wills of men \u2014",
+        "next": "Whether calling according to God's purpose supposeth a saving answer given to that call \u2014 The affirmative proved, and exceptions given thereto removed \u2014 What obstructions persons c"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "lance of our deliverance by Christ? These evident assertions ate as express and flat contradictions to the evident intendment of the Holy Ghost as any man is able to invent. But, \u2014",
+        "next": "Mr. Goodwin hath many deductions out of the former \"sure and evident\" premises, to prove that this is not a promise of absolute and final perseverance (it is a strange perseverance"
+      },
+      {
+        "file": "EPUB/ch011.xhtml",
+        "previous": "rt, that they shall not depart from me,' may be as well rendered, ' That they may not depart from me;' and so it is said in the verse foregoing, ' That they may fear me for ever.'\"",
+        "next": "Ans. Suppose the words may be thus rendered, what inconvenience will ensue? Either way they evidently and beyond exception design out the end aimed at by God; and when God intends "
+      },
+      {
+        "file": "EPUB/ch013.xhtml",
+        "previous": "e;' in which words of 'hearing' and 'following' him he intimateth or includeth their perseverance, as appeareth by the words immediately following, 'And I give them eternal life.'\"",
+        "next": "Ans. This, I confess, is to the purpose, if it be true; but being so contrary to what hath been (I had almost said universally) received concerning the mind of Christ in this place"
+      },
+      {
+        "file": "EPUB/ch014.xhtml",
+        "previous": "also. That the sealing mentioned depends upon the faith of the sealed is evident, because it is said, 'In whom also, after ye believed, ye were sealed with the Spirit of promise.'\"",
+        "next": "Ans. I dare say there is no honest man that would take it well at the hand of Mr. Goodwin, or any else, that should attempt, by distinctions, or any other way, to alleviate or take"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "of the argument from thence \u2014 The saints' perseverance fully confirmed \u2014 Romans 8:33, 34 at large explained \u2014 Mr. G.'s interpretation of the place in all the parts of it confuted \u2014",
+        "next": "Vain supposals groundlessly interserted into the apostle's discourse \u2014"
+      },
+      {
+        "file": "EPUB/ch016.xhtml",
+        "previous": "Vain supposals groundlessly interserted into the apostle's discourse \u2014",
+        "next": "What Christ intercedes for, for believers farther manifested \u2014 The sum of what is assigned to the intercession of Christ by Mr. G. \u2014 How far it is all from yielding the least conso"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "G.'s arguments against the doctrine of the saints' perseverance \u2014 His sixth argument about the usefulness of the doctrine under consideration to the work of the ministry proposed \u2014",
+        "next": "His proof of the minor proposition considered and answered \u2014 Many pretenders to promote godliness by false doctrines \u2014 Mr. G.'s common interest in this argument \u2014 His proofs of the"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "s arguing discovered \u2014 The doctrine by him opposed mistaken, ignorantly or wilfully \u2014 Objections proposed by Mr. G. to himself to he answered \u2014 The objection as proposed disowned \u2014",
+        "next": "Certainty of the love of God, in what sense a motive to obedience \u2014 The doctrine of apostasy denies the unchangeableness of God's love to believers placeth qualifications in the ro"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "ifications in the room of persons \u2014 How the doctrine of perseverance promiseth the continuance of the love of God to believers \u2014 Certainty of reward encouraging to regular action \u2014",
+        "next": "Promises made to persons qualified, not suspended upon those qualifications \u2014 Means appointed of God for the accomplishment of a determined end certain \u2014 Means not always condition"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "her discussed \u2014 The power ascribed by Mr. G. to men for the strengthening and making willing the Spirit in them considered \u2014 The aptness of the saints to perform, what and whence \u2014",
+        "next": "The opposition they have in them thereunto \u2014 Gospel obedience, how easy \u2014 The conclusion \u2014"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "The opposition they have in them thereunto \u2014 Gospel obedience, how easy \u2014 The conclusion \u2014",
+        "next": "Answer to chap. 13 of his book proposed."
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": "Besides what he relateth of his conquest of it in other places, he addeth, \u2014",
+        "next": "That \"the saints, notwithstanding the possibility of their final falling away, have, or may have, such an assurance of the perpetuity of their standing in the grace and favor of Go"
+      },
+      {
+        "file": "EPUB/ch018.xhtml",
+        "previous": " with him. If he can beat us, not only from Scripture, but from all our spiritual sense and experience, doubtless it is to no purpose to contend any longer with him. Hence, then, \u2014",
+        "next": "He inferreth that \"to abstain from sinning,\" \u2014 that is, sinning customarily and against conscience, so as to endanger the loss of the favor of God, \u2014 \"is no such great mastery, no "
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "Mr. G.'s entrance and preface to his arguments from the apostasy of the saints considered \u2014 The weakness of his first argument \u2014 The import of _it \u2014",
+        "next": "Answer to that first argument \u2014 Doctrine may pretend to give God the glory of being no accepter of persons, and yet be false \u2014 Justification by works of that rank and order \u2014 Accep"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "ife, seeking any thing at the hand of God, but was of another mind, if he understood his own supplications. To what is here urged against this catholic faith of believers, I say, \u2014",
+        "next": "That exhortations are the means of perseverance, inasmuch as by them, in their place and kind, and with them, the Spirit of God effectually works this perseverance, or the matter o"
+      },
+      {
+        "file": "EPUB/ch019.xhtml",
+        "previous": "hreatenings is attempted to be proved by an induction of observations, which, being the sum of all that is spoken to this head, must be transcribed at large, and is as followeth: \u2014",
+        "next": "Sect. 12, \"If the principles of the doctrine we speak of dissolve the efficiency of the said threatenings towards the end for the accomplishment whereof they are given, then they r"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "perations \u2014 [Romans 7:19] Romans 7:19-22, opened \u2014 The second, that sin cannot reign in a regenerate person \u2014 The third, that regenerate _persons sin not with their whole consent \u2014",
+        "next": "Answer to the argument at the entrance proposed \u2014 Believers never sin with their whole consent and wills \u2014 Mr. G.'s attempt to remove the answer \u2014 His exceptions considered and rem"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "elievers how concerned in comminations \u2014_ Threatenings proper to unbelievers for their sins \u2014 Farther objections proposed and removed \u2014 Of the progress of lust in tempting to sin \u2014",
+        "next": "The effect of lust in temptations \u2014 Difference between regenerate and unregenerate persons as to the tempting of lust: 1. In respect of universality;"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "Whether believers may sin out of malice and with deliberation \u2014 Of the state of believers who upon their sin may be excommunicated \u2014 Whether the body of Christ may be dismembered \u2014",
+        "next": "What body of Christ it is that is intended \u2014 Mr. G.'s thoughts to this purpose examined \u2014 Mr. G.'s discourse of the way whereby Christ keeps or may keep his members examined \u2014 Memb"
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "nce between regenerate and unregenerate persons in their being drawn away by lust \u2014 Farther description of him who is drawn away by lust, and of the difference formerly mentioned \u2014",
+        "next": "Of lust's enticing \u2014 How far this may befall regenerate men \u2014 To do sin, Romans 7, what it intendeth \u2014 Lust conceiving, wherein it consists \u2014 Of the bringing forth of sin, and how "
+      },
+      {
+        "file": "EPUB/ch022.xhtml",
+        "previous": "motions and suggestions within you, and you shall be filled with him;' that is, 'Ye shall find him moving and assisting you upon all occasions at a higher and more glorious rate.'\"",
+        "next": "Ans. 1. What this \"joining of our wills to the will of the Spirit\" is was in part manifested before. The \"will of the Spirit\" is that we be mortified. His motions hereunto are his "
+      }
+    ],
+    "inline_structural_markers": [
+      "Five leading arguments are adduced in proof of the perseverance of the saints: \u2014 It is argued, 1. From the divine nature as immutable; under which head the following passages are considered, [Malachi 3:6]; [James 1:16] James 1:16-18; [Romans 11:29] Romans 11:2",
+      "Their quickening is everywhere ascribed to the Spirit that is given unto them; there is not a quickening, a life-giving power, in a quality, a created thing. In the state of nature, besides gracious dispensations and habits in the soul inclining it to that whi",
+      "Sect. 12, \"If the principles of the doctrine we speak of dissolve the efficiency of the said threatenings towards the end for the accomplishment whereof they are given, then they render them unsavory, useless, and vain; but the principles of this doctrine are "
+    ],
+    "repeated_windows": [
+      "both to will and to do of his good pleasure",
+      "law in their inward parts and write it in their",
+      "in their inward parts and write it in their hearts",
+      "all things work together for good to them that love",
+      "he wrought in christ when he raised him from the",
+      "wrought in christ when he raised him from the dead",
+      "will put my law in their inward parts and write",
+      "put my law in their inward parts and write it",
+      "my law in their inward parts and write it in",
+      "in them both to will and to do of his",
+      "to will and to do of his own good pleasure",
+      "depart and the hills be removed but my kindness shall",
+      "the knowledge of his glory in the face of jesus",
+      "knowledge of his glory in the face of jesus christ",
+      "dono perseverantes esse non possint verum etiam ut per hoc",
+      "perseverantes esse non possint verum etiam ut per hoc donum",
+      "esse non possint verum etiam ut per hoc donum non",
+      "non possint verum etiam ut per hoc donum non nisi",
+      "possint verum etiam ut per hoc donum non nisi perseverantes",
+      "verum etiam ut per hoc donum non nisi perseverantes sint",
+      "for if they had been of us they would no",
+      "if they had been of us they would no doubt",
+      "they had been of us they would no doubt have",
+      "had been of us they would no doubt have continued",
+      "been of us they would no doubt have continued with"
+    ],
+    "ignored_warnings": [
+      "weak_pages",
+      "dense_source_window_loss",
+      "top_of_page_text_loss",
+      "bottom_of_page_text_loss",
+      "paragraph_splits",
+      "inline_structural_markers",
+      "repeated_windows",
+      "suspicious_large_number_starts",
+      "roman_heading_candidates",
+      "missing_enumerator_markers",
+      "enumerator_sequence_candidates",
+      "low_latin_translation_coverage",
+      "low_latin_tagging",
+      "low_latin_word_coverage"
+    ],
+    "suspicious_large_number_starts": [
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "24. It seems, moreover, that those bishops and deacons in those days, as was observed, were appointed to the office by and with the consent of the people, or whole body of the church; no loss do these words import, \u03a3\u03c5\u03bd\u03b5\u03c5"
+      },
+      {
+        "file": "EPUB/ch006.xhtml",
+        "text": "30. Paulus tandem et Silas Syriam et Cilieiam peragrantes, ver. 41, cap. 16:4, \u03b4\u03cc\u03b3\u03bc\u03b1\u03c4\u03b1 \u03ba\u03b5\u03ba\u03c1\u03b9\u03bc\u03ad\u03bd\u03b1 \u1f51\u03c0\u1f78 \u03c4\u1ff6\u03bd \u1f00\u03c0\u03bf\u03c3\u03c4\u03cc\u03bb\u03c9\u03bd , singulis elvitatibus observanda tradiderunt, ut quae ad hanc Antiochiae metropolin, ut totidem subordin"
+      }
+    ],
+    "roman_heading_candidates": [
+      {
+        "file": "EPUB/ch007.xhtml",
+        "text": "M. Pacho secured possession of another copy in 1847, which afterwards came under the examination of Mr. Cureton."
+      },
+      {
+        "file": "EPUB/ch015.xhtml",
+        "text": "II. 1. The first signal issue and effect which is ascribed to this indwelling of the Spirit is union; not a personal union with himself, which is impossible."
+      }
+    ]
+  }
+}

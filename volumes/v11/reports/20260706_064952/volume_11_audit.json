@@ -1,6 +1,6 @@
 {
   "epub": "volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-07-06T07:21:22.711143+00:00",
+  "generated_at": "2026-07-06T06:48:46.967872+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -140,6 +140,7 @@
   },
   "unused_whitelist_epub_warnings": [
     "low_latin_translation_coverage",
+    "low_latin_tagging",
     "unenriched_legacy_footnotes",
     "suspicious_large_number_starts",
     "roman_heading_candidates",

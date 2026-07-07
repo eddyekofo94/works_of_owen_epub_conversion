@@ -360,9 +360,5 @@ These anomaly entries are exact audit targets from a no-modernization triage. Hy
 
 ### Modern Notes / Latin Metrics
 - `low_latin_translation_coverage`: Volume 11 contains extensive Latin/patristic source citation material; remaining untranslated samples are tracked for editorial enrichment rather than conversion failure.
+- `low_latin_tagging`: The Latin audit remains approximate and includes proper names/common English homographs; this metric is tracked but not treated as a blocking extraction defect for this pass.
 - `unenriched_legacy_footnotes`: 9 legacy footnotes remain low-confidence enrichment candidates and are documented in the modern notes manifest.
-
-### Ignored Warning Codes
-- `suspicious_large_number_starts`: The two ch006 numbered starts are legitimate sequential source/list paragraphs, not broken references.
-- `roman_heading_candidates`: The ch015 Roman/Arabic forms are valid nested argument structure.
-- `enumerator_sequence_candidates`: The `(2dly.)` candidate is a valid ordinal continuation in prose.

@@ -1,6 +1,6 @@
 # Bug Regression Report: Volume 11
 
-- Status: **PASS**
+- Status: **WARN**
 - EPUB audit: `volume_11_audit.json`
 - Text integrity audit: `volume_11_text_integrity.json`
 
@@ -8,9 +8,9 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 0 | 150 | OK |
-| Inline structural marker candidates | 0 | 8 | OK |
-| Syllabus-anchor candidates | 0 | 16 | OK |
+| Possible faulty paragraph splits | 5 | 150 | OK |
+| Inline structural marker candidates | 1 | 8 | OK |
+| Syllabus-anchor candidates | 3 | 16 | OK |
 | Repeated word windows | 0 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 2 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -64,7 +64,29 @@
 | I WILL/I AM mangles | 0 | 0 | OK |
 | Implemented absent samples | 0 | 0 | OK |
 
+## New Warning Codes
+
+- Text integrity: unenriched_legacy_footnotes
+
 ## Triage Samples
+
+### Possible faulty paragraph splits
+
+- file: EPUB/ch005.xhtml; previous: k to deal so harshly with some of them with whom he hath to do. And it is still feared that "Parata tollit cornua; Qualis Lycambae spretus infido gener, Aut acer hostis Bupalo ." 3; next: It might, indeed, be the more excusable if evident provocation were always ready at hand to be charged with the blame of this procedure, if he said only,
+- file: EPUB/ch006.xhtml; previous: To the same purpose, with application to a particular person, doth that great and holy doctor discourse, De Doctrin. Christiana, lib. 3 cap. 33. ◇; next: Saith he,
+- file: EPUB/ch006.xhtml; previous:  "Nulla," saith he, "quidem nobis incumbit necessitas, ut in tanta exemplarium et editionum varietate et inconstantia, nihil uspiam Ignatio interpolatum ant adsutum affirmemus ." †; next: And, indeed, the foisted passages in many places are so evident, yea shameful, that no man who is not resolved to say any thing, without care of proof or truth, can once appear in 
+- file: EPUB/ch006.xhtml; previous: make the matter more clear, cap. 13, he disputes, that " Auxilium sine quo nullus perseverat, et per quod quilibet perseverat, est Spiritus Sanctus, divina bonitas et voluntas ." †; next: Every cause of bringing sinful man to God is called by them "auxilium.' In these three, " Spiritus Sanctus, divina bonitas, et voluntas ," he compriseth the chief causes of perseve
+- file: EPUB/ch009.xhtml; previous: cally insinuates into their understandings and affections, for their establishment, is an exurgency § of that description of himself which he gives, verse 28: from his eternity , —; next: He is "the everlasting God;" from his power, — He is "the Creator of the ends of the earth;" from his unchangeableness, — "He fainteth not," he waxeth not weary, and therefore ther
+
+### Inline structural marker candidates
+
+- file: EPUB/ch024.xhtml; text: and defile themselves daily with the pollutions of the world. This consequence, according to the principles and known tenets of our adversaries, is legitimate and true, inasmuch as they hold 'That true believers may fall
+
+### Syllabus-anchor candidates
+
+- file: EPUB/ch006.xhtml
+- file: EPUB/ch006.xhtml
+- file: EPUB/ch008.xhtml
 
 ### Lowercase page fragments
 
