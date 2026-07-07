@@ -138,10 +138,12 @@ See previous sessions.
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-07-06T07:21:22.711143+00:00
+**Last run:** 2026-07-07T14:05:14.839944+00:00
 **EPUB:** `volumes/v11/output/volume_11.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
@@ -216,10 +218,14 @@ Reports:
 
 
 
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-07-06T07:22:12.983059+00:00
+**Last run:** 2026-07-07T14:09:37.893673+00:00
 **Status:** PASS (0 warnings)
 
 Reports:

@@ -2590,6 +2590,34 @@ FOOTNOTE_TRANSLATIONS = {
 }
 
 FOOTNOTE_TRANSLATIONS.update({
+    "v11_fn2": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Hor. Od., lib. 4:2. This cites Horace, <em>Odes</em>, Book 4, Ode 2."
+    ),
+    "v11_fn3": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Hor. Od., lib. 5:6. The printed citation is retained as-is because Horace's <em>Odes</em> are normally divided into four books; the exact intended locus needs by-eye/source review."
+    ),
+    "v11_fn4": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Hor. Od., lib. 5:6. The printed citation is retained as-is because Horace's <em>Odes</em> are normally divided into four books; the exact intended locus needs by-eye/source review."
+    ),
+    "v11_fn6": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: &ldquo;Unicum D. Blondellum aut alterum fortasse inter omnes mortales Walonem Messalinum, cap. 25 sect. 3.&rdquo;"
+    ),
+    "v11_fn10": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Armin. Antiperk. Romans Coll. Hag. art. 5. This refers to Arminius, <em>Antiperkinsonus</em>, and the Hague Conference/Collation, article 5."
+    ),
+    "v11_fn12": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Socin. Praelect. Theol. cap. 6 art. 7, etc. This refers to Faustus Socinus, <em>Praelectiones Theologicae</em>, chapter 6, article 7."
+    ),
+    "v11_fn13": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: 2 Peter 2:1; Act. Synod. Dec. Sent., art. 5, pp. 266, 267, etc. This cites 2 Peter 2:1 and the <em>Acta Synodi Nationalis Dordrechti</em>, Declaration of Sentiments, article 5."
+    ),
+    "v11_fn15": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Cic. Inv., lib. 2:54. 817. This cites Cicero, <em>De Inventione</em>, Book 2, section 54."
+    ),
+    "v11_fn20": (
+        "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: Socin. Prael. Theol. cap. 10 sect. 8. This refers to Faustus Socinus, <em>Praelectiones Theologicae</em>, chapter 10, section 8."
+    ),
+
     "v10_fn7": (
         "<strong>Editorial Note:</strong> Legacy source footnote preserved and surfaced for review: John 6:42, 7:52. &ldquo;Natura sic apparet vitiata ut hoc majoris vitii sit, non videre.&rdquo; — Aug."
     ),

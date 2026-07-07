@@ -1,0 +1,107 @@
+{
+  "volume": "11",
+  "generated_at": "2026-07-07T13:53:51Z",
+  "need": 15.2,
+  "need_gate": false,
+  "strict_ready": false,
+  "blocker_count": 1,
+  "review_debt_count": 7,
+  "blockers": [
+    {
+      "code": "unenriched_legacy_footnotes",
+      "message": "Legacy footnotes remain unenriched.",
+      "severity": "blocker",
+      "value": 9
+    }
+  ],
+  "review_debt": [
+    {
+      "code": "low_latin_tagging",
+      "message": "Latin tagging ratio 78.08% is below 99.00%; verify no Latin text is missing.",
+      "severity": "review_debt",
+      "value": 0.7808,
+      "samples": [
+        {
+          "word": "perpetrate",
+          "epub": 10,
+          "tagged": 0
+        },
+        {
+          "word": "salmasius",
+          "epub": 9,
+          "tagged": 0
+        },
+        {
+          "word": "vedelius",
+          "epub": 8,
+          "tagged": 0
+        },
+        {
+          "word": "co-operate",
+          "epub": 8,
+          "tagged": 0
+        },
+        {
+          "word": "alexandria",
+          "epub": 9,
+          "tagged": 3
+        }
+      ]
+    },
+    {
+      "code": "low_latin_translation",
+      "message": "Latin translation ratio 31.74% is below 99.00%; verify no Latin text is missing.",
+      "severity": "review_debt",
+      "value": 0.3174,
+      "samples": [
+        {
+          "phrase": "catena patrum"
+        },
+        {
+          "phrase": "Sancti Sanciti"
+        },
+        {
+          "phrase": "Sancta sanctis"
+        },
+        {
+          "phrase": "actum agere"
+        },
+        {
+          "phrase": "velut amnis"
+        }
+      ]
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: low_latin_translation_coverage"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: unenriched_legacy_footnotes"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: suspicious_large_number_starts"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: roman_heading_candidates"
+    },
+    {
+      "code": "stale_whitelist_entry",
+      "message": "Stale whitelist entry remains and should be cleaned when safe.",
+      "severity": "review_debt",
+      "value": "epub_warnings: enumerator_sequence_candidates"
+    }
+  ],
+  "inline_modern_note_leaks": [],
+  "source_text_or_conversion_changes": []
+}

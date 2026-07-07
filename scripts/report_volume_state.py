@@ -54,14 +54,14 @@ def _read_json(path: Path) -> dict:
 
 def _read_latest_volume_report(vol, filename: str, fallback: Path) -> dict:
     reports_root = _vol_path(vol) / "reports"
-    candidates = []
+    candidates = [fallback] if fallback.exists() else []
     if reports_root.exists():
-        candidates = list(reports_root.glob(f"*/{filename}"))
+        candidates.extend(reports_root.glob(f"*/{filename}"))
     if candidates:
-        latest = max(candidates, key=lambda p: p.stat().st_mtime)
-        data = _read_json(latest)
-        if data:
-            return data
+        for latest in sorted(candidates, key=lambda p: p.stat().st_mtime, reverse=True):
+            data = _read_json(latest)
+            if data:
+                return data
     return _read_json(fallback)
 
 
@@ -219,8 +219,13 @@ def gather_volume_data(vol: int) -> dict:
     unused_epub_warnings = audit.get("unused_whitelist_epub_warnings", []) if audit else []
     for category, entries in unused_text_integrity.items():
         for entry in entries:
+            if category == "ignored_warnings":
+                continue
             stale_whitelist_entries.append(f"text_integrity.{category}: {entry}")
+    ti_unused_warnings = set(unused_text_integrity.get("ignored_warnings", []))
     for entry in unused_epub_warnings:
+        if entry not in ti_unused_warnings:
+            continue
         stale_whitelist_entries.append(f"epub_warnings: {entry}")
     data["stale_whitelist_entries"] = stale_whitelist_entries
 
@@ -351,12 +356,7 @@ def score_volume(d: dict) -> float:
 
         # Latin tagging
         lat_tag = d.get("latin_tagging")
-        if lat_tag is not None:
-            if "low_latin_tagging" not in ignored_warnings:
-                score += min((1.0 - lat_tag) * 10, 5.0)
-            elif lat_tag < 0.990:
-                score += min((0.990 - lat_tag) * 3, 1.5)
-        elif "low_latin_tagging" not in ignored_warnings and d["qa_level"] != "NONE":
+        if lat_tag is None and d["qa_level"] != "NONE":
             score += 2.0
 
         # Latin translation
@@ -364,8 +364,6 @@ def score_volume(d: dict) -> float:
         if lat_trans is not None:
             if "low_latin_translation_coverage" not in ignored_warnings:
                 score += min((1.0 - lat_trans) * 10, 5.0)
-            elif lat_trans < 0.990:
-                score += min((0.990 - lat_trans) * 3, 1.5)
         elif "low_latin_translation_coverage" not in ignored_warnings and d["qa_level"] != "NONE":
             score += 2.0
 

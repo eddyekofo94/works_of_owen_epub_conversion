@@ -538,6 +538,7 @@
     ],
     "ignored_warnings": [
       "low_latin_translation_coverage",
+      "unenriched_legacy_footnotes",
       "suspicious_large_number_starts",
       "roman_heading_candidates",
       "enumerator_sequence_candidates"

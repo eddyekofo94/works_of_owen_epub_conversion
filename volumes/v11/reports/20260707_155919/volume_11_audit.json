@@ -1,6 +1,6 @@
 {
-  "epub": "volumes/v11/output/volume_11.epub",
-  "generated_at": "2026-07-07T14:05:14.839944+00:00",
+  "epub": "/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v11/output/volume_11.epub",
+  "generated_at": "2026-07-07T13:58:21.785432+00:00",
   "status": "pass",
   "error_count": 0,
   "warning_count": 0,
@@ -140,6 +140,7 @@
   },
   "unused_whitelist_epub_warnings": [
     "low_latin_translation_coverage",
+    "unenriched_legacy_footnotes",
     "suspicious_large_number_starts",
     "roman_heading_candidates",
     "enumerator_sequence_candidates"

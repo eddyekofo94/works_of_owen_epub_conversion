@@ -359,9 +359,8 @@ These anomaly entries are exact audit targets from a no-modernization triage. Hy
 - `II. 1. The first signal issue and effect which is ascribed to this indwelling of the Spirit is union; not a personal union with himself, whi...`: Valid nested Roman/Arabic argument structure.
 
 ### Modern Notes / Latin Metrics
-- Latin tagging review debt: Volume 11's raw Latin detector still counts English/proper-name false positives such as `perpetrate`, `co-operate`, and `alexandria`; Latin word coverage is 99.84% with no missing Latin clauses.
 - `low_latin_translation_coverage`: Volume 11 contains extensive Latin/patristic source citation material; remaining untranslated samples are tracked for editorial enrichment rather than conversion failure.
-- Legacy footnotes: the 9 previously unenriched footnotes have been surfaced with editorial enrichment notes in the modern notes manifest; `unenriched_legacy_footnotes` is no longer whitelisted.
+- `unenriched_legacy_footnotes`: 9 legacy footnotes remain low-confidence enrichment candidates and are documented in the modern notes manifest.
 
 ### Ignored Warning Codes
 - `suspicious_large_number_starts`: The two ch006 numbered starts are legitimate sequential source/list paragraphs, not broken references.
