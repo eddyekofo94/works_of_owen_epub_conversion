@@ -1,29 +1,12 @@
 {
   "volume": "11",
-  "generated_at": "2026-07-07T14:01:43Z",
-  "need": 6.9,
-  "need_gate": false,
-  "strict_ready": false,
-  "blocker_count": 1,
-  "review_debt_count": 8,
-  "blockers": [
-    {
-      "code": "source_text_or_conversion_changes",
-      "message": "Source-text or conversion-affecting files have uncommitted changes and must be explicitly reported before readiness.",
-      "severity": "blocker",
-      "value": 2,
-      "samples": [
-        {
-          "status": "M",
-          "path": "scripts/translation_db.py"
-        },
-        {
-          "status": "M",
-          "path": "volumes/v11/intermediate/volume_11.json"
-        }
-      ]
-    }
-  ],
+  "generated_at": "2026-07-07T14:10:43Z",
+  "need": 0.8,
+  "need_gate": true,
+  "strict_ready": true,
+  "blocker_count": 0,
+  "review_debt_count": 2,
+  "blockers": [],
   "review_debt": [
     {
       "code": "low_latin_tagging",
@@ -80,53 +63,8 @@
           "phrase": "velut amnis"
         }
       ]
-    },
-    {
-      "code": "stale_whitelist_entry",
-      "message": "Stale whitelist entry remains and should be cleaned when safe.",
-      "severity": "review_debt",
-      "value": "text_integrity.ignored_warnings: unenriched_legacy_footnotes"
-    },
-    {
-      "code": "stale_whitelist_entry",
-      "message": "Stale whitelist entry remains and should be cleaned when safe.",
-      "severity": "review_debt",
-      "value": "epub_warnings: low_latin_translation_coverage"
-    },
-    {
-      "code": "stale_whitelist_entry",
-      "message": "Stale whitelist entry remains and should be cleaned when safe.",
-      "severity": "review_debt",
-      "value": "epub_warnings: unenriched_legacy_footnotes"
-    },
-    {
-      "code": "stale_whitelist_entry",
-      "message": "Stale whitelist entry remains and should be cleaned when safe.",
-      "severity": "review_debt",
-      "value": "epub_warnings: suspicious_large_number_starts"
-    },
-    {
-      "code": "stale_whitelist_entry",
-      "message": "Stale whitelist entry remains and should be cleaned when safe.",
-      "severity": "review_debt",
-      "value": "epub_warnings: roman_heading_candidates"
-    },
-    {
-      "code": "stale_whitelist_entry",
-      "message": "Stale whitelist entry remains and should be cleaned when safe.",
-      "severity": "review_debt",
-      "value": "epub_warnings: enumerator_sequence_candidates"
     }
   ],
   "inline_modern_note_leaks": [],
-  "source_text_or_conversion_changes": [
-    {
-      "status": "M",
-      "path": "scripts/translation_db.py"
-    },
-    {
-      "status": "M",
-      "path": "volumes/v11/intermediate/volume_11.json"
-    }
-  ]
+  "source_text_or_conversion_changes": []
 }
