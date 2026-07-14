@@ -9,6 +9,9 @@ Always use the virtual environment for running conversion scripts, tests, or uti
 * Activator: `.venv/bin/activate`
 * Run python: `./.venv/bin/python3 <script_name>.py`
 
+> [!NOTE]
+> **arm64 (2026-07-14):** `.venv` was rebuilt on native arm64 Python 3.14.6 after this Mac's Rosetta→arm64 migration removed the old Intel `python@3.14` that had killed the venv. It's healthy (`tests/` 515 passed; the 3 `test_no_unused_whitelist_entries[8/12/15]` failures are pre-existing, unrelated to arch). If `.venv/bin/python` ever disappears again, rebuild: `mv .venv .venv.intel-dead && uv venv .venv --python 3.14 && uv pip install -r requirements.txt --python .venv/bin/python`, then verify `.venv/bin/python -c "import fitz; print(fitz.pymupdf_version)"`.
+
 ### Build / Conversion Commands
 To convert a volume from PDF to EPUB:
 ```bash
