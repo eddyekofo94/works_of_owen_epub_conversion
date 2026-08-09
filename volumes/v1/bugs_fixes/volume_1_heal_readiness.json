@@ -1,11 +1,11 @@
 {
   "volume": "1",
-  "generated_at": "2026-08-09T00:57:19Z",
+  "generated_at": "2026-08-09T01:03:26Z",
   "need": 0.8,
   "need_gate": true,
   "strict_ready": true,
   "blocker_count": 0,
-  "review_debt_count": 3,
+  "review_debt_count": 2,
   "blockers": [],
   "review_debt": [
     {
@@ -63,33 +63,8 @@
           "phrase": "quam conspici"
         }
       ]
-    },
-    {
-      "code": "source_text_or_conversion_changes",
-      "value": 2,
-      "samples": [
-        {
-          "status": "M",
-          "path": "shared.py"
-        },
-        {
-          "status": "M",
-          "path": "volumes/v1/intermediate/volume_1.json"
-        }
-      ],
-      "message": "Conversion-affecting files have uncommitted changes on branch 'heal-v1-20260707'; disclose and commit them on the heal branch before merging.",
-      "severity": "review"
     }
   ],
   "inline_modern_note_leaks": [],
-  "source_text_or_conversion_changes": [
-    {
-      "status": "M",
-      "path": "shared.py"
-    },
-    {
-      "status": "M",
-      "path": "volumes/v1/intermediate/volume_1.json"
-    }
-  ]
+  "source_text_or_conversion_changes": []
 }

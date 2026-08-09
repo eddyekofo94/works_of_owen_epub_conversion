@@ -1,12 +1,12 @@
 # Volume 1 Heal Readiness
 
-Generated: 2026-08-09T00:57:19Z
+Generated: 2026-08-09T01:03:26Z
 
 - Need: 0.8
 - Need gate `<1.0`: PASS
 - Strict ready for by-eye review: PASS
 - Blockers: 0
-- Review debt: 3
+- Review debt: 2
 
 ## Blockers
 
@@ -20,6 +20,3 @@ None.
 - `low_latin_translation`: Latin translation ratio 53.88% is below 99.00%; verify no Latin text is missing.
   - Value: `0.5388`
   - Samples: `[{"phrase": "quarto (Amsterdam"}, {"phrase": "nobis a praelo a capite"}, {"phrase": "operis absentibus"}]`
-- `source_text_or_conversion_changes`: Conversion-affecting files have uncommitted changes on branch 'heal-v1-20260707'; disclose and commit them on the heal branch before merging.
-  - Value: `2`
-  - Samples: `[{"status": "M", "path": "shared.py"}, {"status": "M", "path": "volumes/v1/intermediate/volume_1.json"}]`

@@ -57,12 +57,20 @@ def _read_latest_volume_report(vol, filename: str, fallback: Path) -> dict:
     candidates = [fallback] if fallback.exists() else []
     if reports_root.exists():
         candidates.extend(reports_root.glob(f"*/{filename}"))
-    if candidates:
-        for latest in sorted(candidates, key=lambda p: p.stat().st_mtime, reverse=True):
-            data = _read_json(latest)
-            if data:
-                return data
-    return _read_json(fallback)
+    # Prefer the report's embedded generation timestamp over filesystem mtime:
+    # git checkouts/merges rewrite mtimes, which let stale snapshots under
+    # reports/ shadow the current bugs_fixes/ report.
+    best: dict = {}
+    best_key: tuple[str, float] | None = None
+    for path in candidates:
+        data = _read_json(path)
+        if not data:
+            continue
+        generated = str(data.get("generated_at") or data.get("generated") or "")
+        key = (generated, path.stat().st_mtime)
+        if best_key is None or key > best_key:
+            best, best_key = data, key
+    return best
 
 
 def _pct(val: float | None, decimals: int = 2) -> str:

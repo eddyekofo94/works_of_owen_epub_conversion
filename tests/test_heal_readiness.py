@@ -140,6 +140,37 @@ def test_uncommitted_changes_still_block_on_master(monkeypatch, tmp_path):
     assert report["blockers"][0]["code"] == "source_text_or_conversion_changes"
 
 
+def test_latest_report_prefers_generated_at_over_mtime(monkeypatch, tmp_path):
+    import json
+
+    from scripts import report_volume_state
+
+    vol_dir = tmp_path / "volumes" / "v10"
+    bugs = vol_dir / "bugs_fixes"
+    snapshot_dir = vol_dir / "reports" / "20260101_000000"
+    bugs.mkdir(parents=True)
+    snapshot_dir.mkdir(parents=True)
+
+    current = bugs / "volume_10_text_integrity.json"
+    current.write_text(json.dumps({"generated_at": "2026-07-07T17:21:47+00:00", "which": "current"}))
+    stale = snapshot_dir / "volume_10_text_integrity.json"
+    stale.write_text(json.dumps({"generated_at": "2026-07-07T17:03:11+00:00", "which": "stale"}))
+
+    # Simulate a git checkout giving the stale snapshot a newer mtime.
+    import os
+    import time
+    now = time.time()
+    os.utime(current, (now - 100, now - 100))
+    os.utime(stale, (now, now))
+
+    monkeypatch.setattr(report_volume_state, "_vol_path", lambda vol: vol_dir)
+
+    data = report_volume_state._read_latest_volume_report(
+        10, "volume_10_text_integrity.json", current
+    )
+    assert data["which"] == "current"
+
+
 def test_detect_source_text_changes_reports_target_conversion_files(monkeypatch):
     def fake_run(*args, **kwargs):
         return subprocess.CompletedProcess(
