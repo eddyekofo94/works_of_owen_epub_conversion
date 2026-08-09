@@ -23,6 +23,7 @@ Treat Need `<20.0` as only an intermediate green milestone, never as completion.
 ## Guardrails
 
 - Never batch-heal volumes. `heal worst` may scan all volumes to choose the target, but repair and verification stay on one selected volume.
+- Exception: corpus-wide shared-data passes — `scripts/translation_db.py` entries, Latin lexicon/tagging classification, `scripts/patristic_refs.py` citation data, and whitelist categories — may be prepared across all volumes when the user explicitly requests a batch sweep. Structural/rendering repairs and final verification remain one volume at a time.
 - Use standard Git branches only. Do not use worktrees and do not merge to `master`.
 - Start every new heal run from the latest clean `master`: inspect `git status`, stop if the worktree is dirty, switch to `master`, fast-forward from `origin/master`, confirm `master` is clean, then create a fresh local heal branch. Never stash, reset, discard, or overwrite user changes unless the user explicitly asks.
 - Use the local environment: `./owen vN`, `.venv/bin/python3`, and repository scripts only.
@@ -61,7 +62,7 @@ For `#heal worst`, use `#heal worst` in option 1 and "select and heal the worst 
 ## Workflow
 
 1. Run the Context Preflight above before any audits, branch changes, or file edits.
-2. Read `GEMINI.md` before changing converter behavior or project documentation. For list or blockquote fixes, also read `bugs_fixes/owenian-structure-rules.md` and its focused companion notes.
+2. Read `CLAUDE.md` before changing converter behavior or project documentation. For list or blockquote fixes, also read `bugs_fixes/owenian-structure-rules.md` and its focused companion notes.
 3. Establish the clean `master` base:
    - Run `git status --short --branch`.
    - If any tracked or untracked files are dirty, stop before switching branches. Report the dirty files and ask the user to commit, stash, or otherwise resolve them. Do not run `git stash`, `git reset`, `git checkout --`, or cleanup commands for user changes unless the user explicitly asks.
@@ -105,7 +106,7 @@ For `#heal worst`, use `#heal worst` in option 1 and "select and heal the worst 
    - Score gate check: `.venv/bin/python3 scripts/assert_need_under.py N 1.0`.
    - Readiness gate check: `.venv/bin/python3 scripts/audit_heal_readiness.py N --strict`.
    - If Need remains `>= 1.0`, read the refreshed reports and continue with the next score component instead of finalizing.
-   - If readiness fails while Need is `<1.0`, continue blocker repairs if safe; otherwise finish as `blocked with evidence` and disclose review debt separately.
+   - If readiness fails while Need is `<1.0`, continue blocker repairs if safe; otherwise finish as `blocked with evidence` and disclose review debt separately. Uncommitted heal work on the active heal branch is reported as review debt, not a blocker; it blocks readiness only when the worktree is dirty on `master`.
    - Focused pytest for changed behavior, usually `.venv/bin/python3 -m pytest tests/test_bug_regressions.py` or the smallest relevant test file.
 11. Prepare the by-eye review packet:
    - Create `volumes/vN/reports/YYYYMMDD_HHMMSS/volume_N_by_eye_review.md`.

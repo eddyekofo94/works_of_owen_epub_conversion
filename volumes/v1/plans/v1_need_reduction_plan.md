@@ -1,37 +1,37 @@
 # Volume 1 — Comprehensive Need Score Reduction Plan
 
-> Current Need: **6.7** | Grade: PRISTINE | QA Level: PRISTINE
+> Current Need: **15.7** | Grade: FULL | QA Level: FULL
 > Target Need: **≤ 2.0** (PRISTINE)
 
 ## Need Score Breakdown
 
 | Component | Value | Penalty | Capped? |
 |---|---|---|---|
-| Coverage | 99.93% | **2.8** | no |
-| Greek coverage | 99.9% | **3.9** | no |
+| Coverage | 99.97% | **1.2** | no |
+| Greek coverage | 100.0% | **0.0** | — |
 | Hebrew coverage | 100.0% | **0.0** | — |
-| Latin word coverage | 99.85%>=99% | **0.0** | — |
-| Latin tagging | whitelisted | **0.0** | — |
+| Latin word coverage | 99.90%>=99% | **0.0** | — |
+| Latin tagging | 72.6% | **2.7** | no |
 | Latin translation | whitelisted | **0.0** | — |
 | Unresolved citations | 0/49 | **0.0** | — |
-| Splits | 0 | **0.0** | — |
+| Splits | 13 | **6.5** | no |
 | Audit warnings | 0 | **0.0** | — |
 | Audit errors | 0 | **0.0** | — |
 | Anomalies | 0 | **0.0** | — |
 | Unmatched quotes | 0 | **0.0** | — |
-| **TOTAL** | | **6.7** | |
+| **TOTAL** | | **10.4** | |
 
 ### Scenario Projections
 
 | Scenario | Anomalies | Quotes | Coverage | Total |
 |---|---|---|---|---|
-| **Current state** | 0.0 | 0.0 | 2.8 | **6.7** |
-| **Whitelist anomalies only** | 0.0 | 0.0 | 2.8 | **2.8** |
-| **Whitelist quotes only** | 0.0 | 0.0 | 2.8 | **2.8** |
-| **Whitelist both anomalies + quotes** | 0.0 | 0.0 | 2.8 | **2.8** |
+| **Current state** | 0.0 | 0.0 | 1.2 | **15.7** |
+| **Whitelist anomalies only** | 0.0 | 0.0 | 1.2 | **1.2** |
+| **Whitelist quotes only** | 0.0 | 0.0 | 1.2 | **1.2** |
+| **Whitelist both anomalies + quotes** | 0.0 | 0.0 | 1.2 | **1.2** |
 
-The coverage gap is only **2.8** points — very small. 
-The dominant penalty is **Greek coverage** at **3.9** points.
+The coverage gap is only **1.2** points — very small. 
+The dominant penalty is **Splits** at **6.5** points.
 
 ## Anomaly Breakdown
 
@@ -49,50 +49,44 @@ The dominant penalty is **Greek coverage** at **3.9** points.
 
 ## Dense Source Window Losses
 
-**40 pages** with missing dense source windows.
+**34 pages** with missing dense source windows.
 
 | Page | Sample | Category | Action |
 |---|---|---|---|
-| 3 | contents of χριστολογια or declaration of the glorious myste... | polyglot | Whitelist |
-| 4 | person of christ which is love its truth and reality vindica... | structural | Whitelist |
-| 5 | the accomplishment of the work of mediation in this world re... | patristic_latin | Whitelist |
-| 6 | of the holy trinity of the works of god and first of those t... | structural | Whitelist |
-| 7 | and misapprehension on the principles asserted in the proleg... | patristic_latin | Whitelist |
-| 9 | embraces the most comprehensive view of this vitally-importa... | scripture_refs | Whitelist |
-| 10 | learned puritan we are informed by dr steven that his exposi... | structural | Whitelist |
-| 21 | individuals since the reformation next to calvin's instituti... | structural | Whitelist |
-| 26 | whole church aedificar quid dicturus what will you say es de... | patristic_latin | Whitelist |
-| 27 | not prevail against it for unum hoc est this is one thing im... | patristic_latin | Whitelist |
-| 34 | scrutator majestatis absorbetur gloria the searcher of majes... | structural | Whitelist |
-| 35 | scrutari and most impudent is he who searches cupot opificem... | structural | Whitelist |
-| 51 | imago id est verbum dei ad eum qui est ad imaginem hoc est h... | patristic_latin | Whitelist |
-| 53 | declaration of the glorious mystery of the person of christ ... | scripture_refs | Whitelist |
-| 56 | lively stones also as this apostle assures us epist they mus... | structural | Whitelist |
-| 76 | of the same mystery is elsewhere testified unto hebrews god ... | scripture_refs | Whitelist |
-| 78 | so the apostle expresseth it hebrews god who at sundry times... | scripture_refs | Whitelist |
-| 83 | of his person by whom they are performed john if any man sin... | scripture_refs | Whitelist |
-| 90 | place no small portion of divine blessedness self existence ... | patristic_latin | Whitelist |
-| 101 | glory and the firmament always showed his handy work the inv... | structural | Whitelist |
-| 105 | image of the other for he and the father are one and one and... | structural | Whitelist |
-| 106 | unto his divine person as the son of the father the only beg... | structural | Whitelist |
-| 117 | most frequently expressed by the knowledge of him john corin... | scripture_refs | Whitelist |
-| 148 | the son of god has not life chap v5 if we are wanting herein... | structural | Whitelist |
-| 150 | for when he brought the first begotten into the world he sai... | polyglot | Whitelist |
-| 188 | all the people shall say amen deut and on the other hand he ... | patristic_latin | Whitelist |
-| 194 | the spirit as he is the only begotten of the father he is th... | structural | Whitelist |
-| 203 | divine goodness how great is his goodness how great is his b... | structural | Whitelist |
-| 223 | one whose benignity is ready to exercise loving kindness on ... | structural | Whitelist |
-| 239 | own glory in and by their own immediate proper ends proverbs... | patristic_latin | Whitelist |
-| 269 | and obedience absolute and universal into condition of self ... | structural | Whitelist |
-| 297 | of one into another such notions of these things some fancie... | structural | Whitelist |
-| 319 | residence of god in glory and majesty chap there on the thro... | patristic_latin | Whitelist |
-| 328 | and worship have we communion by faith whilst we are here be... | scripture_refs | Whitelist |
-| 332 | figure of christ on his forehead exodus he has made atonemen... | patristic_latin | Whitelist |
-| 341 | by god the father unto his only begotten son no other being ... | structural | Whitelist |
-| 356 | so as to abide one foot breadth above the earth we tread upo... | patristic_latin | Whitelist |
-| 374 | as one of old complained to the same purpose upon his perusa... | structural | Whitelist |
-| 375 | they taste of its goodness by any of its first fruits in the... | patristic_latin | Whitelist |
-| 379 | face of jesus christ corinthians otherwise we know it not we... | scripture_refs | Whitelist |
+| 382 | the dark after what they cannot clearly discern acts among o... | scripture_refs | Whitelist |
+| 398 | so the apostle expresseth this truth where is the wise where... | structural | Whitelist |
+| 402 | known or as it may be thence earned my present business is o... | structural | Whitelist |
+| 406 | 2-6 isaiah 1-4 zechariah john 1-3 philippians 6-8 hebrews 1-... | scripture_refs | Whitelist |
+| 411 | made her as the chariots of ammi nadib song of solomon it so... | patristic_latin | Whitelist |
+| 419 | in him unto any of the creatures is an act of self humiliati... | patristic_latin | Whitelist |
+| 433 | brightness wherewith this glory shines in heaven the all sat... | patristic_latin | Whitelist |
+| 434 | unto it sweet savor of the love of christ see song of solomo... | scripture_refs | Whitelist |
+| 451 | its holiness and the severity of the curse wherewith it was ... | structural | Whitelist |
+| 478 | to reconcile all things unto himself in him whether they be ... | patristic_latin | Whitelist |
+| 480 | bring in spiritual refreshment unto believing refreshment un... | patristic_latin | Whitelist |
+| 483 | of sight those are the two spiritual powers of our sou1s by ... | structural | Whitelist |
+| 487 | on the right hand that cannot see him chap which way soever ... | structural | Whitelist |
+| 517 | see the description of these things philippians it is not po... | structural | Whitelist |
+| 522 | of iniquity shall be stopped for ever and the voice of the s... | structural | Whitelist |
+| 534 | part meditations and discourses concerning the glory of chri... | structural | Whitelist |
+| 555 | which are proper for the season as namely spirituality heave... | patristic_latin | Whitelist |
+| 559 | and almost visible growth than willows by the water courses ... | structural | Whitelist |
+| 565 | warnings of the danger of spiritually decaying state and he ... | patristic_latin | Whitelist |
+| 570 | zeal humility contriteness of heart spiritual mindedness vig... | patristic_latin | Whitelist |
+| 572 | invited to eat after feast being self full before but this l... | patristic_latin | Whitelist |
+| 596 | 7-9 romans 33-36 malachi james judges samuel kings ezekiel m... | scripture_refs | Whitelist |
+| 603 | of god towards his church in three things first in causing 5... | patristic_latin | Whitelist |
+| 605 | doing any thing that is well pleasing unto god by all which ... | structural | Whitelist |
+| 607 | in the likeness of sinful flesh condemning sin sinful flesh ... | scripture_refs | Whitelist |
+| 613 | due to our sin isaiah 4-6 john romans corinthians15 corinthi... | scripture_refs | Whitelist |
+| 618 | what is the church of christ the whole company of god's elec... | structural | Whitelist |
+| 623 | purpose of heart to cleave unto him for the to cleave unto h... | structural | Whitelist |
+| 624 | quickening of all graces purging act of all graces purging a... | structural | Whitelist |
+| 625 | gracious reception into the family of god as his children an... | structural | Whitelist |
+| 626 | isaiah john corinthians romans hebrews corinthians galatians... | scripture_refs | Whitelist |
+| 627 | him confirmeth the promises of the covenant to all believers... | structural | Whitelist |
+| 629 | 14-20 corinthians 23-25 luke corinthians mark 22-24 corinthi... | scripture_refs | Whitelist |
+| 632 | chapter of particular churches what are particular churches ... | patristic_latin | Whitelist |
 
 ## Compound Word Merging Fixes
 
@@ -104,14 +98,22 @@ Add these to `OVERRIDES['text_replacements']` in `convert.py`:
 'preeminence': 'pre-eminence',
 ```
 
+## Missing Word Samples
+
+- `greeks`: PDF=3, EPUB=0
+
 ## Excess Word Samples
 
-- `digital`: PDF=0, EPUB=10
-- `theological`: PDF=2, EPUB=11
+- `preface`: PDF=7, EPUB=16
+- `super`: PDF=4, EPUB=12
 - `historical`: PDF=2, EPUB=10
-- `modern`: PDF=4, EPUB=11
+- `theological`: PDF=1, EPUB=9
+- `digital`: PDF=0, EPUB=8
+- `text`: PDF=8, EPUB=15
+- `modern`: PDF=3, EPUB=10
 - `footnotes`: PDF=0, EPUB=7
-- `hebrew`: PDF=3, EPUB=9
+- `volume`: PDF=7, EPUB=13
+- `dr`: PDF=7, EPUB=13
 
 ## Whitelist Updates Required
 
@@ -123,11 +125,11 @@ Add these to `OVERRIDES['text_replacements']` in `convert.py`:
 
 ### `dense_source_window_loss` updates
 
-**New pages to add**: [3, 4, 5, 6, 7, 9, 10, 21, 26, 27, 34, 35, 51, 53, 56, 76, 78, 83, 90, 101, 105, 106, 117, 148, 150, 188, 194, 203, 223, 239, 269, 297, 319, 328, 332, 341, 356, 374, 375, 379]
+**New pages to add**: [382, 398, 402, 406, 411, 419, 433, 434, 451, 478, 480, 483, 487, 517, 522, 534, 555, 559, 565, 570, 572, 596, 603, 605, 607, 613, 618, 623, 624, 625, 626, 627, 629, 632]
 
 Updated whitelist:
 ```json
-"dense_source_window_loss": [3, 4, 5, 6, 7, 9, 10, 21, 26, 27, 34, 35, 51, 53, 56, 76, 78, 83, 90, 101, 105, 106, 117, 148, 150, 188, 194, 203, 223, 239, 269, 297, 319, 328, 332, 341, 356, 374, 375, 379]
+"dense_source_window_loss": [382, 398, 402, 406, 411, 419, 433, 434, 451, 478, 480, 483, 487, 517, 522, 534, 555, 559, 565, 570, 572, 596, 603, 605, 607, 613, 618, 623, 624, 625, 626, 627, 629, 632]
 ```
 
 ## Action Checklist
@@ -150,10 +152,9 @@ After all changes:
 4. Audit anomalies: `.venv/bin/python3 scripts/audit_anomalies.py {vol}`
 5. Audit bug regressions: `.venv/bin/python3 scripts/audit_bug_regressions.py {vol}`
 6. Report state: `.venv/bin/python3 scripts/report_volume_state.py`
-7. Verify Need drops from 6.7 to target
+7. Verify Need drops from 15.7 to target
 
 ## What NOT To Do
 
 1. **Do NOT add `low_latin_word_coverage` to `ignored_warnings`** — Latin word coverage
-   is already 99.85% (above the 99% threshold). Whitelisting has zero effect.
-2. **Do NOT remove `low_latin_tagging` from `ignored_warnings`** — It would ADD penalty points.
+   is already 99.90% (above the 99% threshold). Whitelisting has zero effect.

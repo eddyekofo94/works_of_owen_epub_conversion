@@ -983,11 +983,13 @@ This entire quote should remain as one block, not be split at sentence boundarie
 
 
 
+
+
 <!-- AUTO_AUDIT_START -->
 ## Automated EPUB Audit
 
-**Last run:** 2026-07-03T22:56:13.728599+00:00
-**EPUB:** `/Users/eddyekofo/Documents/Theology/epub_conversion/books/Owen/volumes/v1/output/volume_1.epub`
+**Last run:** 2026-07-07T17:21:16.750628+00:00
+**EPUB:** `volumes/v1/output/volume_1.epub`
 **Status:** PASS (0 errors, 0 warnings)
 
 Reports:
@@ -1206,11 +1208,18 @@ Reports:
 
 
 
+
+
+
+
+
+
+
 <!-- TEXT_INTEGRITY_START -->
 ## Automated Textual Integrity Audit
 
-**Last run:** 2026-07-03T22:56:44.995353+00:00
-**Status:** WARN (7 warnings)
+**Last run:** 2026-07-07T17:21:47.106751+00:00
+**Status:** PASS (0 warnings)
 
 Reports:
 - `volume_1_text_integrity.json`
@@ -1222,23 +1231,23 @@ Reports:
 | EPUB text files | 83 |
 | EPUB paragraphs/headings | 2695 |
 | Approximate PDF-to-EPUB word coverage | 0.9997 |
-| Weak page matches | 1 |
+| Weak page matches | 0 |
 | Dense source windows checked | 26650 |
-| Missing dense source-window pages | 34 |
+| Missing dense source-window pages | 0 |
 | Front CONTENTS pages checked | 0 |
 | Missing front CONTENTS pages | 0 |
 | Top-of-page body windows checked | 586 |
 | Top-of-page windows skipped as unstable | 6 |
-| Missing top-of-page body windows | 2 |
+| Missing top-of-page body windows | 0 |
 | Bottom-of-page body windows checked | 534 |
 | Bottom-of-page windows skipped as unstable | 0 |
 | Missing bottom-of-page body windows | 0 |
-| Possible faulty paragraph splits | 13 |
+| Possible faulty paragraph splits | 0 |
 | Structural starts excluded from split warnings | 115 |
 | Short fragments | 12 |
 | Adjacent duplicate paragraphs | 0 |
 | Inline structural marker candidates | 0 |
-| Syllabus-anchor candidates | 15 |
+| Syllabus-anchor candidates | 0 |
 | Reference continuation splits | 0 |
 | Citation continuation splits | 0 |
 | Suspicious large-number starts | 0 |
@@ -1256,16 +1265,6 @@ Reports:
 | Hebrew word coverage ratio | 1.0 |
 | Missing Greek clauses | 0 |
 | Missing Hebrew clauses | 0 |
-
-Warnings requiring triage:
-
-- `weak_page_coverage`: Some PDF pages have no strong text-window match in the EPUB
-- `dense_source_window_loss`: Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors
-- `top_of_page_text_loss`: Some first body lines near the top of PDF pages are not found in the EPUB
-- `paragraph_split_candidates`: Some adjacent EPUB paragraphs look like possible faulty line or page breaks
-- `syllabus_anchor_candidates`: Some introduced scholastic syllabus runs appear unflattened or need triage
-- `unresolved_modern_references`: Modern notes manifest contains unresolved main-body reference candidates.
-- `untranslated_substantial_foreign_passages`: Modern notes manifest contains substantial foreign passages without a high-confidence translation popup.
 
 **Status note:** This audit is a mechanical integrity screen, not final proofreading or user validation.
 <!-- TEXT_INTEGRITY_END -->

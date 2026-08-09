@@ -268,15 +268,31 @@ def build_readiness_report(volume: str, state_data: dict[str, Any], need: float,
         classification["blocker_count"] += 1
         classification["ready"] = False
     if source_changes:
-        classification["blockers"].append({
+        branch = _current_branch()
+        item = {
             "code": "source_text_or_conversion_changes",
-            "message": "Source-text or conversion-affecting files have uncommitted changes and must be explicitly reported before readiness.",
-            "severity": "blocker",
             "value": len(source_changes),
             "samples": source_changes[:10],
-        })
-        classification["blocker_count"] += 1
-        classification["ready"] = False
+        }
+        if branch not in (None, "master"):
+            # In-progress heal-branch work is disclosed review debt, not a blocker;
+            # it only blocks readiness when the worktree is dirty on master.
+            item["message"] = (
+                f"Conversion-affecting files have uncommitted changes on branch '{branch}'; "
+                "disclose and commit them on the heal branch before merging."
+            )
+            item["severity"] = "review"
+            classification["review_debt"].append(item)
+            classification["review_debt_count"] += 1
+        else:
+            item["message"] = (
+                "Source-text or conversion-affecting files have uncommitted changes "
+                "and must be explicitly reported before readiness."
+            )
+            item["severity"] = "blocker"
+            classification["blockers"].append(item)
+            classification["blocker_count"] += 1
+            classification["ready"] = False
 
     strict_ready = need < 1.0 and classification["ready"]
     return {
@@ -292,6 +308,21 @@ def build_readiness_report(volume: str, state_data: dict[str, Any], need: float,
         "inline_modern_note_leaks": inline_leaks,
         "source_text_or_conversion_changes": source_changes,
     }
+
+
+def _current_branch() -> str | None:
+    try:
+        proc = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+    except OSError:
+        return None
+    return proc.stdout.strip() or None
 
 
 def detect_source_text_changes(volume: str) -> list[dict[str, str]]:

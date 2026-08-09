@@ -1,0 +1,95 @@
+{
+  "volume": "1",
+  "generated_at": "2026-08-09T00:57:19Z",
+  "need": 0.8,
+  "need_gate": true,
+  "strict_ready": true,
+  "blocker_count": 0,
+  "review_debt_count": 3,
+  "blockers": [],
+  "review_debt": [
+    {
+      "code": "low_latin_tagging",
+      "message": "Latin tagging ratio 77.12% is below 99.00%; verify no Latin text is missing.",
+      "severity": "review_debt",
+      "value": 0.7712,
+      "samples": [
+        {
+          "word": "nestorius",
+          "epub": 8,
+          "tagged": 0
+        },
+        {
+          "word": "serm",
+          "epub": 5,
+          "tagged": 0
+        },
+        {
+          "word": "folio",
+          "epub": 3,
+          "tagged": 0
+        },
+        {
+          "word": "orat",
+          "epub": 3,
+          "tagged": 0
+        },
+        {
+          "word": "alexandria",
+          "epub": 3,
+          "tagged": 0
+        }
+      ]
+    },
+    {
+      "code": "low_latin_translation",
+      "message": "Latin translation ratio 53.88% is below 99.00%; verify no Latin text is missing.",
+      "severity": "review_debt",
+      "value": 0.5388,
+      "samples": [
+        {
+          "phrase": "quarto (Amsterdam"
+        },
+        {
+          "phrase": "nobis a praelo a capite"
+        },
+        {
+          "phrase": "operis absentibus"
+        },
+        {
+          "phrase": "Salus Electorum Sanguis"
+        },
+        {
+          "phrase": "quam conspici"
+        }
+      ]
+    },
+    {
+      "code": "source_text_or_conversion_changes",
+      "value": 2,
+      "samples": [
+        {
+          "status": "M",
+          "path": "shared.py"
+        },
+        {
+          "status": "M",
+          "path": "volumes/v1/intermediate/volume_1.json"
+        }
+      ],
+      "message": "Conversion-affecting files have uncommitted changes on branch 'heal-v1-20260707'; disclose and commit them on the heal branch before merging.",
+      "severity": "review"
+    }
+  ],
+  "inline_modern_note_leaks": [],
+  "source_text_or_conversion_changes": [
+    {
+      "status": "M",
+      "path": "shared.py"
+    },
+    {
+      "status": "M",
+      "path": "volumes/v1/intermediate/volume_1.json"
+    }
+  ]
+}

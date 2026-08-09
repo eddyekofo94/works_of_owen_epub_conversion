@@ -64,3 +64,15 @@ This repository uses a standard Git branching model. Do not use worktrees unless
 
 ## Scratch Scripts
 Any temporary developer or agent scratch scripts should be placed inside a `scratch/` directory. This directory is global-ignored via `.gitignore` and will not be committed to the repository.
+
+## Project Mandates
+
+Full mandates (workflow rules, mobile-first CSS spec, and numbered Technical Mandates referenced by `scripts/code_review.py`) live in `docs/project_mandates.md`. Read it before changing converter behavior. Non-negotiables:
+
+- **Never merge to `master`** unless the user explicitly instructs it. Keep work on local branches.
+- **Never mark an issue "Fixed"/"Done"** in changelogs until the user validates it; use "IMPLEMENTED (AWAITING VALIDATION)".
+- **Never modernize 17th-century spelling or historical hyphenation.** `text_replacements` are for clear OCR defects only.
+- **Volume-specific logic stays in `volumes/vN/convert.py` `OVERRIDES`**; `shared.py`/`extract.py`/`render.py` stay generic.
+- **Whitelists are dual-format** (`volume_N_whitelist.json` + `.md` under `volumes/vN/bugs_fixes/`) and every entry must be explained in the final report.
+- **Keep the repo root pristine**: diagnostics in `scratch/`, helpers in `scripts/`, session reports in `volumes/vN/reports/`.
+- **Always build via `volumes/vN/convert.py`**, never legacy `converter.py` (it drops `OVERRIDES`).

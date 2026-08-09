@@ -1304,444 +1304,8 @@
     ]
   },
   {
-    "vol": "1",
-    "rank": 8,
-    "score": 23.0,
-    "need": 23.0,
-    "grade": "fair",
-    "qa_level": "FULL",
-    "coverage": 99.97,
-    "greek_coverage": 100.0,
-    "hebrew_coverage": 100.0,
-    "latin_coverage": 99.9,
-    "latin_tagging": 72.63,
-    "latin_translation": 53.88,
-    "total_citations": 49,
-    "unresolved_citations": 0,
-    "splits": 13,
-    "warnings": 0,
-    "errors": 0,
-    "regressions": 0,
-    "heal_readiness": {
-      "blockers": [
-        {
-          "code": "unresolved_modern_references",
-          "message": "Unresolved modern references remain.",
-          "severity": "blocker",
-          "value": 3
-        },
-        {
-          "code": "untranslated_substantial_foreign_passages",
-          "message": "Substantial foreign passages remain untranslated.",
-          "severity": "blocker",
-          "value": 3
-        },
-        {
-          "code": "weak_page_coverage",
-          "message": "Some PDF pages have no strong text-window match in the EPUB",
-          "severity": "blocker"
-        },
-        {
-          "code": "dense_source_window_loss",
-          "message": "Some dense PDF word windows are missing from the EPUB and may indicate sliced sentence interiors",
-          "severity": "blocker"
-        },
-        {
-          "code": "top_of_page_text_loss",
-          "message": "Some first body lines near the top of PDF pages are not found in the EPUB",
-          "severity": "blocker"
-        },
-        {
-          "code": "paragraph_split_candidates",
-          "message": "Some adjacent EPUB paragraphs look like possible faulty line or page breaks",
-          "severity": "blocker"
-        },
-        {
-          "code": "unresolved_modern_references",
-          "message": "Modern notes manifest contains unresolved main-body reference candidates.",
-          "severity": "blocker"
-        },
-        {
-          "code": "untranslated_substantial_foreign_passages",
-          "message": "Modern notes manifest contains substantial foreign passages without a high-confidence translation popup.",
-          "severity": "blocker"
-        }
-      ],
-      "review_debt": [
-        {
-          "code": "syllabus_anchor_candidates",
-          "message": "Some introduced scholastic syllabus runs appear unflattened or need triage",
-          "severity": "review_debt"
-        },
-        {
-          "code": "low_latin_tagging",
-          "message": "Latin tagging ratio 72.63% is below 99.00%; verify no Latin text is missing.",
-          "severity": "review_debt",
-          "value": 0.7263,
-          "samples": [
-            {
-              "word": "incarnate",
-              "epub": 36,
-              "tagged": 0
-            },
-            {
-              "word": "nestorius",
-              "epub": 8,
-              "tagged": 0
-            },
-            {
-              "word": "consummate",
-              "epub": 8,
-              "tagged": 0
-            },
-            {
-              "word": "invocate",
-              "epub": 7,
-              "tagged": 0
-            },
-            {
-              "word": "inanimate",
-              "epub": 6,
-              "tagged": 0
-            }
-          ]
-        },
-        {
-          "code": "low_latin_translation",
-          "message": "Latin translation ratio 53.88% is below 99.00%; verify no Latin text is missing.",
-          "severity": "review_debt",
-          "value": 0.5388,
-          "samples": [
-            {
-              "phrase": "quarto (Amsterdam"
-            },
-            {
-              "phrase": "nobis a praelo a capite"
-            },
-            {
-              "phrase": "operis absentibus"
-            },
-            {
-              "phrase": "Salus Electorum Sanguis"
-            },
-            {
-              "phrase": "quam conspici"
-            }
-          ]
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.weak_pages: 3"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.weak_pages: 4"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.weak_pages: 5"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.weak_pages: 6"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.weak_pages: 533"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 3"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 4"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 5"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 6"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 7"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 9"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 10"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 21"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 26"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 27"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 34"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 35"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 51"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 53"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 56"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 76"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 78"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 83"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 90"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 101"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 105"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 106"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 117"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 148"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 150"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 188"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 194"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 203"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 223"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 239"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 269"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 297"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 319"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 328"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 332"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 341"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 356"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 374"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 375"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.dense_source_window_loss: 379"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "text_integrity.paragraph_splits: (1st,) That the Word ceased"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: low_latin_tagging"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: front_matter_toc_loss"
-        },
-        {
-          "code": "stale_whitelist_entry",
-          "message": "Stale whitelist entry remains and should be cleaned when safe.",
-          "severity": "review_debt",
-          "value": "epub_warnings: repeated_phrases"
-        }
-      ],
-      "blocker_count": 8,
-      "review_debt_count": 52,
-      "ready": false
-    },
-    "anomalies_count": 0,
-    "unmatched_quotes": 0,
-    "font": "adobe-garamond-pro",
-    "treatises": 4,
-    "has_convert_py": true,
-    "text_replacements": 1,
-    "recommended_actions": [
-      "resolve_modern_references",
-      "translate_substantial_foreign_passages"
-    ]
-  },
-  {
     "vol": "9",
-    "rank": 9,
+    "rank": 8,
     "score": 22.0,
     "need": 22.0,
     "grade": "fair",
@@ -1903,7 +1467,7 @@
   },
   {
     "vol": "13",
-    "rank": 10,
+    "rank": 9,
     "score": 13.0,
     "need": 13.0,
     "grade": "good",
@@ -2035,7 +1599,7 @@
   },
   {
     "vol": "15",
-    "rank": 11,
+    "rank": 10,
     "score": 12.2,
     "need": 12.2,
     "grade": "good",
@@ -2176,7 +1740,7 @@
   },
   {
     "vol": "14",
-    "rank": 12,
+    "rank": 11,
     "score": 12.0,
     "need": 12.0,
     "grade": "good",
@@ -2313,7 +1877,7 @@
   },
   {
     "vol": "12",
-    "rank": 13,
+    "rank": 12,
     "score": 10.4,
     "need": 10.4,
     "grade": "good",
@@ -2448,7 +2012,7 @@
   },
   {
     "vol": "16",
-    "rank": 14,
+    "rank": 13,
     "score": 9.2,
     "need": 9.2,
     "grade": "good",
@@ -2587,7 +2151,7 @@
   },
   {
     "vol": "10",
-    "rank": 15,
+    "rank": 14,
     "score": 7.7,
     "need": 7.7,
     "grade": "good",
@@ -2934,7 +2498,7 @@
   },
   {
     "vol": "8",
-    "rank": 16,
+    "rank": 15,
     "score": 3.5,
     "need": 3.5,
     "grade": "good",
@@ -3032,7 +2596,7 @@
   },
   {
     "vol": "2",
-    "rank": 17,
+    "rank": 16,
     "score": 2.8,
     "need": 2.8,
     "grade": "good",
@@ -3123,6 +2687,97 @@
     "unmatched_quotes": 0,
     "font": "hoefler-text",
     "treatises": 3,
+    "has_convert_py": true,
+    "text_replacements": 1,
+    "recommended_actions": []
+  },
+  {
+    "vol": "1",
+    "rank": 17,
+    "score": 0.8,
+    "need": 0.8,
+    "grade": "good",
+    "qa_level": "FULL",
+    "coverage": 99.97,
+    "greek_coverage": 100.0,
+    "hebrew_coverage": 100.0,
+    "latin_coverage": 99.89,
+    "latin_tagging": 77.12,
+    "latin_translation": 53.88,
+    "total_citations": 49,
+    "unresolved_citations": 0,
+    "splits": 0,
+    "warnings": 0,
+    "errors": 0,
+    "regressions": 0,
+    "heal_readiness": {
+      "blockers": [],
+      "review_debt": [
+        {
+          "code": "low_latin_tagging",
+          "message": "Latin tagging ratio 77.12% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.7712,
+          "samples": [
+            {
+              "word": "nestorius",
+              "epub": 8,
+              "tagged": 0
+            },
+            {
+              "word": "serm",
+              "epub": 5,
+              "tagged": 0
+            },
+            {
+              "word": "folio",
+              "epub": 3,
+              "tagged": 0
+            },
+            {
+              "word": "orat",
+              "epub": 3,
+              "tagged": 0
+            },
+            {
+              "word": "alexandria",
+              "epub": 3,
+              "tagged": 0
+            }
+          ]
+        },
+        {
+          "code": "low_latin_translation",
+          "message": "Latin translation ratio 53.88% is below 99.00%; verify no Latin text is missing.",
+          "severity": "review_debt",
+          "value": 0.5388,
+          "samples": [
+            {
+              "phrase": "quarto (Amsterdam"
+            },
+            {
+              "phrase": "nobis a praelo a capite"
+            },
+            {
+              "phrase": "operis absentibus"
+            },
+            {
+              "phrase": "Salus Electorum Sanguis"
+            },
+            {
+              "phrase": "quam conspici"
+            }
+          ]
+        }
+      ],
+      "blocker_count": 0,
+      "review_debt_count": 2,
+      "ready": true
+    },
+    "anomalies_count": 0,
+    "unmatched_quotes": 0,
+    "font": "adobe-garamond-pro",
+    "treatises": 4,
     "has_convert_py": true,
     "text_replacements": 1,
     "recommended_actions": []

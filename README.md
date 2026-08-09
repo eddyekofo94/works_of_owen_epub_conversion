@@ -509,11 +509,10 @@ Owen/
 
 ## Documentation
 
-- `AGENTS.md`: agent-facing instructions
-- `GEMINI.md`: mandatory project protocols
+- `CLAUDE.md`: agent-facing instructions and key mandates
+- `docs/project_mandates.md`: mandatory project protocols (formerly `GEMINI.md`)
 - `PLAN.md`: active roadmap and QA plan
-- `ENGINEERING_LOG.md`: technical post-mortems
-- `docs/archive/`: historical plans and old session summaries
+- `docs/archive/`: historical plans and old session summaries (engineering post-mortems live in git history)
 
 ## Dependencies
 

@@ -8,9 +8,9 @@
 
 | Check | Observed | Budget | Status |
 |-------|----------|--------|--------|
-| Possible faulty paragraph splits | 0 | 125 | OK |
+| Possible faulty paragraph splits | 13 | 125 | OK |
 | Inline structural marker candidates | 0 | 16 | OK |
-| Syllabus-anchor candidates | 0 | 16 | OK |
+| Syllabus-anchor candidates | 15 | 16 | OK |
 | Repeated word windows | 25 | 25 | OK |
 | Missing front CONTENTS pages | 0 | 4 | OK |
 | Reference continuation splits | 0 | 0 | OK |
@@ -65,6 +65,22 @@
 | Implemented absent samples | 0 | 0 | OK |
 
 ## Triage Samples
+
+### Possible faulty paragraph splits
+
+- file: EPUB/ch004.xhtml; previous:  καὶ θεοφιλῶν ἀνδρῶν μετεωριζομένη — διὰ μίαν ἐκείνην , ἥν αὐτὸς ἀπεφήνατο λέξιν , εἴπων , Επὶ τὴν πέτραν οἰκοδομήσω μου τὴν ἐηκκλησίαν , καὶ πύλαι ᾅδου οὐ κατισχύσουσιν αὐτῆς ". †; next: He proves the verity of divine predictions from the glorious accomplishment of that word, and the promise of our Savior, that he would build his church on the rock, (that is, himse
+- file: EPUB/ch004.xhtml; previous:  enim erat Christus, super quod fundamentum etiam ipse aedificatus est Petrus. Fundamentum quippe aliud nemo potest ponere, praeter id quod positum est, quod est Jesus Christus". †; next: — "He (Christ) meant the universal church, which in this world is shaken with divers temptations, as with showers, floods, and tempests, yet falleth not, because it is built on the
+- file: EPUB/ch004.xhtml; previous: To the same purpose. speaks Eusebius ‡ at large: Demonstratio Evang., lib. 5 cap. 2. ◇; next: Leo well adds hereunto the consideration of his incarnation, in these excellent words: (Serm. 9, De Nativit.) ◇ " Quia in Christo Jesus Filio Dei non solum ad divinam essentiam, se
+- file: EPUB/ch004.xhtml; previous: αὴς ἥλιος σὺν ἀνθρώποις ἐπὶ γῆς πολιτευοίτο , οὐδένα τῶν ἑπὶ τῆς γῆς μείναι ἆν ἀδιάφορον , πάντων συλλήβδην ἐμψύχων ὁμοῦ καὶ ἀψύχων ἀθρόᾳ τῃ τοῦ φωτὸς προσβολῇ διαφθαρησομένων ". †; next: The sense of which words, with some that follow in the same place, is unto this purpose: By the beams of the sunlight, and life, and heat, unto the procreation, sustentation, refre
+- file: EPUB/ch004.xhtml; previous: he image of God, even the Father, who by him is represented unto us. See the same book, chap. 7, to the same purpose; also, De Ecclesiast. Theol. contra Marcell., lib. 2 cap. 17. ◇; next: Clemens abounds much in the affirmation of this truth concerning the person of Christ, and we may yet add, from a multitude to the same purpose, one or more testimonies from him. T
+
+### Syllabus-anchor candidates
+
+- file: EPUB/ch006.xhtml
+- file: EPUB/ch010.xhtml
+- file: EPUB/ch014.xhtml
+- file: EPUB/ch014.xhtml
+- file: EPUB/ch022.xhtml
 
 ### Repeated word windows
 

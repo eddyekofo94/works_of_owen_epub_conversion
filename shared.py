@@ -2369,6 +2369,9 @@ ENGLISH_WORDS = {
     'dedicate', 'enervate', 'elevate', 'antithesis', 'anathema', 'decorum', 'novatianus', 'hegesippus', 
     'episcopius', 'anchor', 'moderate', 'demas', 'dam', 'dram', 'levi', 'sardis', 'jericho', 'erasmus',
     'onesimus',
+    # Common English words of Latin origin that are prose in Owen, not Latin runs.
+    'incarnate', 'consummate', 'invocate', 'inanimate', 'indicate',
+    'affectionate', 'fluctuate', 'possessor', 'irradiate', 'obdurate',
     # Proper names and possessives commonly mis-flagged as Latin suffix matches
     'pela', 'esau', 'esaus', 'medusa', 'medusas', 'asa', 'asas', 'nero', 'neros',
     'cicero', 'ciceros', 'hydra', 'hydras', 'elisha', 'elishas', 'joshua', 'joshuas',

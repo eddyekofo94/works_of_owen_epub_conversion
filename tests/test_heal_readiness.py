@@ -1,7 +1,9 @@
 import subprocess
 import zipfile
 
+from scripts import heal_readiness
 from scripts.heal_readiness import (
+    build_readiness_report,
     classify_state_data,
     detect_source_text_changes,
     scan_inline_modern_note_leaks,
@@ -99,6 +101,43 @@ def test_readiness_blocks_inline_modern_note_content_in_body_xhtml(tmp_path):
     assert len(leaks) == 1
     assert leaks[0]["file"] == "EPUB/ch001.xhtml"
     assert leaks[0]["pattern"] == "Modern Translation:"
+
+
+def _clean_epub(tmp_path):
+    epub_path = tmp_path / "sample.epub"
+    with zipfile.ZipFile(epub_path, "w") as zf:
+        zf.writestr("EPUB/ch001.xhtml", "<p>Body text.</p>")
+    return epub_path
+
+
+def test_uncommitted_changes_are_review_debt_on_heal_branch(monkeypatch, tmp_path):
+    monkeypatch.setattr(heal_readiness, "_current_branch", lambda: "heal-v10-20260809")
+    monkeypatch.setattr(
+        heal_readiness,
+        "detect_source_text_changes",
+        lambda volume: [{"status": "M", "path": "shared.py"}],
+    )
+
+    report = build_readiness_report("10", _base_state(), 0.5, _clean_epub(tmp_path))
+
+    assert report["strict_ready"]
+    assert report["blocker_count"] == 0
+    debt_codes = {item["code"] for item in report["review_debt"]}
+    assert "source_text_or_conversion_changes" in debt_codes
+
+
+def test_uncommitted_changes_still_block_on_master(monkeypatch, tmp_path):
+    monkeypatch.setattr(heal_readiness, "_current_branch", lambda: "master")
+    monkeypatch.setattr(
+        heal_readiness,
+        "detect_source_text_changes",
+        lambda volume: [{"status": "M", "path": "shared.py"}],
+    )
+
+    report = build_readiness_report("10", _base_state(), 0.5, _clean_epub(tmp_path))
+
+    assert not report["strict_ready"]
+    assert report["blockers"][0]["code"] == "source_text_or_conversion_changes"
 
 
 def test_detect_source_text_changes_reports_target_conversion_files(monkeypatch):

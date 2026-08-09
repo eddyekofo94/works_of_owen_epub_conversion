@@ -1,9 +1,12 @@
 # Project Mandates — John Owen Works Conversion
 
+> Formerly `GEMINI.md` at the repository root; rule numbering is unchanged so
+> `scripts/code_review.py` "Rule N" labels still refer to the Technical Mandates below.
+
 ## Workflow & Documentation
 - **Validation Requirement:** NEVER update the status of an issue or task as "Finished", "Fixed", or "Done" in any changelog or status log (e.g., `BUGS_AND_FIXES.md`) unless the change has been explicitly validated and approved by the user. Use "IMPLEMENTED (AWAITING VALIDATION)".
 - **Merge Requirement:** NEVER merge branches to `master` unless explicitly instructed to do so by the user. Keep work in local development branches.
-- **Engineering Log:** Detailed technical post-mortems and architectural deep-dives must be recorded in `ENGINEERING_LOG.md` for all complex issues (Issue 40+).
+- **Engineering Log:** `ENGINEERING_LOG.md` was retired in 2026-08; its post-mortems remain in git history. Record new deep-dives under `volumes/vN/reports/` or `docs/`.
 - **Reporting:** Always provide a summary of the implemented fix and wait for a validation directive before marking the item as resolved in the project documentation.
 - **PRISTINE Tier / Green Section Target (<20 Need Score):** Whenever a volume is selected for improvements, the agent must systematically resolve warnings, errors, missing translations, and unresolved citations to bring the quality `Need` score under `20.0` (aiming for `PRISTINE` status).
 - **Whitelisting & Reporting Mandate:** If you determine that specific warnings, page ranges, or anomalies should be whitelisted, you are permitted to do so. However, you MUST maintain two copies of the whitelist under `volumes/vN/bugs_fixes/`: an agent-readable JSON format (`volume_N_whitelist.json`) and a human-readable Markdown format (`volume_N_whitelist.md`) describing and explaining each item. Additionally, you MUST explicitly list and explain all whitelisted items in your final report to the user.

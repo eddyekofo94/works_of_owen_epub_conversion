@@ -1,6 +1,6 @@
 # Owen Volumes — QA State Report
 
-Generated: 2026-07-07T16:58:23Z
+Generated: 2026-07-07T18:41:29Z
 
 ## Summary
 
@@ -10,16 +10,16 @@ Generated: 2026-07-07T16:58:23Z
 
 | Rank | Vol | Need | Font | Treatises | Coverage | Greek | Hebrew | Latin | Unres | Quotes | QA Level |
 |------|-----|------|------|-----------|----------|-------|--------|-------|-------|--------|----------|
-| 1 | 1 | 23.0 | adobe-garamond-pro | 4 |  99.97 |  100.0 |  100.0 |   99.9 | 0 | 0 | FULL |
-| 2 | 9 | 22.0 | im-fell-english | 3 |  99.64 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
-| 3 | 13 | 13.0 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.44 | 0 | 0 | FULL |
-| 4 | 15 | 12.2 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.44 | 0 | 0 | FULL |
-| 5 | 14 | 12.0 | brill-font | 2 |  99.87 |  100.0 |  100.0 |  99.66 | 0 | 0 | FULL |
-| 6 | 12 | 10.4 | centaur | 3 |  99.93 |  99.92 |  100.0 |  99.75 | 0 | 0 | FULL |
-| 7 | 16 | 9.2 | georgia | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | FULL |
-| 8 | 10 | 7.7 | eb-garamond | 4 |  99.94 |  100.0 |  100.0 |  99.58 | 0 | 0 | FULL |
-| 9 | 8 | 3.5 | cardo | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | FULL |
-| 10 | 2 | 2.8 | hoefler-text | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | FULL |
+| 1 | 9 | 22.0 | im-fell-english | 3 |  99.64 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
+| 2 | 13 | 13.0 | itc-galliard | 5 |  99.94 |  100.0 |  100.0 |  99.44 | 0 | 0 | FULL |
+| 3 | 15 | 12.2 | new-caledonia-lt-std | 3 |  99.93 |  100.0 |  100.0 |  99.44 | 0 | 0 | FULL |
+| 4 | 14 | 12.0 | brill-font | 2 |  99.87 |  100.0 |  100.0 |  99.66 | 0 | 0 | FULL |
+| 5 | 12 | 10.4 | centaur | 3 |  99.93 |  99.92 |  100.0 |  99.75 | 0 | 0 | FULL |
+| 6 | 16 | 9.2 | georgia | 5 |  99.94 |  100.0 |  100.0 |  99.96 | 0 | 0 | FULL |
+| 7 | 10 | 7.7 | eb-garamond | 4 |  99.94 |  100.0 |  100.0 |  99.58 | 0 | 0 | FULL |
+| 8 | 8 | 3.5 | cardo | 16 |  99.95 |  100.0 |  100.0 |   99.8 | 0 | 0 | FULL |
+| 9 | 2 | 2.8 | hoefler-text | 3 |  99.99 |  100.0 |  100.0 |  99.87 | 0 | 0 | FULL |
+| 10 | 1 | 0.8 | adobe-garamond-pro | 4 |  99.97 |  100.0 |  100.0 |  99.89 | 0 | 0 | FULL |
 | 11 | 3 | 0.8 | arno-pro | 1 |  99.97 |  100.0 |  100.0 |  99.94 | 0 | 0 | FULL |
 | 12 | 4 | 0.8 | palatino | 4 |  99.95 |  100.0 |  100.0 |  99.59 | 0 | 0 | FULL |
 | 13 | 6 | 0.8 | baskerville | 4 |  99.96 |  100.0 |  100.0 |  99.15 | 0 | 0 | FULL |
@@ -202,30 +202,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** None
 - **Recommended:** translate_unresolved_citations
 
-### Volume 1 — Need: 23.0 (👌 Fair) — Rank 8
-
-- **Body font:** adobe-garamond-pro
-- **Source type:** ages_pdf
-- **Treatises:** 4
-- **QA level:** FULL
-- **convert.py:** Yes (603 lines, 1 text_replacements)
-- **Audit:** errors=0, warnings=0, footnotes=None
-- **Word coverage:** 99.97
-- **Greek coverage:** 100.00
-- **Hebrew coverage:** 100.00
-- **Latin coverage:** 99.90
-- **Latin tagging:** 72.63
-- **Latin translation:** 53.88
-- **Citations:** total=49, unresolved=0
-- **Splits:** 13
-- **Regressions:** 0
-- **Heal readiness blockers:** 8
-- **Heal readiness review debt:** 52
-- **Suspected anomalies:** 0
-- **Unmatched quotes:** 0
-- **Recommended:** resolve_modern_references; translate_substantial_foreign_passages
-
-### Volume 9 — Need: 22.0 (👌 Fair) — Rank 9
+### Volume 9 — Need: 22.0 (👌 Fair) — Rank 8
 
 - **Body font:** im-fell-english
 - **Source type:** ages_pdf
@@ -248,7 +225,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 13 — Need: 13.0 (✅ Good) — Rank 10
+### Volume 13 — Need: 13.0 (✅ Good) — Rank 9
 
 - **Body font:** itc-galliard
 - **Source type:** ages_pdf
@@ -271,7 +248,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 15 — Need: 12.2 (✅ Good) — Rank 11
+### Volume 15 — Need: 12.2 (✅ Good) — Rank 10
 
 - **Body font:** new-caledonia-lt-std
 - **Source type:** ages_pdf
@@ -294,7 +271,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 14 — Need: 12.0 (✅ Good) — Rank 12
+### Volume 14 — Need: 12.0 (✅ Good) — Rank 11
 
 - **Body font:** brill-font
 - **Source type:** ages_pdf
@@ -317,7 +294,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 12 — Need: 10.4 (✅ Good) — Rank 13
+### Volume 12 — Need: 10.4 (✅ Good) — Rank 12
 
 - **Body font:** centaur
 - **Source type:** ages_pdf
@@ -340,7 +317,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 16 — Need: 9.2 (✅ Good) — Rank 14
+### Volume 16 — Need: 9.2 (✅ Good) — Rank 13
 
 - **Body font:** georgia
 - **Source type:** ages_pdf
@@ -363,7 +340,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 10 — Need: 7.7 (✅ Good) — Rank 15
+### Volume 10 — Need: 7.7 (✅ Good) — Rank 14
 
 - **Body font:** eb-garamond
 - **Source type:** ages_pdf
@@ -386,7 +363,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 8 — Need: 3.5 (✅ Good) — Rank 16
+### Volume 8 — Need: 3.5 (✅ Good) — Rank 15
 
 - **Body font:** cardo
 - **Source type:** ages_pdf
@@ -409,7 +386,7 @@ Generated: 2026-07-07T16:58:23Z
 - **Unmatched quotes:** 0
 - **Recommended:** 
 
-### Volume 2 — Need: 2.8 (✅ Good) — Rank 17
+### Volume 2 — Need: 2.8 (✅ Good) — Rank 16
 
 - **Body font:** hoefler-text
 - **Source type:** ages_pdf
@@ -427,6 +404,29 @@ Generated: 2026-07-07T16:58:23Z
 - **Splits:** 0
 - **Regressions:** 0
 - **Heal readiness blockers:** 1
+- **Heal readiness review debt:** 2
+- **Suspected anomalies:** 0
+- **Unmatched quotes:** 0
+- **Recommended:** 
+
+### Volume 1 — Need: 0.8 (✅ Good) — Rank 17
+
+- **Body font:** adobe-garamond-pro
+- **Source type:** ages_pdf
+- **Treatises:** 4
+- **QA level:** FULL
+- **convert.py:** Yes (603 lines, 1 text_replacements)
+- **Audit:** errors=0, warnings=0, footnotes=None
+- **Word coverage:** 99.97
+- **Greek coverage:** 100.00
+- **Hebrew coverage:** 100.00
+- **Latin coverage:** 99.89
+- **Latin tagging:** 77.12
+- **Latin translation:** 53.88
+- **Citations:** total=49, unresolved=0
+- **Splits:** 0
+- **Regressions:** 0
+- **Heal readiness blockers:** 0
 - **Heal readiness review debt:** 2
 - **Suspected anomalies:** 0
 - **Unmatched quotes:** 0
